@@ -31,8 +31,17 @@ export function useCloseDrawer() {
 export function Drawer() {
     const [open, setOpen] = useState(false)
     const router = useRouter()
+    const closeDrawer = useCloseDrawer()
+
+    // useEffect(() => {
+    //     document.querySelector('#drawer')?.addEventListener('longpress')
+    //     return () => {
+    //         cleanup
+    //     }
+    // }, [input])
 
     useEffect(() => {
+        console.log(router)
         if (router.asPath === drawer) {
             setOpen(true)
         } else {
@@ -47,17 +56,13 @@ export function Drawer() {
                     width: 250 ?? 'auto'
                 }}
                 role="presentation"
-                onClick={() => console.log('Box onclick')}
-                onKeyDown={() => console.log('Box onKeyDown')}
+                onClick={() => {}}
+                onKeyDown={() => {}}
             >
                 <List>
                     {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
                         (text, index) => (
-                            <ListItem
-                                button
-                                key={text}
-                                onClick={() => console.log('List item onclick')}
-                            >
+                            <ListItem button key={text} onClick={() => {}}>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? (
                                         <InboxIcon />
@@ -89,10 +94,12 @@ export function Drawer() {
         <div>
             <div>
                 <SwipeableDrawer
+                    id="drawer"
                     anchor={drawerDirection}
                     open={open}
+                    disableSwipeToOpen={true}
                     onClose={() => {
-                        router.back()
+                        closeDrawer()
                         setOpen(false)
                     }}
                     onOpen={() => setOpen(true)}
