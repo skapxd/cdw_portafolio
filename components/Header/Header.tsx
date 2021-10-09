@@ -1,13 +1,30 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Style from './Header.module.sass'
-import { Menu, Search } from 'react-ionicons'
+import 'material-icons/iconfont/material-icons.css'
+import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
 
 export const Header = () => {
+    const router = useRouter()
+
+    const openDrawer = useOpenDrawer()
+
     return (
         <div className={Style.mainContainer}>
-            <Image src="/assets/logo.svg" width={100} height={40} />
-            <Menu height={25} width={25} cssClasses={Style.menu} />
-            <Search height={20} width={20} cssClasses={Style.search} />
+            <Drawer />
+
+            <div className={Style.logo}>
+                <Image src="/assets/logo.svg" width={100} height={40} />
+            </div>
+
+            <span
+                className={`material-icons ${Style.menu}`}
+                onClick={() => openDrawer()}
+            >
+                menu
+            </span>
+            <span className={`material-icons ${Style.search}`}>search</span>
         </div>
     )
 }

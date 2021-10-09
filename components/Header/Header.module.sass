@@ -1,24 +1,32 @@
 @import '../../styles/_theme.module'
 
 .mainContainer
-    padding: 0 16px
+    margin: 1.8rem 0
+    padding: 0 1.6rem
     background: $background
     display: flex
     align-items: center
-    justify-content: space-between
+    width: 100%
 
-.menu
-    width: 18px
-    height: 24px
-    color: $white
-    fill: $white
-    & > path
-        color: $white
-        fill: $white
+.logo
+    display: flex
+    margin-right: auto
 
 .search
-    width: 18px
-    height: 24px
+    width: 1.8rem
+    height: 2.4rem
+    cursor: pointer
+    color: #fff
+    transition: color 0.3s ease
+    &:hover
+        color: $red
 
-    & > path
-        fill: $white
+.menu
+    width: 1.8rem
+    height: 2.4rem
+    margin-right: 1.6rem
+    cursor: pointer
+    color: #fff
+    transition: color 0.3s ease
+    &:hover
+        color: $red
