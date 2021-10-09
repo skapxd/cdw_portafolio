@@ -33,13 +33,6 @@ export function Drawer() {
     const router = useRouter()
     const closeDrawer = useCloseDrawer()
 
-    // useEffect(() => {
-    //     document.querySelector('#drawer')?.addEventListener('longpress')
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
-
     useEffect(() => {
         console.log(router)
         if (router.asPath === drawer) {
