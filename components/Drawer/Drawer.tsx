@@ -17,6 +17,9 @@ const drawerDirection = 'left'
 
 export function useOpenDrawer() {
     const router = useRouter()
+
+    if (router.pathname !== router.asPath) return () => {}
+
     return () => router.push(drawer)
 }
 
