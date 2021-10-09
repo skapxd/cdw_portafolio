@@ -1,14 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Style from './Header.module.sass'
 import 'material-icons/iconfont/material-icons.css'
-import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
+import { Drawer, useOpenDrawer, useCloseDrawer } from '../Drawer/Drawer'
 
 export const Header = () => {
-    const router = useRouter()
-
     const openDrawer = useOpenDrawer()
+
+    const closeDrawer = useCloseDrawer()
 
     return (
         <div className={Style.mainContainer}>
@@ -24,7 +22,12 @@ export const Header = () => {
             >
                 menu
             </span>
-            <span className={`material-icons ${Style.search}`}>search</span>
+            <span
+                className={`material-icons ${Style.search}`}
+                onClick={() => closeDrawer()}
+            >
+                search
+            </span>
         </div>
     )
 }
