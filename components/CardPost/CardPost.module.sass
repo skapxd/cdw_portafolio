@@ -1,0 +1,67 @@
+@import '../../styles/_theme.module.scss'
+
+.card
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 90%
+    z-index: 1
+    border-radius: 1.6rem
+    // background: #999
+    padding: 2rem
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 70%)
+
+    &_starWrapper
+        cursor: pointer
+        width: 3rem
+        height: 3rem
+        margin-left: auto
+        background: #232227
+        border-radius: 0.4rem
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: background 0.3s ease
+        &:hover
+            background: #5a5764
+
+    &_star
+        font-size: 2.2rem
+        z-index: 1
+        color: #abc
+
+    &_readingTimeAndDatePosition
+        margin-top: 5rem
+
+    &_readingTime
+        color: $white
+        z-index: 1
+        font-size: 1.2rem
+        font-weight: 500
+
+    &_date
+        color: #999
+        z-index: 1
+        font-size: 1.2rem
+        font-weight: 500
+
+    &_title
+        margin-top: 1rem
+        color: #fff
+        z-index: 1
+        font-size: 2.4rem
+        font-weight: 800
+
+    &_shortDescription
+        margin-top: 1.4rem
+        color: #aaa
+        font-size: 1.4rem
+
+    &_tagsList
+        display: flex
+        margin: 2rem
+    &_tagsItem
+        border-radius: 10rem
+        border-width: 0.2rem
+        border-color: #aaa
+        color: #aaa

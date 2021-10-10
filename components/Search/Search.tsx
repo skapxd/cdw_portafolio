@@ -46,7 +46,10 @@ export const Search = () => {
                     arrow_back
                 </span>
 
-                <input className={Style.search_bar_inputText} />
+                <input
+                    className={Style.search_bar_inputText}
+                    placeholder="Buscar post"
+                />
             </div>
             <div className={Style.search_divider}></div>
         </div>

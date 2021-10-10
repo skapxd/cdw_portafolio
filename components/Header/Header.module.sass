@@ -1,30 +1,26 @@
 @import '../../styles/_theme.module'
 
 .mainContainer
+    position: absolute
+    top: 0
+    width: 100%
     margin: 1.8rem 0
     padding: 0 1.6rem
-    background: $background
     display: flex
     align-items: center
-    width: 100%
+    z-index: 5
 
-.logo
-    display: flex
+.menu
+    font-size: 3rem
     margin-right: auto
-
-.search
-    width: 1.8rem
-    height: 2.4rem
     cursor: pointer
     color: #fff
     transition: color 0.3s ease
     &:hover
         color: $red
 
-.menu
-    width: 1.8rem
-    height: 2.4rem
-    margin-right: 1.6rem
+.search
+    font-size: 3rem
     cursor: pointer
     color: #fff
     transition: color 0.3s ease

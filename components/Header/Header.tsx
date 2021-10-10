@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import Style from './Header.module.sass'
 import 'material-icons/iconfont/material-icons.css'
@@ -9,11 +10,14 @@ export const Header = () => {
     const openSearch = useOpenSearch()
     return (
         <div className={Style.mainContainer}>
+            <Head>
+                {/* <meta name="theme-color" content="black" /> */}
+                <meta name="theme-color" content="#0f0f12" />
+            </Head>
+
             <Drawer />
+
             <Search />
-            <div className={Style.logo}>
-                <Image src="/assets/logo.svg" width={100} height={40} />
-            </div>
 
             <span
                 className={`material-icons ${Style.menu}`}
