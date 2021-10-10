@@ -12,6 +12,7 @@ export default function Home() {
             readingTime: '2 min read',
             title: 'Believe and act as if it were impossible to fail',
             tags: ['Work', 'Notes'],
+            urlPost: 'https://google.com',
             urlImage:
                 'http://norlin.anvodstudio.com/content/images/2020/11/10.jpg',
             shortDescription:

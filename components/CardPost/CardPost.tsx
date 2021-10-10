@@ -1,4 +1,5 @@
 import Style from './CardPost.module.sass'
+import Link from 'next/link'
 
 export interface CardPostI {
     id: string
@@ -9,6 +10,7 @@ export interface CardPostI {
     tags: string[]
     shortDescription: string
     urlImage: string
+    urlPost: string
 }
 export function CardPost(props: CardPostI) {
     const {
@@ -18,33 +20,44 @@ export function CardPost(props: CardPostI) {
         title,
         tags,
         shortDescription,
-        urlImage
+        urlImage,
+        id,
+        urlPost
     } = props
 
     return (
-        <div className={Style.card} style={{ background: `url(${urlImage})` }}>
-            <div className={Style.card_starWrapper}>
-                <span className={`material-icons ${Style.card_star}`}>
-                    star_outline
-                </span>
-            </div>
+        <Link href={urlPost} key={id}>
+            <a
+                className={Style.card}
+                style={{ background: `url(${urlImage})` }}
+            >
+                <div className={Style.card_starWrapper}>
+                    <span className={`material-icons ${Style.card_star}`}>
+                        star_outline
+                    </span>
+                </div>
 
-            <div className={Style.card_readingTimeAndDatePosition}>
-                <span className={Style.card_readingTime}>{readingTime}</span>{' '}
-                <span className={Style.card_date}>{date}</span>
-            </div>
+                <div className={Style.card_readingTimeAndDatePosition}>
+                    <span className={Style.card_readingTime}>
+                        {readingTime}
+                    </span>{' '}
+                    <span className={Style.card_date}>{date}</span>
+                </div>
 
-            <h2 className={Style.card_title}>{title}</h2>
+                <h2 className={Style.card_title}>{title}</h2>
 
-            <p className={Style.card_shortDescription}>{shortDescription}</p>
+                <p className={Style.card_shortDescription}>
+                    {shortDescription}
+                </p>
 
-            <div className={Style.card_tagsList}>
-                {tags.map((e) => (
-                    <>
-                        <span className={Style.card_tagsItem}>{e + ' '} </span>
-                    </>
-                ))}
-            </div>
-        </div>
+                <div className={Style.card_tagsList}>
+                    {tags.map((e) => (
+                        <>
+                            <span className={Style.card_tagsItem}>{e}</span>
+                        </>
+                    ))}
+                </div>
+            </a>
+        </Link>
     )
 }

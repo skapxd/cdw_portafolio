@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Style from './Header.module.sass'
 import 'material-icons/iconfont/material-icons.css'
 import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
-import { useOpenSearch, Search } from '../Search/Search'
+import { Search, useOpenSearch } from '../Search/Search'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -11,7 +10,6 @@ export const Header = () => {
     return (
         <div className={Style.mainContainer}>
             <Head>
-                {/* <meta name="theme-color" content="black" /> */}
                 <meta name="theme-color" content="#0f0f12" />
             </Head>
 

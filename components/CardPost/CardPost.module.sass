@@ -7,9 +7,11 @@
     width: 90%
     z-index: 1
     border-radius: 1.6rem
-    // background: #999
     padding: 2rem
     box-shadow: 0 5px 10px 0 rgb(0 0 0 / 70%)
+    transition: box-shadow 0.3s ease
+    &:hover
+        box-shadow: 0 0 10px 0 rgb(255 255 255 / 70%)
 
     &_starWrapper
         cursor: pointer
@@ -60,8 +62,18 @@
     &_tagsList
         display: flex
         margin: 2rem 0
+
     &_tagsItem
+        cursor: pointer
+        padding: 0.1rem 1rem
         border-radius: 10rem
+        border-style: solid
         border-width: 0.2rem
         border-color: #aaa
         color: #aaa
+        margin-right: 1rem
+        font-size: 1.4rem
+        transition: border-color 0.3s ease, color 0.3s ease
+        &:hover
+            color: $white
+            border-color: #e78486

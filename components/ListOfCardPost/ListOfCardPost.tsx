@@ -12,8 +12,9 @@ export function ListOfCardPost(props: ListOfCardPostI) {
         <div className={className}>
             {data.map((e) => (
                 <CardPost
-                    urlImage={e.urlImage}
                     key={e.id}
+                    urlPost={e.urlPost}
+                    urlImage={e.urlImage}
                     id={e.id}
                     favorite={e.favorite}
                     date={e.date}
