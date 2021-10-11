@@ -37,7 +37,6 @@ export function Drawer() {
     const closeDrawer = useCloseDrawer()
 
     useEffect(() => {
-        console.log(router)
         if (router.asPath === drawer) {
             setOpen(true)
         } else {

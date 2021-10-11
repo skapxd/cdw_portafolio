@@ -1,25 +1,26 @@
-import Style from './index.module.sass'
 import Image from 'next/image'
 import { ListOfCardPost } from '../components/CardPost/ListOfCardPost'
 import { CardPostI } from '../components/CardPost/CardPost'
 import { ExploreTags } from '../components/ExploreTags/ExploreTags'
+import Style from './index.module.sass'
 
-export default function Home() {
-    const data: CardPostI[] = [
-        {
-            id: '1',
-            favorite: false,
-            date: 'Nov 12, 2020',
-            readingTime: '2 min read',
-            title: 'Believe and act as if it were impossible to fail',
-            tags: ['Work', 'Notes'],
-            urlPost: 'https://google.com',
-            urlImage:
-                'http://norlin.anvodstudio.com/content/images/2020/11/10.jpg',
-            shortDescription:
-                'Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu ita posuisti, et verba vestra sunt. Idemne potest esse dies sa'
+export async function getStaticProps() {
+    const rest = await fetch('http://localhost:3000/post.json')
+    const post = await rest.json()
+
+    return {
+        props: {
+            data: post
         }
-    ]
+    }
+}
+
+interface HomeI {
+    data: CardPostI[]
+}
+
+export default function Home(props: HomeI) {
+    const { data } = props
 
     return (
         <div className={Style.firtsScreen}>

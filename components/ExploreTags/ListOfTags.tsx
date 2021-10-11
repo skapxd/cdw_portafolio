@@ -7,7 +7,7 @@ export const ListOfTags = () => {
     return (
         <div className={Style.listOfTags}>
             {data.map((e) => (
-                <Tags text={e} />
+                <Tags text={e} key={e} />
             ))}
         </div>
     )

@@ -26,7 +26,8 @@ export function CardPost(props: CardPostI) {
     } = props
 
     return (
-        <Link href={urlPost} key={id}>
+        <Link href={'/post/' + urlPost} key={id}>
+            {/* <Link href={urlPost} key={id}> */}
             <a
                 className={Style.card}
                 style={{ background: `url(${urlImage})` }}
