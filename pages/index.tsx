@@ -1,7 +1,8 @@
 import Style from './index.module.sass'
 import Image from 'next/image'
-import { ListOfCardPost } from '../components/ListOfCardPost/ListOfCardPost'
+import { ListOfCardPost } from '../components/CardPost/ListOfCardPost'
 import { CardPostI } from '../components/CardPost/CardPost'
+import { ExploreTags } from '../components/ExploreTags/ExploreTags'
 
 export default function Home() {
     const data: CardPostI[] = [
@@ -31,6 +32,8 @@ export default function Home() {
                 className={Style.firtsScreen_listOfCardPost}
                 data={data}
             />
+
+            <ExploreTags />
         </div>
     )
 }
