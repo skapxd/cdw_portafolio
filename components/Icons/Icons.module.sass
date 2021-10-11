@@ -1,0 +1,22 @@
+@import '../../styles/_theme.module.scss'
+
+.telegram
+    cursor: pointer
+    width: 3rem
+    height: 3rem
+    background: $greyMini
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 0.8rem
+    transition: background 0.3s ease
+    &:hover
+        background: $greyPass
+
+    & > svg
+        margin-left: -0.2rem
+        width: 1.5rem
+        height: 1.5rem
+
+        & path
+            fill: $greyAct
