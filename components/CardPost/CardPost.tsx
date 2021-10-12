@@ -27,7 +27,6 @@ export function CardPost(props: CardPostI) {
 
     return (
         <Link href={'/post/' + urlPost} key={id}>
-            {/* <Link href={urlPost} key={id}> */}
             <a
                 className={Style.card}
                 style={{ background: `url(${urlImage})` }}
@@ -53,9 +52,9 @@ export function CardPost(props: CardPostI) {
 
                 <div className={Style.card_tagsList}>
                     {tags.map((e) => (
-                        <>
+                        <div key={e}>
                             <span className={Style.card_tagsItem}>{e}</span>
-                        </>
+                        </div>
                     ))}
                 </div>
             </a>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Style from './[post].module.sass'
-import { CardPostI } from '../../components/CardPost/CardPost'
+import { CardPost, CardPostI } from '../../components/CardPost/CardPost'
 
 export async function getStaticPaths(props: any) {
     const rest = await fetch('http://localhost:3000/post.json')
@@ -14,16 +14,46 @@ export async function getStaticPaths(props: any) {
 }
 
 export async function getStaticProps(props: any) {
-    const rest = await fetch('http://localhost:3000/post.json')
+    const { params } = props
+
+    const rest = await fetch(`http://localhost:3000/api/posts/${params.post}`)
     const post: CardPostI[] = await rest.json()
 
+    console.log('post: ', post)
+
     return {
-        props: {
-            data: post
-        }
+        props: post
     }
 }
 
 export default function Post(props: any) {
-    return <div className={Style.post}>hola</div>
+    const {
+        date,
+        urlImage,
+        urlPost,
+        tags,
+        title,
+        id,
+        readingTime,
+        favorite,
+        shortDescription
+    }: CardPostI = props.data
+
+    console.log(urlImage)
+
+    return (
+        <>
+            <div className={Style.post}>
+                <img className={Style.post_imgMain} src={urlImage} alt="" />
+                {/* <Image
+                loader={() => ''}
+                alt="hola"
+                src={urlImage}
+                className={Style.post}
+                width={30}
+                height={30}
+            /> */}
+            </div>
+        </>
+    )
 }
