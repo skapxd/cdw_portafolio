@@ -1,11 +1,15 @@
 import React from 'react'
+import { Github } from '../Icons/Github'
 import { Telegram } from '../Icons/Telegram'
 import Style from './Footer.module.sass'
 
 export const Footer = () => {
     return (
         <footer className={Style.footer}>
-            <Telegram href="https://t.me/skapxd" />
+            <div className={Style.footer_socialMedia}>
+                <Telegram />
+                <Github />
+            </div>
             <div className={Style.footer_right}>
                 2021 ©{' '}
                 <b>

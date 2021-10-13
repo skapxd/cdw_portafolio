@@ -7,6 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "logs": "gcloud app logs tail",
+        "gcp": "gcloud app deploy --project portafolio-nextjs",
+        "open": "gcloud app browse",
         "test": "cypress open"
     },
     "dependencies": {

@@ -30,7 +30,7 @@ export function CardPost(props: CardPostI) {
         <Link href={'/post/' + urlPost} key={id}>
             <a
                 className={Style.card}
-                style={{ background: `url(${urlImage})` }}
+                style={{ backgroundImage: `url(${urlImage})` }}
             >
                 <div className={Style.card_starWrapper}>
                     <span className={`material-icons ${Style.card_star}`}>

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Style from './Icons.module.sass'
 
 interface TelegramI {
-    href: string
+    href?: string
     className?: string
 }
 
@@ -10,7 +10,7 @@ export const Telegram = (props: TelegramI) => {
     const { href, className } = props
 
     return (
-        <Link href={href}>
+        <Link href={href ?? 'https://t.me/skapxd'}>
             <a className={`${Style.telegram} ${className}`} target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">
                     <g id="Capa_2" data-name="Capa 2">
