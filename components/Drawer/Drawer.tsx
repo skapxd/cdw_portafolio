@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-// import Style from './Drawer.module.sass'
+import Style from './Drawer.module.sass'
 
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
@@ -11,22 +11,25 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
+import { route } from 'next/dist/server/router'
 
-const drawer = '/#drawer'
+const drawer = '#drawer'
 const drawerDirection = 'left'
 
 export function useOpenDrawer() {
     const router = useRouter()
 
-    if (router.pathname !== router.asPath) return () => {}
+    // if true, it means that Drawer page is open
+    if (router.asPath.includes(drawer)) return () => {}
 
-    return () => router.push(drawer)
+    return () => router.push(router.asPath + drawer)
 }
 
 export function useCloseDrawer() {
     const router = useRouter()
 
-    if (router.asPath !== drawer) return () => {}
+    // if false, it means that Drawer page is close
+    if (!router.asPath.includes(drawer)) return () => {}
 
     return () => router.back()
 }
@@ -37,7 +40,7 @@ export function Drawer() {
     const closeDrawer = useCloseDrawer()
 
     useEffect(() => {
-        if (router.asPath === drawer) {
+        if (router.asPath.includes(drawer)) {
             setOpen(true)
         } else {
             setOpen(false)

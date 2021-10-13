@@ -19,8 +19,6 @@ export async function getStaticProps(props: any) {
     const rest = await fetch(`http://localhost:3000/api/posts/${params.post}`)
     const post: CardPostI[] = await rest.json()
 
-    console.log('post: ', post)
-
     return {
         props: post
     }

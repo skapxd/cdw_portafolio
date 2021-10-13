@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react'
 
 import Style from './Search.module.sass'
 
-const search = '/#search'
+const search = '#search'
 
 export const useOpenSearch = () => {
     const router = useRouter()
 
-    if (router.pathname !== router.asPath) return () => {}
+    // if true, it means that Search page is open
+    if (router.asPath.includes(search)) return () => {}
 
     return () => router.push(search)
 }
@@ -16,7 +17,8 @@ export const useOpenSearch = () => {
 export const useCloseSearch = () => {
     const router = useRouter()
 
-    if (router.asPath !== search) return () => {}
+    // if false, it means that Search page is close
+    if (!router.asPath.includes(search)) return () => {}
 
     return () => router.back()
 }
@@ -27,7 +29,7 @@ export const Search = () => {
     const [ifCanShowSearch, setIfCanShowSearch] = useState(false)
 
     useEffect(() => {
-        if (router.asPath === search) {
+        if (router.asPath.includes(search)) {
             setIfCanShowSearch(true)
         } else {
             setIfCanShowSearch(false)

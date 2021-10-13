@@ -14,8 +14,8 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const queryPost = req.query.post
-
+    const queryPost = req.query.id
+    console.log(queryPost)
     const data = fs.readFileSync('public/post.json', {
         encoding: 'utf-8'
     })
