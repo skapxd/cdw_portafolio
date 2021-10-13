@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { CardPostI } from '../components/CardPost/CardPost'
 import { ListOfCardPost } from '../components/CardPost/ListOfCardPost'
-import { ExploreTags } from '../components/ExploreTags/ExploreTags'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {
@@ -33,8 +32,6 @@ export default function Home(props: HomeI) {
                 className={Style.firtsScreen_listOfCardPost}
                 data={data}
             />
-
-            <ExploreTags />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import Style from './CardPost.module.sass'
 import Link from 'next/link'
+import { MiniTags } from '../Tags/Tags'
 
 export interface CardPostI {
     id: string
@@ -50,14 +51,18 @@ export function CardPost(props: CardPostI) {
                     {shortDescription}
                 </p>
 
-                <div className={Style.card_tagsList}>
-                    {tags.map((e) => (
-                        <div key={e}>
-                            <span className={Style.card_tagsItem}>{e}</span>
-                        </div>
-                    ))}
-                </div>
+                <ListOfMiniTags tags={tags} />
             </a>
         </Link>
+    )
+}
+
+function ListOfMiniTags({ tags }: { tags: string[] }) {
+    return (
+        <div className={Style.card_tagsList}>
+            {tags.map((e) => (
+                <MiniTags text={e} key={e} />
+            ))}
+        </div>
     )
 }

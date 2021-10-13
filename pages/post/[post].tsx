@@ -1,6 +1,9 @@
-import Image from 'next/image'
+import { CardPostI } from '../../components/CardPost/CardPost'
+import { MiniTags } from '../../components/Tags/Tags'
+import ReactMarkdown from 'react-markdown'
+
 import Style from './[post].module.sass'
-import { CardPost, CardPostI } from '../../components/CardPost/CardPost'
+import MarkDownStyle from '../../styles/_markdown.module.sass'
 
 export async function getStaticPaths(props: any) {
     const rest = await fetch('http://localhost:3000/post.json')
@@ -37,21 +40,35 @@ export default function Post(props: any) {
         shortDescription
     }: CardPostI = props.data
 
-    console.log(urlImage)
-
     return (
         <>
             <div className={Style.post}>
                 <img className={Style.post_imgMain} src={urlImage} alt="" />
-                {/* <Image
-                loader={() => ''}
-                alt="hola"
-                src={urlImage}
-                className={Style.post}
-                width={30}
-                height={30}
-            /> */}
+
+                <div className={Style.post_boxReadTimeAndDate}>
+                    <span className={Style.post_readTime}>{readingTime} </span>{' '}
+                    <span className={Style.post_date}>{date}</span>
+                </div>
+
+                <h2 className={Style.post_title}>{title}</h2>
+
+                <ListOfTags tags={tags} />
+
+                <ReactMarkdown
+                    className={MarkDownStyle.markDown}
+                    children={`Hola`}
+                />
             </div>
         </>
+    )
+}
+
+function ListOfTags({ tags }: { tags: string[] }) {
+    return (
+        <div className={Style.post_listOfTags}>
+            {tags.map((e) => (
+                <MiniTags text={e} key={e} className={Style.post_tagItem} />
+            ))}
+        </div>
     )
 }

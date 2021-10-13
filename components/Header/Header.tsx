@@ -13,22 +13,23 @@ export const Header = () => {
                 <meta name="theme-color" content="#0f0f12" />
             </Head>
 
-            <Drawer />
-
-            <Search />
-
             <span
                 className={`material-icons ${Style.menu}`}
                 onClick={() => openDrawer()}
             >
                 menu
             </span>
+
             <span
                 className={`material-icons ${Style.search}`}
                 onClick={() => openSearch()}
             >
                 search
             </span>
+
+            <Drawer />
+
+            <Search />
         </div>
     )
 }
