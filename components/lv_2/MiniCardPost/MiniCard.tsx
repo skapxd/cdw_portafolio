@@ -1,6 +1,6 @@
 import Style from './MiniCard.module.sass'
 import { CardPostI } from '../CardPost/CardPost'
-import { ListOfTags } from '../ExploreTags/ListOfTags'
+import { ListOfTags } from '../ListOfTags/ListOfTags'
 
 export const MiniCard = (props: CardPostI) => {
     const {

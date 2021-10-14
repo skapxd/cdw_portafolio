@@ -2,13 +2,26 @@ import type { AppProps } from 'next/app'
 import { Header } from '../components/lv_2/Header/Header'
 import { Footer } from '../components/lv_2/Fotter/Footer'
 import { ExploreTags } from '../components/lv_2/ExploreTags/ExploreTags'
+import { MostSeen } from '../components/lv_4/MostSeen/MostSeen'
 
 import '../styles/normalize.css'
 import '../styles/globals.scss'
 import Style from './_app.module.sass'
-import { MostSeen } from '../components/lv_2/MostSeen/MostSeen'
+
+export async function getStaticProps() {
+    const rest = await fetch('http://localhost:3000/post.json')
+    const post = await rest.json()
+
+    return {
+        props: {
+            data: post
+        }
+    }
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
+    console.log(pageProps)
+
     return (
         <>
             <Header />
@@ -16,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Component {...pageProps} />
 
                 <ExploreTags />
-                <MostSeen />
+                <MostSeen data={[]} />
                 <Footer />
             </div>
         </>

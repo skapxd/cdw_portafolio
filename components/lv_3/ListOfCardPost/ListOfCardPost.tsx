@@ -1,4 +1,4 @@
-import { CardPost, CardPostI } from '../CardPost/CardPost'
+import { CardPost, CardPostI } from '../../lv_2/CardPost/CardPost'
 
 interface ListOfCardPostI {
     data: CardPostI[]

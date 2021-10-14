@@ -1,9 +1,8 @@
-import { CardPostI } from '../../components/lv_2/CardPost/CardPost'
-import { MiniTags } from '../../components/lv_1/Tags/Tags'
 import ReactMarkdown from 'react-markdown'
-
+import { CardPostI } from '../../components/lv_2/CardPost/CardPost'
 import Style from './[post].module.sass'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
+import { MiniTags } from '../../components/lv_1/Tags/Tags'
 
 export async function getStaticPaths(props: any) {
     const rest = await fetch('http://localhost:3000/post.json')

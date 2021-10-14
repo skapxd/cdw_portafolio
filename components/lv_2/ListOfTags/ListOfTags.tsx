@@ -1,5 +1,6 @@
+// import { Tags } from '../../lv_1/Tags/Tags'
 import { Tags } from '../../lv_1/Tags/Tags'
-import Style from './ExploreTags.module.sass'
+import Style from './ListOfTags.module.sass'
 
 export const ListOfTags = () => {
     const data = ['Móvil', 'Web', 'Deploy', 'GCP', 'Heroku', 'holaaaaa']
