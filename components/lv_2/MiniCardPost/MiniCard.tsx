@@ -20,12 +20,17 @@ export const MiniCard = (props: CardPostI) => {
             <img src={urlImage} alt={title} />
 
             <div className={Style.miniCard_info}>
-                <span className={Style.miniCard_info_readingTime}>
-                    {readingTime}
-                </span>{' '}
-                <span className={Style.miniCard_info_date}>{date}</span>
+                <div>
+                    <span className={Style.miniCard_info_readingTime}>
+                        {readingTime}
+                    </span>{' '}
+                    <span className={Style.miniCard_info_date}>{date}</span>
+                </div>
                 <h4 className={Style.miniCard_info_title}>{title}</h4>
-                <ListOfMiniTags tags={tags} />
+                <ListOfMiniTags
+                    tags={tags}
+                    className={Style.miniCard_info_displayRow}
+                />
             </div>
         </div>
     )

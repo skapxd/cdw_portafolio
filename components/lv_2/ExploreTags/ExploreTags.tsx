@@ -1,7 +1,6 @@
 import Style from './ExploreTags.module.sass'
 import { Title } from '../../lv_1/Title/Title'
 import { ListOfTags } from '../ListOfTags/ListOfTags'
-import { CardPostI } from '../../lv_3/CardPost/CardPost'
 
 interface ExploreTagsI {
     listOfTags: string[]
