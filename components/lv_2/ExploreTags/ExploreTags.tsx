@@ -1,5 +1,5 @@
 import Style from './ExploreTags.module.sass'
-import { Title } from '../Title/Title'
+import { Title } from '../../lv_1/Title/Title'
 import { ListOfTags } from './ListOfTags'
 
 export const ExploreTags = () => {

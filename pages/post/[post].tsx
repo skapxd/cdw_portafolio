@@ -1,5 +1,5 @@
-import { CardPostI } from '../../components/CardPost/CardPost'
-import { MiniTags } from '../../components/Tags/Tags'
+import { CardPostI } from '../../components/lv_1/CardPost/CardPost'
+import { MiniTags } from '../../components/lv_1/Tags/Tags'
 import ReactMarkdown from 'react-markdown'
 
 import Style from './[post].module.sass'

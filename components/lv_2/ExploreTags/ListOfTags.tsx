@@ -1,4 +1,4 @@
-import { Tags } from '../Tags/Tags'
+import { Tags } from '../../lv_1/Tags/Tags'
 import Style from './ExploreTags.module.sass'
 
 export const ListOfTags = () => {

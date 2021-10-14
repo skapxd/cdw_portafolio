@@ -1,6 +1,5 @@
-import React from 'react'
-import { Github } from '../Icons/Github'
-import { Telegram } from '../Icons/Telegram'
+import { Github } from '../../lv_1/Icons/Github'
+import { Telegram } from '../../lv_1/Icons/Telegram'
 import Style from './Footer.module.sass'
 
 export const Footer = () => {
