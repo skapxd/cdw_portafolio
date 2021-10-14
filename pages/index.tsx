@@ -1,23 +1,28 @@
 import { CardPost, CardPostI } from '../components/lv_3/CardPost/CardPost'
+import { ListOfCardPost } from '../components/lv_3/ListOfCardPost/ListOfCardPost'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {
     const rest = await fetch('http://localhost:3000/post.json')
     const post = await rest.json()
+    console.log('getStaticProps Home: ', post)
 
     return {
         props: {
-            data: post
+            // list: [1, 2, 3, 4]
+            list: post
         }
     }
 }
 
 interface HomeI {
-    data: CardPostI[]
+    list: CardPostI[]
 }
 
-export default function Home(props: HomeI) {
-    const { data } = props
+export default function Home(props: any) {
+    const { list } = props
+
+    console.log('Home: ', props)
 
     return (
         <div className={Style.firtsScreen}>
@@ -28,36 +33,8 @@ export default function Home(props: HomeI) {
 
             <ListOfCardPost
                 className={Style.firtsScreen_listOfCardPost}
-                data={data}
+                list={list}
             />
-        </div>
-    )
-}
-
-interface ListOfCardPostI {
-    data: CardPostI[]
-    className?: string
-}
-
-function ListOfCardPost(props: ListOfCardPostI) {
-    const { data, className } = props
-
-    return (
-        <div className={className}>
-            {data.map((e) => (
-                <CardPost
-                    key={e.id}
-                    urlPost={e.urlPost}
-                    urlImage={e.urlImage}
-                    id={e.id}
-                    favorite={e.favorite}
-                    date={e.date}
-                    readingTime={e.readingTime}
-                    title={e.title}
-                    tags={e.tags}
-                    shortDescription={e.shortDescription}
-                />
-            ))}
         </div>
     )
 }

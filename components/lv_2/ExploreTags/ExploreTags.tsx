@@ -13,7 +13,7 @@ export const ExploreTags = (props: ExploreTagsI) => {
         <div className={Style.exploreTags}>
             <Title text="Etiquetas" className={Style.exploreTags_title} />
             <ListOfTags
-                data={listOfTags}
+                tags={listOfTags}
                 className={Style.exploreTags_displayRow}
             />
         </div>

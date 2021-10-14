@@ -4,6 +4,7 @@ import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import Style from './[post].module.sass'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
 import { MiniTags } from '../../components/lv_1/MiniTags/MiniTags'
+import { ListOfTags } from '../../components/lv_2/ListOfTags/ListOfTags'
 
 export async function getStaticPaths(props: any) {
     const rest = await fetch('http://localhost:3000/post.json')
@@ -20,7 +21,7 @@ export async function getStaticProps(props: any) {
     const { params } = props
 
     const rest = await fetch(`http://localhost:3000/api/posts/${params.post}`)
-    const post: CardPostI[] = await rest.json()
+    const post: CardPostI = await rest.json()
 
     return {
         props: post
@@ -60,15 +61,5 @@ export default function Post(props: any) {
                 />
             </div>
         </>
-    )
-}
-
-function ListOfTags({ tags }: { tags: string[] }) {
-    return (
-        <div className={Style.post_listOfTags}>
-            {tags.map((e) => (
-                <MiniTags text={e} key={e} className={Style.post_tagItem} />
-            ))}
-        </div>
     )
 }

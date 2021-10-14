@@ -4,7 +4,7 @@
     display: flex
     flex-direction: column
 
-    & > img
+    &_img
         width: 100%
         // max-width: 17.4rem
         aspect-ratio: 101/57
@@ -33,6 +33,9 @@
             font-size: 1.8rem
             font-weight: 900
             line-height: 2.5rem
+            transition: color 0.3s ease
+            &:hover
+                color: $red
 
         &_displayRow
             margin-top: 1.5rem

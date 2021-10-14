@@ -10,7 +10,11 @@ import Style from './_app.module.sass'
 
 export async function getStaticProps() {
     const rest = await fetch('http://localhost:3000/post.json')
-    const post = await rest.json()
+    const data = await rest.json()
+
+    const post = JSON.parse(data)
+
+    console.log(post)
 
     return {
         props: {
@@ -21,6 +25,10 @@ export async function getStaticProps() {
 
 function MyApp({ Component, pageProps }: AppProps) {
     const { data } = pageProps
+
+    console.log('MyApp: props', pageProps)
+    console.log('MyApp: props.list', pageProps.list)
+
     const listTags = ['Móvil', 'Web', 'Deploy', 'GCP', 'Heroku', 'holaaaaa']
 
     return (
@@ -30,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <Component {...pageProps} />
 
                 <ExploreTags listOfTags={listTags} />
-                <MostSeen data={data} />
+                <MostSeen list={pageProps.list} />
                 <Footer />
             </div>
         </>

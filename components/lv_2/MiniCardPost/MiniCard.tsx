@@ -1,6 +1,8 @@
-import Style from './MiniCard.module.sass'
+import Link from 'next/link'
+
 import { CardPostI } from '../../lv_3/CardPost/CardPost'
 import { ListOfMiniTags } from '../ListOfMiniTags/ListOfTags'
+import Style from './MiniCard.module.sass'
 
 export const MiniCard = (props: CardPostI) => {
     const {
@@ -17,8 +19,15 @@ export const MiniCard = (props: CardPostI) => {
 
     return (
         <div className={Style.miniCard}>
-            <img src={urlImage} alt={title} />
-
+            <Link href={urlPost}>
+                <a>
+                    <img
+                        className={Style.miniCard_img}
+                        src={urlImage}
+                        alt={title}
+                    />
+                </a>
+            </Link>
             <div className={Style.miniCard_info}>
                 <div>
                     <span className={Style.miniCard_info_readingTime}>
@@ -26,7 +35,13 @@ export const MiniCard = (props: CardPostI) => {
                     </span>{' '}
                     <span className={Style.miniCard_info_date}>{date}</span>
                 </div>
-                <h4 className={Style.miniCard_info_title}>{title}</h4>
+
+                <Link href={urlPost}>
+                    <a>
+                        <h4 className={Style.miniCard_info_title}>{title}</h4>
+                    </a>
+                </Link>
+
                 <ListOfMiniTags
                     tags={tags}
                     className={Style.miniCard_info_displayRow}

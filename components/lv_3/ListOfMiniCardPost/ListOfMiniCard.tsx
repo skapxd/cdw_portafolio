@@ -2,16 +2,16 @@ import { CardPostI } from '../CardPost/CardPost'
 import { MiniCard } from '../../lv_2/MiniCardPost/MiniCard'
 
 interface ListOfMiniCardI {
-    data: CardPostI[]
+    list: CardPostI[]
     className?: string
 }
 
 export const ListOfMiniCard = (props: ListOfMiniCardI) => {
-    const { data, className } = props
+    const { list, className } = props
 
     return (
         <div className={className}>
-            {data.map((e) => (
+            {list?.map((e) => (
                 <MiniCard
                     key={e.id}
                     date={e.date}

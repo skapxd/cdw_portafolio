@@ -1,16 +1,16 @@
 import { CardPost, CardPostI } from '../CardPost/CardPost'
 
 interface ListOfCardPostI {
-    data: CardPostI[]
+    list: CardPostI[]
     className?: string
 }
 
 export function ListOfCardPost(props: ListOfCardPostI) {
-    const { data, className } = props
+    const { list, className } = props
 
     return (
         <div className={className}>
-            {data.map((e) => (
+            {list.map((e) => (
                 <CardPost
                     key={e.id}
                     urlPost={e.urlPost}

@@ -4,17 +4,16 @@ import { CardPostI } from '../../lv_3/CardPost/CardPost'
 import Style from './MostSeen.module.sass'
 
 interface MostSeenI {
-    data: CardPostI[]
+    list: CardPostI[]
 }
 
 export const MostSeen = (props: MostSeenI) => {
-    const { data } = props
-
+    const { list } = props
     return (
         <div className={Style.mostSeen}>
-            <Title text="Más vistos" />
+            <Title text="Más vistos" className={Style.mostSeen_title} />
             <ListOfMiniCard
-                data={data}
+                list={list}
                 className={Style.mostSeen_listOfMiniCard}
             />
         </div>

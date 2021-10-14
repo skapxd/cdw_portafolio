@@ -1,16 +1,16 @@
 import { Tags } from '../../lv_1/Tags/Tags'
 
 interface ListOfTagsI {
-    data: string[]
+    tags: string[]
     className?: string
 }
 
 export const ListOfTags = (props: ListOfTagsI) => {
-    const { data, className } = props
+    const { tags, className } = props
 
     return (
         <div className={className}>
-            {data?.map((e) => (
+            {tags?.map((e) => (
                 // {data.map((e) => (
                 <Tags text={e} key={e} />
             ))}
