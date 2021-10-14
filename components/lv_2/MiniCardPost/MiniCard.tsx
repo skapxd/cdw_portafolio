@@ -1,5 +1,5 @@
-import Style from './CardPost.module.sass'
-import { CardPostI } from './CardPost'
+import Style from './MiniCard.module.sass'
+import { CardPostI } from '../CardPost/CardPost'
 import { ListOfTags } from '../../lv_2/ExploreTags/ListOfTags'
 
 export const MiniCard = (props: CardPostI) => {
