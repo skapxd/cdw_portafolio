@@ -20,7 +20,8 @@ export async function getStaticProps() {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-    console.log(pageProps)
+    const { data } = pageProps
+    const listTags = ['Móvil', 'Web', 'Deploy', 'GCP', 'Heroku', 'holaaaaa']
 
     return (
         <>
@@ -28,8 +29,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div className={Style.mainContainer}>
                 <Component {...pageProps} />
 
-                <ExploreTags />
-                <MostSeen data={[]} />
+                <ExploreTags listOfTags={listTags} />
+                <MostSeen data={data} />
                 <Footer />
             </div>
         </>

@@ -1,0 +1,7 @@
+import { TagsI } from '../Tags/Tags'
+import Style from './MiniTags.module.sass'
+
+export const MiniTags = (props: TagsI) => {
+    const { className, text } = props
+    return <div className={`${Style.miniTags} ${className}`}>{text}</div>
+}

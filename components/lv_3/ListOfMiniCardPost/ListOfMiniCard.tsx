@@ -1,5 +1,5 @@
 import Style from './ListOfMiniCard.module.sass'
-import { CardPostI } from '../../lv_2/CardPost/CardPost'
+import { CardPostI } from '../CardPost/CardPost'
 import { MiniCard } from '../../lv_2/MiniCardPost/MiniCard'
 
 interface ListOfMiniCardI {

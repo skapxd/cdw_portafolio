@@ -1,18 +1,18 @@
 import Style from './MiniCard.module.sass'
-import { CardPostI } from '../CardPost/CardPost'
-import { ListOfTags } from '../ListOfTags/ListOfTags'
+import { CardPostI } from '../../lv_3/CardPost/CardPost'
+import { ListOfMiniTags } from '../ListOfMiniTags/ListOfTags'
 
 export const MiniCard = (props: CardPostI) => {
     const {
-        date,
-        urlImage,
-        favorite,
-        shortDescription,
-        tags,
-        title,
         id,
+        tags,
+        date,
+        title,
+        urlPost,
+        favorite,
+        urlImage,
         readingTime,
-        urlPost
+        shortDescription
     } = props
 
     return (
@@ -25,7 +25,7 @@ export const MiniCard = (props: CardPostI) => {
                 </span>{' '}
                 <span className={Style.miniCard_info_date}>{date}</span>
                 <h4 className={Style.miniCard_info_title}>{title}</h4>
-                <ListOfTags />
+                <ListOfMiniTags tags={tags} />
             </div>
         </div>
     )

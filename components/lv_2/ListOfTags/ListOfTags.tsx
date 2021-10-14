@@ -1,13 +1,17 @@
-// import { Tags } from '../../lv_1/Tags/Tags'
 import { Tags } from '../../lv_1/Tags/Tags'
-import Style from './ListOfTags.module.sass'
 
-export const ListOfTags = () => {
-    const data = ['Móvil', 'Web', 'Deploy', 'GCP', 'Heroku', 'holaaaaa']
+interface ListOfTagsI {
+    data: string[]
+    className?: string
+}
+
+export const ListOfTags = (props: ListOfTagsI) => {
+    const { data, className } = props
 
     return (
-        <div className={Style.listOfTags}>
-            {data.map((e) => (
+        <div className={className}>
+            {data?.map((e) => (
+                // {data.map((e) => (
                 <Tags text={e} key={e} />
             ))}
         </div>
