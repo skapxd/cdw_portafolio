@@ -1,4 +1,4 @@
-import { MiniCard } from '../../lv_1/MiniCardPost/MiniCard'
+import { MiniCard } from '../MiniCardPost/MiniCard'
 import { Title } from '../../lv_1/Title/Title'
 import Style from './MostSeen.module.sass'
 

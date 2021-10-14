@@ -1,6 +1,6 @@
 import Style from './CardPost.module.sass'
 import Link from 'next/link'
-import { MiniTags } from '../Tags/Tags'
+import { MiniTags } from '../../lv_1/Tags/Tags'
 
 export interface CardPostI {
     id: string

@@ -1,4 +1,4 @@
-import { CardPost, CardPostI } from '../components/lv_1/CardPost/CardPost'
+import { CardPost, CardPostI } from '../components/lv_2/CardPost/CardPost'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {

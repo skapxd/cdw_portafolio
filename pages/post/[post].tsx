@@ -1,4 +1,4 @@
-import { CardPostI } from '../../components/lv_1/CardPost/CardPost'
+import { CardPostI } from '../../components/lv_2/CardPost/CardPost'
 import { MiniTags } from '../../components/lv_1/Tags/Tags'
 import ReactMarkdown from 'react-markdown'
 
