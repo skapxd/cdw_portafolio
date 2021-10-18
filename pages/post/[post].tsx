@@ -6,9 +6,10 @@ import { Layout } from '../../components/lv_5/Layout/Layout'
 
 import Style from './[post].module.sass'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
+import { postAPIRoute, postJsonRoute, tagJsonRoute } from '../../config/routes'
 
 export async function getStaticPaths(props: any) {
-    const rest = await fetch('http://localhost:3000/post.json')
+    const rest = await fetch(postJsonRoute)
     const post: CardPostI[] = await rest.json()
 
     const paths = post.map((e) => ({
@@ -21,15 +22,15 @@ export async function getStaticPaths(props: any) {
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    const respSinglePost = await fetch(
-        `http://localhost:3000/api/posts/${params.post}`
-    )
+    const url = postAPIRoute(params.post)
+
+    const respSinglePost = await fetch(url)
     const { data } = await respSinglePost.json()
 
-    const respMultiPost = await fetch('http://localhost:3000/post.json')
+    const respMultiPost = await fetch(postJsonRoute)
     const multiPost = await respMultiPost.json()
 
-    const respListTags = await fetch('http://localhost:3000/tags.json')
+    const respListTags = await fetch(tagJsonRoute)
     const listTags = await respListTags.json()
 
     return {

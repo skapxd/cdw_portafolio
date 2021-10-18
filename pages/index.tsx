@@ -1,13 +1,14 @@
 import { CardPost, CardPostI } from '../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../components/lv_5/Layout/Layout'
+import { postJsonRoute, tagJsonRoute } from '../config/routes'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {
-    const respMultiPost = await fetch('http://localhost:3000/post.json')
+    const respMultiPost = await fetch(postJsonRoute)
     const multiPost = await respMultiPost.json()
 
-    const respListTags = await fetch('http://localhost:3000/tags.json')
+    const respListTags = await fetch(tagJsonRoute)
     const listTags = await respListTags.json()
 
     return {
