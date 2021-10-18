@@ -1,19 +1,22 @@
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
+import { ListOfCardPost } from '../../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../../components/lv_5/Layout/Layout'
-import { postJsonRoute, tagJsonRoute } from '../../config/routes'
+import { tagAPIRouter, tagJsonRoute } from '../../config/routes'
 import Style from './[tag].module.sass'
 
 export async function getStaticPaths(props: any) {
-    const rest = await fetch(tagJsonRoute)
-    const post: CardPostI[] = await rest.json()
+    const getPath = async () => {
+        const rest = await fetch(tagJsonRoute)
+        const post: string[] = await rest.json()
 
-    const paths = post.map((e) => ({
-        params: { tag: e }
-    }))
+        const paths = post.map((e) => ({
+            params: { tag: e }
+        }))
 
-    console.log('paths: ', paths)
+        return paths
+    }
 
-    console.log(post)
+    const paths = await getPath()
 
     return { paths, fallback: false }
 }
@@ -21,38 +24,58 @@ export async function getStaticPaths(props: any) {
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    // const respSinglePost = await fetch(
-    //     `http://localhost:3000/api/posts/${params.post}`
-    // )
-    // const { data } = await respSinglePost.json()
+    const getListPost = async () => {
+        const url = tagAPIRouter(params.tag)
+        const respMultiPost = await fetch(url)
+        const multiPost = await respMultiPost.json()
+        return multiPost
+    }
 
-    const respMultiPost = await fetch(postJsonRoute)
-    const multiPost = await respMultiPost.json()
+    const getListTags = async () => {
+        const respListTags = await fetch(tagJsonRoute)
+        const listTags = await respListTags.json()
+        return listTags
+    }
 
-    const respListTags = await fetch(tagJsonRoute)
-    const listTags = await respListTags.json()
+    const listPost = await getListPost()
+    const listTags = await getListTags()
+
+    if (!listPost.success)
+        return {
+            redirect: {
+                destination: '/404'
+            }
+        }
 
     return {
         props: {
-            multiPost,
-            listTags
-            // singlePost: data
+            listTags,
+            tag: params.tag,
+            listPost: listPost.data
         }
     }
 }
 
 interface TagsI {
-    // singlePost: CardPostI
-    multiPost: CardPostI[]
+    listPost: CardPostI[]
     listTags: string[]
+    tag: string
 }
 
 export default function Tags(props: TagsI) {
-    const { listTags, multiPost } = props
+    const { listTags, listPost, tag } = props
 
     return (
-        <Layout listOfPost={multiPost} listOfTags={listTags}>
-            <div></div>
+        <Layout listOfPost={listPost} listOfTags={listTags}>
+            <div className={Style.tags}>
+                <p> {listPost.length} coincidencias de</p>
+                <div className={Style.tags_title}> {tag} </div>
+
+                <ListOfCardPost
+                    list={listPost}
+                    className={Style.tags_listPost}
+                />
+            </div>
         </Layout>
     )
 }

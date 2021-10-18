@@ -1,8 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
 import * as fs from 'fs'
+import type { NextApiRequest, NextApiResponse } from 'next'
 import { CardPostI } from '../../../components/lv_3/CardPost/CardPost'
-import { join } from 'path'
 
 type Data = {
     success: boolean
@@ -16,21 +14,23 @@ export default function handler(
 ) {
     const queryPost = req.query.id
 
-    const data = fs.readFileSync('public/tags.json', {
+    const jsonPost = fs.readFileSync('public/post.json', {
         encoding: 'utf-8'
     })
 
-    if (!data) {
+    if (!jsonPost) {
         return res.status(400).json({
             success: false,
-            error: 'Error to load data file'
+            error: 'Error to load postTags file'
         })
     }
 
-    const tags = <string[]>JSON.parse(data)
+    const postList = <CardPostI[]>JSON.parse(jsonPost)
 
-    const post = tags.filter((e) => {
-        return e === queryPost
+    const post = postList.filter((e) => {
+        if (typeof queryPost === 'object') return
+
+        return e.tags.includes(queryPost)
     })
 
     if (post.length === 0) {

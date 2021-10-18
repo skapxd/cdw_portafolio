@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Style from './Tags.module.sass'
 
 export interface TagsI {
@@ -6,5 +7,11 @@ export interface TagsI {
 }
 export const Tags = (props: TagsI) => {
     const { className, text } = props
-    return <div className={`${Style.tags} ${className}`}>{text}</div>
+    return (
+        <div>
+            <Link href={`/tag/${text}`}>
+                <a className={`${Style.tags} ${className}`}>{text}</a>
+            </Link>
+        </div>
+    )
 }
