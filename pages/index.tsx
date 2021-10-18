@@ -40,9 +40,6 @@ export default function Home(props: HomeI) {
                     className={Style.firtsScreen_listOfCardPost}
                     list={listPost}
                 />
-                <WrapperComponent test="test">
-                    <div>hola</div>
-                </WrapperComponent>
             </div>
         </Layout>
     )
@@ -51,6 +48,10 @@ export default function Home(props: HomeI) {
 function WrapperComponent(props: any) {
     console.log(props)
 
+    // How to call
+    // <WrapperComponent test="test">
+    //     <div>hola</div>
+    // </WrapperComponent>
     return (
         <div
             style={{
