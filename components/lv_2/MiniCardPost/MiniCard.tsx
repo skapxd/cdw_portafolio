@@ -19,7 +19,7 @@ export const MiniCard = (props: CardPostI) => {
 
     return (
         <div className={Style.miniCard}>
-            <Link href={urlPost}>
+            <Link href={'/post/' + urlPost}>
                 <a>
                     <img
                         className={Style.miniCard_img}
@@ -36,7 +36,7 @@ export const MiniCard = (props: CardPostI) => {
                     <span className={Style.miniCard_info_date}>{date}</span>
                 </div>
 
-                <Link href={urlPost}>
+                <Link href={'/post/' + urlPost}>
                     <a>
                         <h4 className={Style.miniCard_info_title}>{title}</h4>
                     </a>

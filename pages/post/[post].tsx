@@ -1,10 +1,12 @@
 import ReactMarkdown from 'react-markdown'
 
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
-import Style from './[post].module.sass'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
 import { MiniTags } from '../../components/lv_1/MiniTags/MiniTags'
 import { ListOfTags } from '../../components/lv_2/ListOfTags/ListOfTags'
+
+import Style from './[post].module.sass'
+import { Layout } from '../../components/lv_5/Layout/Layout'
 
 export async function getStaticPaths(props: any) {
     const rest = await fetch('http://localhost:3000/post.json')
@@ -20,29 +22,49 @@ export async function getStaticPaths(props: any) {
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    const rest = await fetch(`http://localhost:3000/api/posts/${params.post}`)
-    const post: CardPostI = await rest.json()
+    const respSinglePost = await fetch(
+        `http://localhost:3000/api/posts/${params.post}`
+    )
+    const { data } = await respSinglePost.json()
+
+    const respMultiPost = await fetch('http://localhost:3000/post.json')
+    const multiPost = await respMultiPost.json()
+
+    const respListTags = await fetch('http://localhost:3000/tags.json')
+    const listTags = await respListTags.json()
 
     return {
-        props: post
+        props: {
+            multiPost,
+            listTags,
+            singlePost: data
+        }
     }
 }
 
-export default function Post(props: any) {
+interface PostI {
+    singlePost: CardPostI
+    multiPost: CardPostI[]
+    listTags: string[]
+}
+
+export default function Post(props: PostI) {
+    const { multiPost, singlePost, listTags } = props
+
     const {
         date,
-        urlImage,
-        urlPost,
         tags,
         title,
+        shortDescription,
+        urlImage,
+        favorite,
         id,
         readingTime,
-        favorite,
-        shortDescription
-    }: CardPostI = props.data
+        urlPost
+    } = singlePost
 
     return (
-        <>
+        <Layout listOfPost={multiPost} listOfTags={listTags}>
             <div className={Style.post}>
                 <img className={Style.post_imgMain} src={urlImage} alt="" />
 
@@ -53,13 +75,13 @@ export default function Post(props: any) {
 
                 <h2 className={Style.post_title}>{title}</h2>
 
-                <ListOfTags tags={tags} />
+                <ListOfTags tags={tags} className={Style.post_listOfTags} />
 
                 <ReactMarkdown
                     className={MarkDownStyle.markDown}
                     children={`Hola`}
                 />
             </div>
-        </>
+        </Layout>
     )
 }
