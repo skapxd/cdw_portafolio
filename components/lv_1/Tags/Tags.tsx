@@ -8,10 +8,8 @@ export interface TagsI {
 export const Tags = (props: TagsI) => {
     const { className, text } = props
     return (
-        <div>
-            <Link href={`/tag/${text}`}>
-                <a className={`${Style.tags} ${className}`}>{text}</a>
-            </Link>
-        </div>
+        <Link href={`/tag/${text}`}>
+            <a className={`${Style.tags} ${className}`}>{text}</a>
+        </Link>
     )
 }

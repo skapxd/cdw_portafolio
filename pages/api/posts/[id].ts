@@ -2,7 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as fs from 'fs'
 import { CardPostI } from '../../../components/lv_3/CardPost/CardPost'
-import { join } from 'path'
 
 type Data = {
     success: boolean

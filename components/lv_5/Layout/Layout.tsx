@@ -8,11 +8,11 @@ import Style from './Layout.module.sass'
 
 interface LayoutI {
     children: any
-    listOfPost: CardPostI[]
+    mostSeen: CardPostI[]
     listOfTags: string[]
 }
 
-export const Layout = ({ children, listOfPost, listOfTags }: LayoutI) => {
+export const Layout = ({ children, mostSeen, listOfTags }: LayoutI) => {
     return (
         <>
             <Header />
@@ -20,7 +20,7 @@ export const Layout = ({ children, listOfPost, listOfTags }: LayoutI) => {
                 {children}
 
                 <ExploreTags listOfTags={listOfTags} />
-                <MostSeen list={listOfPost} />
+                <MostSeen list={mostSeen} />
                 <Footer />
             </div>
         </>

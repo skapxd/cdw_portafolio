@@ -1,7 +1,11 @@
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../../components/lv_5/Layout/Layout'
-import { tagAPIRouter, tagJsonRoute } from '../../config/routes'
+import {
+    mostSeenAPIRoute,
+    tagAPIRouter,
+    tagJsonRoute
+} from '../../config/routes'
 import Style from './[tag].module.sass'
 
 export async function getStaticPaths(props: any) {
@@ -37,38 +41,52 @@ export async function getStaticProps(props: any) {
         return listTags
     }
 
-    const listPost = await getListPost()
-    const listTags = await getListTags()
+    const getMostSeen = async () => {
+        const respMostSeen = await fetch(mostSeenAPIRoute)
+        const mostSeen = await respMostSeen.json()
+        return mostSeen
+    }
+
+    const [listPost, listTags, mostSeen] = await Promise.all([
+        getListPost(),
+        getListTags(),
+        getMostSeen()
+    ])
 
     if (!listPost.success)
         return {
-            redirect: {
-                destination: '/404'
+            props: {
+                listTags,
+                mostSeen: mostSeen.data,
+                tag: params.tag,
+                listPost: null
             }
         }
 
     return {
         props: {
+            mostSeen: mostSeen.data,
             listTags,
             tag: params.tag,
-            listPost: listPost.data
+            listPost: listPost?.data
         }
     }
 }
 
 interface TagsI {
     listPost: CardPostI[]
+    mostSeen: CardPostI[]
     listTags: string[]
     tag: string
 }
 
 export default function Tags(props: TagsI) {
-    const { listTags, listPost, tag } = props
+    const { listTags, listPost, tag, mostSeen } = props
 
     return (
-        <Layout listOfPost={listPost} listOfTags={listTags}>
+        <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.tags}>
-                <p> {listPost.length} coincidencias de</p>
+                <p> {listPost?.length ?? 0} coincidencias de</p>
                 <div className={Style.tags_title}> {tag} </div>
 
                 <ListOfCardPost

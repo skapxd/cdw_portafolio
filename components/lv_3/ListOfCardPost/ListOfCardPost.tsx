@@ -10,7 +10,7 @@ export function ListOfCardPost(props: ListOfCardPostI) {
 
     return (
         <div className={className}>
-            {list.map((e) => (
+            {list?.map((e) => (
                 <CardPost
                     key={e.id}
                     urlPost={e.urlPost}
