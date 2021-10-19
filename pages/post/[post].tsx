@@ -82,7 +82,7 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
 `
 
     return (
-        <Layout listOfPost={multiPost} listOfTags={listTags}>
+        <Layout mostSeen={multiPost} listOfTags={listTags}>
             <div className={Style.post}>
                 <img className={Style.post_imgMain} src={urlImage} alt="" />
 

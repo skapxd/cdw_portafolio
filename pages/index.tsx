@@ -28,7 +28,7 @@ export default function Home(props: HomeI) {
     const { listPost, listTags } = props
 
     return (
-        <Layout listOfPost={listPost} listOfTags={listTags}>
+        <Layout mostSeen={listPost} listOfTags={listTags}>
             <div className={Style.firtsScreen}>
                 <div className={Style.firtsScreen_logo}>
                     <img src="/assets/logo.svg" height="50" width="150" />

@@ -12,7 +12,7 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const queryPost = req.query.id
+    const queryPost = req.query.tags
 
     const jsonPost = fs.readFileSync('public/post.json', {
         encoding: 'utf-8'
