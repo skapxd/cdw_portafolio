@@ -1,34 +1,32 @@
 import { CardPost, CardPostI } from '../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../components/lv_5/Layout/Layout'
-import { postJsonRoute, tagJsonRoute } from '../config/routes'
+import { getBasicData } from '../helpers/getBasicData'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {
-    const respMultiPost = await fetch(postJsonRoute)
-    const multiPost = await respMultiPost.json()
-
-    const respListTags = await fetch(tagJsonRoute)
-    const listTags = await respListTags.json()
+    const { listPost, listTags, mostSeen } = await getBasicData()
 
     return {
         props: {
-            listPost: multiPost,
-            listTags
+            listPost,
+            listTags,
+            mostSeen
         }
     }
 }
 
 interface HomeI {
     listPost: CardPostI[]
+    mostSeen: CardPostI[]
     listTags: string[]
 }
 
 export default function Home(props: HomeI) {
-    const { listPost, listTags } = props
+    const { listPost, listTags, mostSeen } = props
 
     return (
-        <Layout mostSeen={listPost} listOfTags={listTags}>
+        <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.firtsScreen}>
                 <div className={Style.firtsScreen_logo}>
                     <img src="/assets/logo.svg" height="50" width="150" />

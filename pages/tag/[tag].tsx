@@ -1,22 +1,18 @@
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../../components/lv_5/Layout/Layout'
-import {
-    mostSeenAPIRoute,
-    tagAPIRouter,
-    tagJsonRoute
-} from '../../config/routes'
+import { tagAPIRouter, tagJsonRoute } from '../../config/routes'
+import { getBasicData } from '../../helpers/getBasicData'
+
 import Style from './[tag].module.sass'
 
 export async function getStaticPaths(props: any) {
     const getPath = async () => {
         const rest = await fetch(tagJsonRoute)
         const post: string[] = await rest.json()
-
         const paths = post.map((e) => ({
             params: { tag: e }
         }))
-
         return paths
     }
 
@@ -32,43 +28,18 @@ export async function getStaticProps(props: any) {
         const url = tagAPIRouter(params.tag)
         const respMultiPost = await fetch(url)
         const multiPost = await respMultiPost.json()
-        return multiPost
+        return multiPost.data ?? null
     }
 
-    const getListTags = async () => {
-        const respListTags = await fetch(tagJsonRoute)
-        const listTags = await respListTags.json()
-        return listTags
-    }
-
-    const getMostSeen = async () => {
-        const respMostSeen = await fetch(mostSeenAPIRoute)
-        const mostSeen = await respMostSeen.json()
-        return mostSeen
-    }
-
-    const [listPost, listTags, mostSeen] = await Promise.all([
-        getListPost(),
-        getListTags(),
-        getMostSeen()
-    ])
-
-    if (!listPost.success)
-        return {
-            props: {
-                listTags,
-                mostSeen: mostSeen.data,
-                tag: params.tag,
-                listPost: null
-            }
-        }
+    const { mostSeen, listTags } = await getBasicData()
+    const listPost = await getListPost()
 
     return {
         props: {
-            mostSeen: mostSeen.data,
+            listPost,
+            mostSeen,
             listTags,
-            tag: params.tag,
-            listPost: listPost?.data
+            tag: params.tag
         }
     }
 }
