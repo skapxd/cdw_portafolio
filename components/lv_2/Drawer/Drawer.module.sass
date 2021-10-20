@@ -1,1 +1,31 @@
+@import '../../../styles/_theme.module'
+
 .drawer
+
+    &_container
+        background: $background
+        height: 100%
+        display: flex
+        flex-direction: column
+
+        &_logo
+            margin-top: 3rem
+            margin-bottom: 2rem
+            max-width: 13.2rem
+            padding: 0 1.6rem
+
+        &_listText
+            padding: 0
+            display: flex
+            gap: 1rem
+            flex-direction: column
+
+        &_text
+            font-size: 1.4rem
+            font-weight: 700
+            color: $greySup
+            letter-spacing: 0.1rem
+            text-transform: uppercase
+            transition: color 0.3s ease
+            &:hover
+                color: $red

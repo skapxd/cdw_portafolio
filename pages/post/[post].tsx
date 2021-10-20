@@ -7,6 +7,7 @@ import { Layout } from '../../components/lv_5/Layout/Layout'
 import Style from './[post].module.sass'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
 import { postAPIRoute, postJsonRoute, tagJsonRoute } from '../../config/routes'
+import { getBasicData } from '../../helpers/getBasicData'
 
 export async function getStaticPaths(props: any) {
     const rest = await fetch(postJsonRoute)
@@ -22,34 +23,35 @@ export async function getStaticPaths(props: any) {
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    const url = postAPIRoute(params.post)
+    const getSinglePost = async () => {
+        const url = postAPIRoute(params.post)
+        const respSinglePost = await fetch(url)
+        const { data } = await respSinglePost.json()
+        return data
+    }
 
-    const respSinglePost = await fetch(url)
-    const { data } = await respSinglePost.json()
-
-    const respMultiPost = await fetch(postJsonRoute)
-    const multiPost = await respMultiPost.json()
-
-    const respListTags = await fetch(tagJsonRoute)
-    const listTags = await respListTags.json()
+    const { listPost, listTags, mostSeen } = await getBasicData()
+    const singlePost = await getSinglePost()
 
     return {
         props: {
-            multiPost,
+            listPost,
+            mostSeen,
             listTags,
-            singlePost: data
+            singlePost
         }
     }
 }
 
 interface PostI {
     singlePost: CardPostI
-    multiPost: CardPostI[]
+    listPost: CardPostI[]
+    mostSeen: CardPostI[]
     listTags: string[]
 }
 
 export default function Post(props: PostI) {
-    const { multiPost, singlePost, listTags } = props
+    const { listPost, singlePost, listTags } = props
 
     const {
         date,
@@ -82,7 +84,7 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
 `
 
     return (
-        <Layout mostSeen={multiPost} listOfTags={listTags}>
+        <Layout mostSeen={listPost} listOfTags={listTags}>
             <div className={Style.post}>
                 <img className={Style.post_imgMain} src={urlImage} alt="" />
 
