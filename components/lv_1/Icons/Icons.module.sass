@@ -22,3 +22,38 @@
 
         & path
             fill: $greyAct
+
+.menu
+    width: 2.5rem
+    font-size: 3rem
+    margin-right: auto
+    cursor: pointer
+    transition: stroke 0.3s ease
+    stroke: #fff
+    &:hover
+        stroke: $red
+
+.search
+    width: 2.5rem
+    font-size: 3rem
+    cursor: pointer
+    stroke: #fff
+    fill: none
+    transition: stroke 0.3s ease
+    &:hover
+        stroke: $red
+
+.arrow
+    width: 2.5rem
+    fill: #aaa
+    stroke: #aaa
+    cursor: pointer
+
+    &_left
+        transform: rotate(180deg)
+    &_up
+        transform: rotate(270deg)
+    &_down
+        transform: rotate(90deg)
+    &_rigth
+        transform: rotate(0deg)

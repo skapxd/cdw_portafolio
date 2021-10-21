@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import ArrowIcon, { ArrowIconDirection } from '../../lv_1/Icons/ArrowIcon'
 
 import Style from './Search.module.sass'
 
@@ -23,7 +24,7 @@ export const useCloseSearch = () => {
     return () => router.back()
 }
 
-export const Search = () => {
+export function Search() {
     const router = useRouter()
     const closeSearch = useCloseSearch()
     const [ifCanShowSearch, setIfCanShowSearch] = useState(false)
@@ -41,12 +42,10 @@ export const Search = () => {
     return (
         <div className={Style.search}>
             <div className={Style.search_bar}>
-                <span
-                    className={`material-icons-round ${Style.search_bar_iconBack}`}
+                <ArrowIcon
+                    direction={ArrowIconDirection.Left}
                     onClick={() => closeSearch()}
-                >
-                    arrow_back
-                </span>
+                />
 
                 <input
                     className={Style.search_bar_inputText}

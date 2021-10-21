@@ -5,12 +5,7 @@ import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import List from '@mui/material/List'
-import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
 
 import Style from './Drawer.module.sass'
 
@@ -95,13 +90,13 @@ function Content() {
                     { name: 'Sobre mi', url: '/about' },
                     { name: 'tecnologías', url: '/' }
                 ].map((text, index) => (
-                    <ListItem button key={text.name} onClick={() => {}}>
-                        <Link href={text.url}>
-                            <a className={Style.drawer_container_text}>
+                    <Link href={text.url}>
+                        <a className={Style.drawer_container_text}>
+                            <ListItem button key={text.name} onClick={() => {}}>
                                 {text.name}
-                            </a>
-                        </Link>
-                    </ListItem>
+                            </ListItem>
+                        </a>
+                    </Link>
                 ))}
             </List>
         </Box>

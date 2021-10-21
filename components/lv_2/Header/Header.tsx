@@ -3,6 +3,8 @@ import Style from './Header.module.sass'
 import 'material-icons/iconfont/material-icons.css'
 import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
 import { Search, useOpenSearch } from '../Search/Search'
+import MenuIcon from '../../lv_1/Icons/MenuIcon'
+import SearchIcon from '../../lv_1/Icons/SearchIcon'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -13,19 +15,9 @@ export const Header = () => {
                 <meta name="theme-color" content="#0f0f12" />
             </Head>
 
-            <span
-                className={`material-icons ${Style.menu}`}
-                onClick={() => openDrawer()}
-            >
-                menu
-            </span>
+            <MenuIcon onClick={() => openDrawer()} />
 
-            <span
-                className={`material-icons ${Style.search}`}
-                onClick={() => openSearch()}
-            >
-                search
-            </span>
+            <SearchIcon onClick={() => openSearch()} />
 
             <Drawer />
 
