@@ -12,7 +12,8 @@
         "open": "gcloud app browse",
         "test": "cypress open",
         "push": "git push",
-        "deploy": "run-s build push gcp open "
+        "deploy": "run-s build push gcp open ",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@emotion/react": "^11.4.1",
@@ -49,5 +50,10 @@
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     }
 }
