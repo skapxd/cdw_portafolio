@@ -6,32 +6,26 @@ import { Layout } from '../../components/lv_5/Layout/Layout'
 
 import Style from './[post].module.sass'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
-import { postAPIRoute, postJsonRoute, tagJsonRoute } from '../../config/routes'
-import { getBasicData } from '../../helpers/getBasicData'
+import { getBasicData, getSinglePost } from '../../helpers/getBasicData'
 
 export async function getStaticPaths(props: any) {
-    const rest = await fetch(postJsonRoute)
-    const post: CardPostI[] = await rest.json()
+    const getPaths = async () => {
+        const { listPost } = await getBasicData()
+        const paths = listPost.map((e) => ({
+            params: { post: e.urlPost }
+        }))
+        return paths
+    }
 
-    const paths = post.map((e) => ({
-        params: { post: e.urlPost }
-    }))
-
+    const paths = await getPaths()
     return { paths, fallback: false }
 }
 
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    const getSinglePost = async () => {
-        const url = postAPIRoute(params.post)
-        const respSinglePost = await fetch(url)
-        const { data } = await respSinglePost.json()
-        return data
-    }
-
     const { listPost, listTags, mostSeen } = await getBasicData()
-    const singlePost = await getSinglePost()
+    const singlePost = getSinglePost(params.post)
 
     return {
         props: {

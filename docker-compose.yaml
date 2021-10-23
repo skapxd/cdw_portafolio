@@ -1,0 +1,47 @@
+# version: '3.7'
+
+# services:
+#     db:
+#         image: postgres
+#         restart: always
+#         networks:
+#             - stagingnetwork
+
+#     api:
+#         image: express
+#         restart: always
+#         ports:
+#             - '3008:3008'
+#         depends_on:
+#             - db
+#         networks:
+#             - stagingnetwork
+
+#     adminer:
+#         image: adminer
+#         restart: always
+#         networks:
+#             - stagingnetwork
+#         ports:
+#             - 8080:8080
+
+# networks:
+#     stagingnetwork:
+#         driver: bridge
+#         ipam:
+#             config:
+#                 - subnet: 172.28.0.0/16
+#                   gateway: 172.28.0.1
+
+version: '3'
+services:
+    strapi:
+        build: ./backend
+        image: mydockerhubid/project-cms:latest
+        ports:
+            - '1337:1337'
+    next:
+        build: ./frontend
+        image: mydockerhubid/project-webui:latest
+        ports:
+            - '3000:3000'

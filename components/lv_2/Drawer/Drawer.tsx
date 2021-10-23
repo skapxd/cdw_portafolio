@@ -88,7 +88,7 @@ function Content() {
                     { name: 'proyectos', url: '/' },
                     { name: 'referencias', url: '/' },
                     { name: 'Sobre mi', url: '/about' },
-                    { name: 'tecnologías', url: '/' }
+                    { name: 'Mis habilidades', url: '/' }
                 ].map((text, index) => (
                     <Link href={text.url}>
                         <a className={Style.drawer_container_text}>

@@ -1,15 +1,3 @@
-# FROM node:14-alpine
-# # ENV NODE_ENV=production
-# WORKDIR /app
-# # COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-# # RUN npm install --production --silent && mv node_modules ../
-# COPY . .
-# # EXPOSE 3000
-# # RUN chown -R node /usr/src/app
-# RUN npm install --production
-# # USER node
-# CMD ["npm", "start"]
-
 # Install dependencies only when needed
 FROM node:alpine AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
@@ -51,3 +39,9 @@ EXPOSE 3000
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 CMD ["yarn", "start"]
+
+# FROM node:alpine
+# WORKDIR /app
+# COPY . .
+# RUN npm install
+# CDM ["npm", "start"]
