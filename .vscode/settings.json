@@ -3,5 +3,6 @@
     "prettier.trailingComma": "none",
     "prettier.semi": false,
     "prettier.singleQuote": true,
-    "prettier.tabWidth": 4
+    "prettier.tabWidth": 4,
+    "commentTranslate.targetLanguage": "es"
 }
