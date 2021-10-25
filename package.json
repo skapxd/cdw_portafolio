@@ -5,12 +5,15 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "docker:build": "sudo docker build . -t my-next-js-app",
-        "docker:run": "sudo docker run -p 3000:3000 my-next-js-app",
+        "docker:build": "sudo docker build . -t skapxd/blog-nextjs:v2",
+        "docker:run": "sudo docker run -p 3000:3000 skapxd/blog-nextjs:v2",
+        "docker:rm-img": "sudo  docker rmi $(docker images -q ) -f",
+        "gcp": "gcloud app deploy --project portafolio-nextjs",
+        "gcp:build": "gcloud builds submit --tag gcr.io/portafolio-nextjs/blog-nextjs:v2 --project portafolio-nextjs --timeout=3600",
+        "gcp:deploy": "gcloud run deploy --image gcr.io/portafolio-nextjs/blog-nextjs:v2 --project portafolio-nextjs --platform managed",
         "start": "next start",
         "lint": "next lint",
         "logs": "gcloud app logs tail",
-        "gcp": "gcloud app deploy --project portafolio-nextjs",
         "open": "gcloud app browse",
         "test": "cypress open",
         "push": "git push",
@@ -32,7 +35,8 @@
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-markdown": "^7.0.1",
-        "sass": "^1.42.1"
+        "sass": "^1.42.1",
+        "yarn": "^1.22.17"
     },
     "devDependencies": {
         "@commitlint/cli": "^13.2.1",
