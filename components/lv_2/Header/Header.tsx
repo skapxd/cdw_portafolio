@@ -1,10 +1,12 @@
 import Head from 'next/head'
-import Style from './Header.module.sass'
-import 'material-icons/iconfont/material-icons.css'
 import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
 import { Search, useOpenSearch } from '../Search/Search'
 import MenuIcon from '../../lv_1/Icons/MenuIcon'
 import SearchIcon from '../../lv_1/Icons/SearchIcon'
+import { ListMenuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
+
+import Style from './Header.module.sass'
+import Link from 'next/link'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -15,13 +17,27 @@ export const Header = () => {
                 <meta name="theme-color" content="#0f0f12" />
             </Head>
 
-            <MenuIcon onClick={() => openDrawer()} />
+            <MenuIcon onClick={() => openDrawer()} className={Style.menu} />
 
-            <SearchIcon onClick={() => openSearch()} />
+            <Link href="/">
+                <a>
+                    <img
+                        src="/assets/logo.svg"
+                        className={Style.logo}
+                        alt="logo"
+                    />
+                </a>
+            </Link>
 
-            <Drawer />
+            <ListMenuAnchor className={Style.listMenuAnchor} />
 
-            <Search />
+            <SearchIcon onClick={() => openSearch()} className={Style.search} />
+
+            <div style={{ width: 0, position: 'absolute' }}>
+                <Drawer />
+
+                <Search />
+            </div>
         </div>
     )
 }

@@ -10,10 +10,7 @@ export default function MenuIcon(props: MenuI) {
 
     return (
         <svg
-            // fill="none"
-            // stroke="#000"
-            // height="24"
-            // width="24"
+            data-cy="drawer"
             onClick={() => onClick && onClick()}
             className={`${Style.menu} ${className}`}
             strokeLinecap="round"

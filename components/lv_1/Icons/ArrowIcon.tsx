@@ -16,17 +16,19 @@ const dic = {
 
 interface ArrowIconI {
     className?: string
+    'data-cy'?: string
     direction?: ArrowIconDirection
     onClick?: () => void
 }
 
 export default function ArrowIcon(props: ArrowIconI) {
-    let { onClick, direction, className = '' } = props
+    let { onClick, direction, className = '', 'data-cy': data_cy = '' } = props
 
     const axis = dic[direction ?? ArrowIconDirection.Rigth]
 
     return (
         <svg
+            data-cy={data_cy}
             onClick={() => onClick && onClick()}
             viewBox="0 0 96 96"
             className={`${Style.arrow} ${axis} ${className}`}

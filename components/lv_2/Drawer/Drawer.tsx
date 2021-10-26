@@ -8,6 +8,7 @@ import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 
 import Style from './Drawer.module.sass'
+import { menuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
 
 const drawer = '#drawer'
 const drawerDirection = 'left'
@@ -82,14 +83,7 @@ function Content() {
             />
 
             <List className={Style.drawer_container_listText}>
-                {[
-                    { name: 'Inicio', url: '/' },
-                    { name: 'posts', url: '/' },
-                    { name: 'proyectos', url: '/' },
-                    { name: 'referencias', url: '/' },
-                    { name: 'Sobre mi', url: '/about' },
-                    { name: 'Mis habilidades', url: '/' }
-                ].map((text, index) => (
+                {menuAnchor.map((text, index) => (
                     <Link href={text.url}>
                         <a className={Style.drawer_container_text}>
                             <ListItem button key={text.name} onClick={() => {}}>

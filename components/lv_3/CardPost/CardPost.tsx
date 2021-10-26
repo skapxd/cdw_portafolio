@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ListOfMiniTags } from '../../lv_2/ListOfMiniTags/ListOfTags'
 import Style from './CardPost.module.sass'
+import { StarIcon } from '../../lv_1/Icons/StarIcon'
 
 export interface CardPostI {
     id: string
@@ -32,11 +33,12 @@ export function CardPost(props: CardPostI) {
                 className={Style.card}
                 style={{ backgroundImage: `url(${urlImage})` }}
             >
-                <div className={Style.card_starWrapper}>
+                <StarIcon className={Style.card_starWrapper} />
+                {/* <div className={Style.card_starWrapper}>
                     <span className={`material-icons ${Style.card_star}`}>
                         star_outline
                     </span>
-                </div>
+                </div> */}
 
                 <div className={Style.card_readingTimeAndDatePosition}>
                     <span className={Style.card_readingTime}>

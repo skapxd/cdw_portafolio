@@ -8,10 +8,7 @@ export default function SearchIcon(props: SearchIconI) {
     const { className = '', onClick } = props
     return (
         <svg
-            // fill="none"
-            // stroke="#000"
-            // width="24"
-            // height="24"
+            data-cy="search_icon"
             onClick={() => onClick && onClick()}
             className={`${Style.search} ${className}`}
             strokeLinecap="round"
