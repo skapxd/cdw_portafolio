@@ -1,5 +1,5 @@
-FROM node:alpine 
-# FROM node:14.18-alpine 
+# FROM node:alpine 
+FROM node:14-alpine
 WORKDIR /app
 COPY . .
 RUN npm i

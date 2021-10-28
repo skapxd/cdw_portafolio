@@ -20,7 +20,7 @@ export function ListMenuAnchor(props: ListMenuAnchorI) {
     return (
         <div className={`${Style.listMenuAnchor} ${className}`}>
             {menuAnchor.map((e) => {
-                return <MenuAnchor name={e.name} url={e.url} />
+                return <MenuAnchor key={e.name} name={e.name} url={e.url} />
             })}
         </div>
     )
