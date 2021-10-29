@@ -5,10 +5,11 @@ import MenuIcon from '../../lv_1/Icons/MenuIcon'
 import SearchIcon from '../../lv_1/Icons/SearchIcon'
 
 import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
-import { Search, useOpenSearch } from '../Search/Search'
+// import { Search, useOpenSearch } from '../Search/Search'
 import { ListMenuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
 
 import Style from './Header.module.sass'
+import Search, { namePageSearch, useOpenSearch } from '../../../pages/search'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -29,7 +30,11 @@ export const Header = () => {
 
             <ListMenuAnchor className={Style.listMenuAnchor} />
 
-            <SearchIcon onClick={() => openSearch()} className={Style.search} />
+            <Link href={namePageSearch}>
+                <a>
+                    <SearchIcon className={Style.search} />
+                </a>
+            </Link>
 
             <div style={{ width: 0, position: 'absolute' }}>
                 <Drawer />

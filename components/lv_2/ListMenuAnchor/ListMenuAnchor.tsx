@@ -4,7 +4,7 @@ import Style from './ListMenuAnchor.module.sass'
 
 export const menuAnchor = [
     { name: 'Inicio', url: '/' },
-    { name: 'posts', url: '/' },
+    { name: 'Articulos', url: '/' },
     { name: 'Proyectos', url: '/' },
     { name: 'Historia', url: '/about' },
     { name: 'Habilidades', url: '/' }
