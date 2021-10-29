@@ -1,4 +1,4 @@
-import { CardPost, CardPostI } from '../components/lv_3/CardPost/CardPost'
+import { CardPostI } from '../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../components/lv_5/Layout/Layout'
 import { getBasicData } from '../helpers/getBasicData'
