@@ -5,10 +5,9 @@ import Style from './ListMenuAnchor.module.sass'
 export const menuAnchor = [
     { name: 'Inicio', url: '/' },
     { name: 'posts', url: '/' },
-    { name: 'proyectos', url: '/' },
-    { name: 'referencias', url: '/' },
-    { name: 'Sobre mi', url: '/about' },
-    { name: 'Mis habilidades', url: '/' }
+    { name: 'Proyectos', url: '/' },
+    { name: 'Historia', url: '/about' },
+    { name: 'Habilidades', url: '/' }
 ]
 
 interface ListMenuAnchorI {

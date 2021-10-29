@@ -1,12 +1,14 @@
+import Link from 'next/link'
 import Head from 'next/head'
-import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
-import { Search, useOpenSearch } from '../Search/Search'
+
 import MenuIcon from '../../lv_1/Icons/MenuIcon'
 import SearchIcon from '../../lv_1/Icons/SearchIcon'
+
+import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
+import { Search, useOpenSearch } from '../Search/Search'
 import { ListMenuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
 
 import Style from './Header.module.sass'
-import Link from 'next/link'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -20,12 +22,8 @@ export const Header = () => {
             <MenuIcon onClick={() => openDrawer()} className={Style.menu} />
 
             <Link href="/">
-                <a>
-                    <img
-                        src="/assets/logo.svg"
-                        className={Style.logo}
-                        alt="logo"
-                    />
+                <a className={Style.logo}>
+                    <img src="/assets/logo.svg" alt="logo" />
                 </a>
             </Link>
 
