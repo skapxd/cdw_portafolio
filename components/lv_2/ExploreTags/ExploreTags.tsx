@@ -4,13 +4,14 @@ import { ListOfTags } from '../ListOfTags/ListOfTags'
 
 interface ExploreTagsI {
     listOfTags: string[]
+    className?: string
 }
 
 export const ExploreTags = (props: ExploreTagsI) => {
-    const { listOfTags } = props
+    const { listOfTags, className = '' } = props
 
     return (
-        <div className={Style.exploreTags}>
+        <div className={`${Style.exploreTags} ${className}`}>
             <Title text="Etiquetas" className={Style.exploreTags_title} />
             <ListOfTags
                 tags={listOfTags}

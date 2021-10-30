@@ -84,9 +84,9 @@ function Content() {
 
             <List className={Style.drawer_container_listText}>
                 {menuAnchor.map((text, index) => (
-                    <Link href={text.url}>
+                    <Link href={text.url} key={text.name}>
                         <a className={Style.drawer_container_text}>
-                            <ListItem button key={text.name} onClick={() => {}}>
+                            <ListItem button onClick={() => {}}>
                                 {text.name}
                             </ListItem>
                         </a>

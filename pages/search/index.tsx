@@ -52,7 +52,7 @@ export function Search() {
                 />
 
                 <input
-                    data-cy="search_input"
+                    // data-cy="search_input"
                     className={Style.search_bar_inputText}
                     placeholder="Buscar post"
                 />

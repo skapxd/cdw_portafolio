@@ -1,9 +1,9 @@
 @import '../../../styles/_theme.module'
 
 .mainContainer
-    position: absolute
-    top: 0
-    padding: 1.8rem 1.6rem
+    // position: absolute
+    // top: 0
+    // padding: 1.8rem 1.6rem
     display: flex
     flex-direction: row
     align-items: center
@@ -17,10 +17,9 @@
 .logo
     display: none
 
-@media (min-width: $brackPointToTablet)
+@media only screen and(min-width: $brackPointToTablet)
 
     .mainContainer
-        padding: 2.8rem 2.2rem
         justify-content: flex-start
         gap: 2.2rem
 

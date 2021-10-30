@@ -5,12 +5,13 @@ import Style from './MostSeen.module.sass'
 
 interface MostSeenI {
     list: CardPostI[]
+    className?: string
 }
 
 export const MostSeen = (props: MostSeenI) => {
-    const { list } = props
+    const { list, className = '' } = props
     return (
-        <div className={Style.mostSeen}>
+        <div className={`${Style.mostSeen} ${className}`}>
             <Title text="Más vistos" className={Style.mostSeen_title} />
             <ListOfMiniCard
                 list={list}

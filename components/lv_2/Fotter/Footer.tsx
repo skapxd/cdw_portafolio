@@ -2,9 +2,15 @@ import { Github } from '../../lv_1/Icons/Github'
 import { Telegram } from '../../lv_1/Icons/Telegram'
 import Style from './Footer.module.sass'
 
-export const Footer = () => {
+interface FooterI {
+    className?: string
+}
+
+export const Footer = (props: FooterI) => {
+    const { className = '' } = props
+
     return (
-        <footer className={Style.footer}>
+        <footer className={`${Style.footer} ${className}`}>
             <div className={Style.footer_socialMedia}>
                 <Telegram />
                 <Github />

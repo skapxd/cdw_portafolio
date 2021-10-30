@@ -14,15 +14,19 @@ interface LayoutI {
 
 export const Layout = ({ children, mostSeen, listOfTags }: LayoutI) => {
     return (
-        <>
-            <Header />
+        <div className={Style.body}>
             <div className={Style.mainContainer}>
+                <Header />
                 {children}
 
-                <ExploreTags listOfTags={listOfTags} />
-                <MostSeen list={mostSeen} />
-                <Footer />
+                <ExploreTags
+                    listOfTags={listOfTags}
+                    className={Style.z_index}
+                />
+                <p>Test</p>
+                <MostSeen list={mostSeen} className={Style.z_index} />
+                <Footer className={Style.z_index} />
             </div>
-        </>
+        </div>
     )
 }

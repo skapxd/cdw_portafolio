@@ -3,24 +3,18 @@ import { CardPostI } from '../components/lv_3/CardPost/CardPost'
 
 export const getBasicData = async () => {
     const getListPosts = async (): Promise<CardPostI[]> => {
-        // const respMultiPost = await fetch(postJsonRoute)
-        // const multiPost = await respMultiPost.json()
         const data = fs.readFileSync('public/post.json', { encoding: 'utf-8' })
         const multiPost = JSON.parse(data)
         return multiPost
     }
 
     const getListTags = async (): Promise<string[]> => {
-        // const respListTags = await fetch(tagJsonRoute)
-        // const listTags = await respListTags.json()
         const data = fs.readFileSync('public/tags.json', { encoding: 'utf-8' })
         const listTags = JSON.parse(data)
         return listTags
     }
 
     const getMostSeen = async (): Promise<CardPostI[]> => {
-        // const respMostSeen = await fetch(mostSeenAPIRoute)
-        // const mostSeen = await respMostSeen.json()
         const data = fs.readFileSync('public/most_seen.json', {
             encoding: 'utf-8'
         })
