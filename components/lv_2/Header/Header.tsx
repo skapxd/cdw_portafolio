@@ -7,8 +7,9 @@ import { Drawer, useOpenDrawer } from '../Drawer/Drawer'
 import { ListMenuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
 
 import Style from './Header.module.sass'
-import Search, { namePageSearch, useOpenSearch } from '../../../pages/search'
+import Search, { searchLink, useOpenSearch } from '../../../pages/search'
 import staticImage from '../../../routes/static_images'
+import { homeLink } from '../../../pages/index'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -17,7 +18,7 @@ export const Header = () => {
         <div className={Style.mainContainer}>
             <MenuIcon onClick={() => openDrawer()} className={Style.menu} />
 
-            <Link href="/">
+            <Link href={homeLink()}>
                 <a className={Style.logo}>
                     <img src={staticImage().logo} alt="logo" />
                 </a>
@@ -25,7 +26,7 @@ export const Header = () => {
 
             <ListMenuAnchor className={Style.listMenuAnchor} />
 
-            <Link href={namePageSearch}>
+            <Link href={searchLink()}>
                 <a>
                     <SearchIcon className={Style.search} />
                 </a>

@@ -67,3 +67,7 @@ export default function Tags(props: TagsI) {
         </Layout>
     )
 }
+
+export function tagLink(tag: string) {
+    return `/tag/${tag}`
+}

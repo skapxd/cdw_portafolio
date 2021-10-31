@@ -64,3 +64,7 @@ function WrapperComponent(props: any) {
         </div>
     )
 }
+
+export function homeLink() {
+    return '/'
+}

@@ -6,9 +6,11 @@ import ArrowIcon, {
 
 import Style from './Search.module.sass'
 
-export const namePageSearch = '/search'
-
 const search = 'search'
+
+export function searchLink() {
+    return '/search'
+}
 
 export const useOpenSearch = () => {
     const router = useRouter()

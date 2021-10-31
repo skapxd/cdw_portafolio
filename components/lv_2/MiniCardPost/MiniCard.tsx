@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { postLink } from '../../../pages/post/[post]'
 
 import { CardPostI } from '../../lv_3/CardPost/CardPost'
 import { ListOfMiniTags } from '../ListOfMiniTags/ListOfTags'
@@ -19,7 +20,7 @@ export const MiniCard = (props: CardPostI) => {
 
     return (
         <div className={Style.miniCard}>
-            <Link href={'/post/' + urlPost}>
+            <Link href={postLink(urlPost)}>
                 <a>
                     <img
                         className={Style.miniCard_img}
@@ -36,7 +37,7 @@ export const MiniCard = (props: CardPostI) => {
                     <span className={Style.miniCard_info_date}>{date}</span>
                 </div>
 
-                <Link href={'/post/' + urlPost}>
+                <Link href={postLink(urlPost)}>
                     <a>
                         <h4 className={Style.miniCard_info_title}>{title}</h4>
                     </a>

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ListOfMiniTags } from '../../lv_2/ListOfMiniTags/ListOfTags'
 import Style from './CardPost.module.sass'
 import { StarIcon } from '../../lv_1/Icons/StarIcon'
+import { postLink } from '../../../pages/post/[post]'
 
 export interface CardPostI {
     id: string
@@ -28,17 +29,12 @@ export function CardPost(props: CardPostI) {
     } = props
 
     return (
-        <Link href={'/post/' + urlPost} key={id}>
+        <Link href={postLink(urlPost)} key={id}>
             <a
                 className={Style.card}
                 style={{ backgroundImage: `url(${urlImage})` }}
             >
                 <StarIcon className={Style.card_starWrapper} />
-                {/* <div className={Style.card_starWrapper}>
-                    <span className={`material-icons ${Style.card_star}`}>
-                        star_outline
-                    </span>
-                </div> */}
 
                 <div className={Style.card_readingTimeAndDatePosition}>
                     <span className={Style.card_readingTime}>
