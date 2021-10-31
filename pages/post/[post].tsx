@@ -45,7 +45,7 @@ interface PostI {
 }
 
 export default function Post(props: PostI) {
-    const { listPost, singlePost, listTags } = props
+    const { listPost, singlePost, listTags, mostSeen } = props
 
     const {
         date,
@@ -78,7 +78,7 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
 `
 
     return (
-        <Layout mostSeen={listPost} listOfTags={listTags}>
+        <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.post}>
                 <img className={Style.post_imgMain} src={urlImage} alt="" />
 

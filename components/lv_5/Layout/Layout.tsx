@@ -5,6 +5,7 @@ import { MostSeen } from '../../lv_4/MostSeen/MostSeen'
 import { CardPostI } from '../../lv_3/CardPost/CardPost'
 
 import Style from './Layout.module.sass'
+import { SocialMedia } from '../../lv_2/SocialMedia/SocialMedia'
 
 interface LayoutI {
     children: any
@@ -19,12 +20,20 @@ export const Layout = ({ children, mostSeen, listOfTags }: LayoutI) => {
                 <Header />
                 {children}
 
-                <ExploreTags
-                    listOfTags={listOfTags}
-                    className={Style.z_index}
-                />
-                <p>Test</p>
-                <MostSeen list={mostSeen} className={Style.z_index} />
+                <div className={Style.mainContainer_flex}>
+                    <MostSeen
+                        list={mostSeen}
+                        className={`${Style.z_index} ${Style.mainContainer_flex_flex_width1}`}
+                    />
+                    <SocialMedia
+                        className={`${Style.mainContainer_flex_flex_width1}`}
+                    />
+                    <ExploreTags
+                        listOfTags={listOfTags}
+                        className={`${Style.z_index} ${Style.mainContainer_flex_flex_width1}`}
+                    />
+                </div>
+
                 <Footer className={Style.z_index} />
             </div>
         </div>

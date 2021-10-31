@@ -11,10 +11,10 @@ export const Footer = (props: FooterI) => {
 
     return (
         <footer className={`${Style.footer} ${className}`}>
-            <div className={Style.footer_socialMedia}>
+            {/* <div className={Style.footer_socialMedia}>
                 <Telegram />
                 <Github />
-            </div>
+            </div> */}
             <div className={Style.footer_right}>
                 2021 ©{' '}
                 <b>

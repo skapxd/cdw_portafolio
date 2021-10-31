@@ -6,16 +6,15 @@
 
     &_img
         width: 100%
-        // max-width: 17.4rem
         aspect-ratio: 101/57
         border-radius: 1.6rem
         object-fit: cover
 
     &_info
-        margin-top: 1.5rem
         display: flex
         flex-direction: column
         justify-content: center
+        gap: 0.5rem
 
         &_readingTime
             color: $white
@@ -29,7 +28,6 @@
 
         &_title
             color: white
-            margin-top: 1.5rem
             font-size: 1.8rem
             font-weight: 900
             line-height: 2.5rem
@@ -38,7 +36,17 @@
                 color: $red
 
         &_displayRow
-            margin-top: 1.5rem
             display: flex
             flex-direction: row
             gap: 0.5rem
+
+@media only screen and(min-width: 440px)
+    .miniCard
+        display: flex
+        flex-direction: row
+        gap: 2rem
+
+        &_img
+            width: 17.5rem
+            height: 14.5rem
+            object-fit: cover
