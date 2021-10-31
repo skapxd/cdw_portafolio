@@ -2,6 +2,7 @@ import { CardPostI } from '../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../components/lv_5/Layout/Layout'
 import { getBasicData } from '../helpers/getBasicData'
+import staticImage from '../routes/static_images'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {
@@ -29,7 +30,7 @@ export default function Home(props: HomeI) {
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.firtsScreen}>
                 <div className={Style.firtsScreen_logo}>
-                    <img src="/assets/logo.svg" height="50" width="150" />
+                    <img src={staticImage().logo} height="50" width="150" />
                 </div>
                 <h1 className={Style.firtsScreen_titulo}>
                     Desarrollo web y móvil

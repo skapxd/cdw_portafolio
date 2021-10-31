@@ -5,6 +5,7 @@ import { getBasicData } from '../../helpers/getBasicData'
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 
 import Style from './about.module.sass'
+import staticImage from '../../routes/static_images'
 
 export async function getStaticProps() {
     const { listPost, listTags, mostSeen } = await getBasicData()
@@ -31,8 +32,8 @@ export default function About(props: AboutI) {
         <Layout listOfTags={listTags} mostSeen={mostSeen}>
             <div className={Style.about}>
                 <img
-                    src="/assets/placeholder.png"
-                    alt=""
+                    src={staticImage().perfil}
+                    alt="Manuel Londoño :D"
                     className={Style.about_img}
                 />
 

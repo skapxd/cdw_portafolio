@@ -9,6 +9,7 @@ import ListItem from '@mui/material/ListItem'
 
 import Style from './Drawer.module.sass'
 import { menuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
+import staticImage from '../../../routes/static_images'
 
 const drawer = '#drawer'
 const drawerDirection = 'left'
@@ -77,7 +78,7 @@ function Content() {
             onKeyDown={() => {}}
         >
             <img
-                src="/assets/logo.svg"
+                src={staticImage().logo}
                 alt="logo"
                 className={Style.drawer_container_logo}
             />

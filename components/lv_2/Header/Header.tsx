@@ -8,6 +8,7 @@ import { ListMenuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
 
 import Style from './Header.module.sass'
 import Search, { namePageSearch, useOpenSearch } from '../../../pages/search'
+import staticImage from '../../../routes/static_images'
 
 export const Header = () => {
     const openDrawer = useOpenDrawer()
@@ -18,7 +19,7 @@ export const Header = () => {
 
             <Link href="/">
                 <a className={Style.logo}>
-                    <img src="/assets/logo.svg" alt="logo" />
+                    <img src={staticImage().logo} alt="logo" />
                 </a>
             </Link>
 
