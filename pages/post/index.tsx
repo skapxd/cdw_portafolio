@@ -30,7 +30,9 @@ export default function AllPost(props: AllPostI) {
 
     return (
         <Layout listOfTags={listTags} mostSeen={mostSeen}>
-            <ListOfCardPost list={listPost} className={Style.listPost} />
+            <div className={Style.post_title}> Articulos</div>
+
+            <ListOfCardPost list={listPost} className={Style.post_listPost} />
         </Layout>
     )
 }

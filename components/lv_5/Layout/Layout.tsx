@@ -26,7 +26,7 @@ export const Layout = ({ children, mostSeen, listOfTags }: LayoutI) => {
                         className={`${Style.z_index} ${Style.mainContainer_flex_flex_width1}`}
                     />
                     <SocialMedia
-                        className={`${Style.mainContainer_flex_flex_width1}`}
+                        className={`${Style.z_index} ${Style.mainContainer_flex_flex_width1}`}
                     />
                     <ExploreTags
                         listOfTags={listOfTags}
