@@ -1,8 +1,9 @@
+@import '../../../styles/_theme.module'
+
 .mostSeen
     display: flex
     flex-direction: column
     margin-top: 6rem
-    min-width: 50rem
 
     &_listOfMiniCard
         display: flex
@@ -13,3 +14,7 @@
 
     &_title
         max-width: 15rem
+
+@media screen and(min-width: $brackPointToTablet)
+    .mostSeen
+        min-width: 50rem
