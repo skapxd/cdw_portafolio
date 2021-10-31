@@ -40,7 +40,9 @@ export const getBasicData = async () => {
 }
 
 export const getSinglePost = (id: string): CardPostI => {
-    const data = fs.readFileSync('public/post.json', {
+    const postUrl = jsonFile().post
+
+    const data = fs.readFileSync(postUrl, {
         encoding: 'utf-8'
     })
 
@@ -56,7 +58,8 @@ export const getSinglePost = (id: string): CardPostI => {
 }
 
 export const getPostByTags = (tag: string): CardPostI[] => {
-    const data = fs.readFileSync('public/post.json', {
+    const postUrl = jsonFile().post
+    const data = fs.readFileSync(postUrl, {
         encoding: 'utf-8'
     })
 
