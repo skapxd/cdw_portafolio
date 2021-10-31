@@ -24,12 +24,11 @@ export async function getStaticPaths(props: any) {
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    const { listPost, listTags, mostSeen } = await getBasicData()
+    const { listTags, mostSeen } = await getBasicData()
     const singlePost = getSinglePost(params.post)
 
     return {
         props: {
-            listPost,
             mostSeen,
             listTags,
             singlePost
@@ -39,13 +38,12 @@ export async function getStaticProps(props: any) {
 
 interface PostI {
     singlePost: CardPostI
-    listPost: CardPostI[]
     mostSeen: CardPostI[]
     listTags: string[]
 }
 
 export default function Post(props: PostI) {
-    const { listPost, singlePost, listTags, mostSeen } = props
+    const { singlePost, listTags, mostSeen } = props
 
     const {
         date,
@@ -66,7 +64,7 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
 
 In qua quid est boni praeter summam voluptatem, et eam sempiternam? Cur post Tarentum ad Archytam? Qua ex cognitione facilior facta est investigatio rerum occultissimarum. Negat enim tenuissimo victu, id est contemptissimis escis et potionibus, minorem voluptatem percipi quam rebus exquisitissimis ad epulandum. Non enim iam stirpis bonum quaeret, sed animalis. Qui autem esse poteris, nisi te amor ipse ceperit? Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. Natura sic ab iis investigata est, ut nulla pars caelo, mari, terra, ut poëtice loquar, praetermissa sit; Eadem nunc mea adversum te oratio est. Mihi quidem Homerus huius modi quiddam vidisse videatur in iis, quae de Sirenum cantibus finxerit potionibus.
 
-![](http://norlin.anvodstudio.com/content/images/2020/11/611.jpg)
+![](/assets/placeholder_post.jpg)
 
 _Workplace / [Unsplash](https://unsplash.com/)_
 
@@ -80,16 +78,30 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.post}>
-                <img className={Style.post_imgMain} src={urlImage} alt="" />
+                <div className={Style.post_presentation}>
+                    <div className={Style.post_boxImgMain}>
+                        <img
+                            className={Style.post_imgMain}
+                            src={urlImage}
+                            alt=""
+                        />
+                    </div>
 
-                <div className={Style.post_boxReadTimeAndDate}>
-                    <span className={Style.post_readTime}>{readingTime} </span>{' '}
-                    <span className={Style.post_date}>{date}</span>
+                    <div className={Style.post_column}>
+                        <div className={Style.post_boxReadTimeAndDate}>
+                            <span className={Style.post_readTime}>
+                                {readingTime}{' '}
+                            </span>
+                            <span className={Style.post_date}>{date}</span>
+                        </div>
+
+                        <h2 className={Style.post_title}>{title}</h2>
+                        <ListOfTags
+                            tags={tags}
+                            className={Style.post_listOfTags}
+                        />
+                    </div>
                 </div>
-
-                <h2 className={Style.post_title}>{title}</h2>
-
-                <ListOfTags tags={tags} className={Style.post_listOfTags} />
 
                 <ReactMarkdown
                     className={MarkDownStyle.markDown}
