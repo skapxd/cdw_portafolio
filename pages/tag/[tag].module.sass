@@ -23,7 +23,13 @@
 
     &_listPost
         display: flex
-        flex-direction: row
-        flex-wrap: wrap
-        gap: 5rem
+        flex-direction: column
+        gap: 3rem
         margin-top: 10rem
+
+@media only screen and(min-width: $brackPointToTablet)
+
+    .tags
+        &_listPost
+            flex-direction: row
+            flex-wrap: wrap
