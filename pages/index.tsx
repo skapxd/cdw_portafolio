@@ -6,13 +6,14 @@ import staticImage from '../routes/static_images'
 import Style from './index.module.sass'
 
 export async function getStaticProps() {
-    const { listPost, listTags, mostSeen } = await getBasicData()
+    const { listPost, listTags, mostSeen, lastPost } = getBasicData()
 
     return {
         props: {
             listPost,
             listTags,
-            mostSeen
+            mostSeen,
+            lastPost
         }
     }
 }
@@ -21,10 +22,11 @@ interface HomeI {
     listPost: CardPostI[]
     mostSeen: CardPostI[]
     listTags: string[]
+    lastPost: CardPostI[]
 }
 
 export default function Home(props: HomeI) {
-    const { listPost, listTags, mostSeen } = props
+    const { listPost, listTags, mostSeen, lastPost } = props
 
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
@@ -38,7 +40,7 @@ export default function Home(props: HomeI) {
 
                 <ListOfCardPost
                     className={Style.firtsScreen_listOfCardPost}
-                    list={listPost}
+                    list={lastPost}
                 />
             </div>
         </Layout>
