@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { CardPostI } from '../../../components/lv_3/CardPost/CardPost'
+import jsonFile from '../../../routes/json_files'
 
 type Data = {
     success: boolean
@@ -12,7 +13,8 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const data = fs.readFileSync('public/most_seen.json', {
+    const mostSeenUrl = jsonFile().mostSeen
+    const data = fs.readFileSync(mostSeenUrl, {
         encoding: 'utf-8'
     })
 

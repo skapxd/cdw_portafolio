@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as fs from 'fs'
 import { CardPostI } from '../../../components/lv_3/CardPost/CardPost'
+import jsonFile from '../../../routes/json_files'
 
 type Data = {
     success: boolean
@@ -14,8 +15,9 @@ export default function handler(
     res: NextApiResponse<Data>
 ) {
     const queryPost = req.query.posts
+    const postUrl = jsonFile().post
 
-    const data = fs.readFileSync('public/post.json', {
+    const data = fs.readFileSync(postUrl, {
         encoding: 'utf-8'
     })
 
