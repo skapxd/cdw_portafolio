@@ -2,7 +2,8 @@ import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../../components/lv_5/Layout/Layout'
 // import { tagAPIRouter} from '../../config/routes'
-import { getBasicData, getPostByTags } from '../../helpers/getBasicData'
+import { getBasicData } from '../../helpers/getBasicData'
+import { getPostByTags } from '../../helpers/getPostByTags'
 
 import Style from './[tag].module.sass'
 
@@ -23,14 +24,7 @@ export async function getStaticPaths(props: any) {
 export async function getStaticProps(props: any) {
     const { params } = props
 
-    // const getListPost = async () => {
-    //     const url = tagAPIRouter(params.tag)
-    //     const respMultiPost = await fetch(url)
-    //     const multiPost = await respMultiPost.json()
-    //     return multiPost.data ?? null
-    // }
-
-    const { mostSeen, listTags } = await getBasicData()
+    const { mostSeen, listTags } = getBasicData()
     const listPost = getPostByTags(params.tag)
 
     return {
