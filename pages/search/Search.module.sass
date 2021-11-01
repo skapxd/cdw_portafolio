@@ -2,7 +2,7 @@
 
 .search
     width: 100%
-    padding: 1.8rem 0
+    // padding: 1.8rem 0
     padding-bottom: 0
     background: $background
     display: flex
@@ -11,6 +11,8 @@
     &_bar
         margin: 0 1.8rem
         display: flex
+        align-items: center
+        height: 100%
         flex-direction: row
 
         &_iconBack
@@ -18,8 +20,9 @@
             cursor: pointer
 
         &_inputText
+            height: 6rem
             outline: 0rem solid $transparent
-            width: 80%
+            width: 100%
             margin-left: 2.5rem
             color: #ccc
             font-size: 1.8rem
@@ -33,7 +36,6 @@
 
     &_divider
         width: 100%
-        margin-top: 1.8rem
         height: 0.1rem
         background: #888
 
