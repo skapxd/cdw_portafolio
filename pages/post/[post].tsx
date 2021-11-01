@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
-
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { ListOfTags } from '../../components/lv_2/ListOfTags/ListOfTags'
 import { Layout } from '../../components/lv_5/Layout/Layout'
-import MarkDownStyle from '../../styles/_markdown.module.sass'
 import { getBasicData } from '../../helpers/getBasicData'
+import { getSinglePost } from '../../helpers/getSinglePost'
 
 import Style from './[post].module.sass'
-import { getSinglePost } from '../../helpers/getSinglePost'
+import MarkDownStyle from '../../styles/_markdown.module.sass'
 
 export async function getStaticPaths(props: any) {
     const getPaths = async () => {
@@ -27,8 +26,9 @@ export async function getStaticProps(props: any) {
     const { params } = props
 
     const { listTags, mostSeen } = getBasicData()
-    const { metaData, markDown } = getSinglePost(params.post)
-
+    const { metaData, markDown, success } = await getSinglePost(params.post)
+    if (!success) {
+    }
     return {
         props: {
             mostSeen,
@@ -47,7 +47,7 @@ interface PostI {
 }
 
 export default function Post(props: PostI) {
-    const { metaData: singlePost, listTags, mostSeen, markDown } = props
+    const { metaData, listTags, mostSeen, markDown } = props
 
     const {
         date,
@@ -59,7 +59,7 @@ export default function Post(props: PostI) {
         id,
         readingTime,
         urlPost
-    } = singlePost
+    } = metaData
 
     const post = `
 Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu ita posuisti, et verba vestra sunt. Idemne potest esse dies saepius, qui semel fuit? Ampulla enim sit necne sit, quis non iure optimo irrideatur, si laboret? Ego vero volo in virtute vim esse quam maximam; Serpere anguiculos, nare anaticulas, evolare merulas, cornibus uti videmus boves, nepas aculeis. Conferam tecum, quam cuique verso rem subicias. Si longus, levis ampulla enim sit necne vel omnia vel partes genere plurima et maxima.
@@ -115,10 +115,9 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
                         </div>
                     </div>
 
-                    <ReactMarkdown
-                        className={MarkDownStyle.markDown}
-                        children={markDown}
-                    />
+                    <ReactMarkdown className={MarkDownStyle.markDown}>
+                        {markDown}
+                    </ReactMarkdown>
                 </div>
             </Layout>
         </>
