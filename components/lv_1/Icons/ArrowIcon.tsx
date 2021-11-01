@@ -15,7 +15,12 @@ interface ArrowIconI {
 }
 
 export default function ArrowIcon(props: ArrowIconI) {
-    let { onClick, direction, className = '', 'data-cy': data_cy = '' } = props
+    const {
+        onClick,
+        direction,
+        className = '',
+        'data-cy': data_cy = ''
+    } = props
 
     const dic = {
         Up: Style.arrow_up,

@@ -14,6 +14,7 @@ export interface CardPostI {
     shortDescription: string
     urlImage: string
     urlPost: string
+    urlMarkdown?: string
 }
 export function CardPost(props: CardPostI) {
     const {

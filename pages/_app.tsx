@@ -9,6 +9,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <Head>
                 <meta name="theme-color" content="#0f0f12" />
+                <meta name="application-name" content="skapxd.dev" />
+                <meta
+                    name="description"
+                    content="Artículos, vídeos, recursos y tutoriales sobre Desarrollo Web, Frontend, JavaScript ☕️, React ⚛️, CSS 🎨 y Performance Web ⚡️"
+                />
+                <title>Skapxd</title>
             </Head>
 
             <Component {...pageProps} />

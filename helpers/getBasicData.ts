@@ -47,36 +47,3 @@ export const getBasicData = () => {
         lastPost
     }
 }
-
-export const getSinglePost = (id: string): CardPostI => {
-    const postUrl = jsonFile().post
-
-    const data = fs.readFileSync(postUrl, {
-        encoding: 'utf-8'
-    })
-
-    const posts = <CardPostI[]>JSON.parse(data)
-
-    const post = posts.filter((e) => {
-        return e.urlPost === id
-    })
-
-    if (post.length === 0) throw new Error("Post don't exist")
-
-    return post[0]
-}
-
-export const getPostByTags = (tag: string): CardPostI[] => {
-    const postUrl = jsonFile().post
-    const data = fs.readFileSync(postUrl, {
-        encoding: 'utf-8'
-    })
-
-    const listPost = <CardPostI[]>JSON.parse(data)
-
-    const post = listPost.filter((e) => {
-        return e.tags.includes(tag)
-    })
-
-    return post
-}

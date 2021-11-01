@@ -1,16 +1,18 @@
+import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
 
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { ListOfTags } from '../../components/lv_2/ListOfTags/ListOfTags'
 import { Layout } from '../../components/lv_5/Layout/Layout'
+import MarkDownStyle from '../../styles/_markdown.module.sass'
+import { getBasicData } from '../../helpers/getBasicData'
 
 import Style from './[post].module.sass'
-import MarkDownStyle from '../../styles/_markdown.module.sass'
-import { getBasicData, getSinglePost } from '../../helpers/getBasicData'
+import { getSinglePost } from '../../helpers/getSinglePost'
 
 export async function getStaticPaths(props: any) {
     const getPaths = async () => {
-        const { listPost } = await getBasicData()
+        const { listPost } = getBasicData()
         const paths = listPost.map((e) => ({
             params: { post: e.urlPost }
         }))
@@ -25,25 +27,27 @@ export async function getStaticProps(props: any) {
     const { params } = props
 
     const { listTags, mostSeen } = getBasicData()
-    const singlePost = getSinglePost(params.post)
+    const { metaData, markDown } = getSinglePost(params.post)
 
     return {
         props: {
             mostSeen,
             listTags,
-            singlePost
+            metaData,
+            markDown
         }
     }
 }
 
 interface PostI {
-    singlePost: CardPostI
+    metaData: CardPostI
     mostSeen: CardPostI[]
     listTags: string[]
+    markDown: string
 }
 
 export default function Post(props: PostI) {
-    const { singlePost, listTags, mostSeen } = props
+    const { metaData: singlePost, listTags, mostSeen, markDown } = props
 
     const {
         date,
@@ -76,39 +80,48 @@ Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu 
 `
 
     return (
-        <Layout mostSeen={mostSeen} listOfTags={listTags}>
-            <div className={Style.post}>
-                <div className={Style.post_presentation}>
-                    <div className={Style.post_boxImgMain}>
-                        <img
-                            className={Style.post_imgMain}
-                            src={urlImage}
-                            alt=""
-                        />
-                    </div>
-
-                    <div className={Style.post_column}>
-                        <div className={Style.post_boxReadTimeAndDate}>
-                            <span className={Style.post_readTime}>
-                                {readingTime}{' '}
-                            </span>
-                            <span className={Style.post_date}>{date}</span>
+        <>
+            <Head>
+                <meta property="og:locale" content="es_ES" />
+                <meta property="og:title" content={title} />
+                <meta property="og:image" content={urlImage} />
+                <meta property="og:description" content={shortDescription} />
+                <meta property="og:site_name" content="skapxd.dev" />
+            </Head>
+            <Layout mostSeen={mostSeen} listOfTags={listTags}>
+                <div className={Style.post}>
+                    <div className={Style.post_presentation}>
+                        <div className={Style.post_boxImgMain}>
+                            <img
+                                className={Style.post_imgMain}
+                                src={urlImage}
+                                alt=""
+                            />
                         </div>
 
-                        <h2 className={Style.post_title}>{title}</h2>
-                        <ListOfTags
-                            tags={tags}
-                            className={Style.post_listOfTags}
-                        />
-                    </div>
-                </div>
+                        <div className={Style.post_column}>
+                            <div className={Style.post_boxReadTimeAndDate}>
+                                <span className={Style.post_readTime}>
+                                    {readingTime}{' '}
+                                </span>
+                                <span className={Style.post_date}>{date}</span>
+                            </div>
 
-                <ReactMarkdown
-                    className={MarkDownStyle.markDown}
-                    children={post}
-                />
-            </div>
-        </Layout>
+                            <h2 className={Style.post_title}>{title}</h2>
+                            <ListOfTags
+                                tags={tags}
+                                className={Style.post_listOfTags}
+                            />
+                        </div>
+                    </div>
+
+                    <ReactMarkdown
+                        className={MarkDownStyle.markDown}
+                        children={markDown}
+                    />
+                </div>
+            </Layout>
+        </>
     )
 }
 
