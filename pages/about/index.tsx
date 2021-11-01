@@ -6,6 +6,7 @@ import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 
 import Style from './about.module.sass'
 import staticImage from '../../routes/static_images'
+import { abilitiesLink } from '../abilities'
 
 export async function getStaticProps() {
     const { listPost, listTags, mostSeen } = await getBasicData()
@@ -40,12 +41,11 @@ export default function About(props: AboutI) {
                 <h2 className={Style.about_name}>Manuel Londoño</h2>
 
                 <p className={Style.about_shortDescription}>
-                    Hola, mi nombre es <b>Manuel Londoño</b> y soy un
-                    desarrollador de software capaz de llevar una aplicación de
-                    inicio a fin, con conocimientos en <b>Frontend</b>,{' '}
-                    <b>Backend</b>, <b>Movíl</b>, <b>Google Play</b>,{' '}
-                    <b>Google Cloud Platform</b>, ...{' '}
-                    <Link href="/">
+                    Soy un desarrollador de software capaz de llevar una
+                    aplicación de inicio a fin, con conocimientos en{' '}
+                    <b>Frontend</b>, <b>Backend</b>, <b>Movíl</b>,{' '}
+                    <b>Google Play</b>, <b>Google Cloud Platform</b>, ...{' '}
+                    <Link href={abilitiesLink()}>
                         <a className={Style.about_seeMore}> ver mas. </a>
                     </Link>
                 </p>

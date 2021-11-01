@@ -30,3 +30,5 @@ export default function Abilities(props: AbilitiesI) {
         </Layout>
     )
 }
+
+export const abilitiesLink = () => 'abilities'
