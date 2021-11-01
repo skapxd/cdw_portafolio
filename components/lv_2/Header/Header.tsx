@@ -34,8 +34,6 @@ export const Header = () => {
 
             <div style={{ width: 0, position: 'absolute' }}>
                 <Drawer />
-
-                <Search />
             </div>
         </div>
     )
