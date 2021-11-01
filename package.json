@@ -18,7 +18,7 @@
         "cypress:open": "cypress open",
         "push": "git push",
         "app-engine:deploy": "run-s build push gcp open ",
-        "cloud-run:deploy": "run-s docker:build  gcp:build gcp:deploy",
+        "cloud-run:deploy": "run-s gcp:build gcp:deploy",
         "step-1-install-commitlint": "npm install --save-dev @commitlint/config-conventional @commitlint/cli",
         "step-2-install-husky": "npm install husky --save-dev",
         "step-3-husky-activate-hooks": "husky install",
