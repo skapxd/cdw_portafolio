@@ -7,7 +7,7 @@ urlMarkdown: public/post/md/Believe and act as if it were impossible to fail.md
 title: That which does not kill us makes us stronger
 tags: [Work, Notes]
 urlPost: that-which-does-not-kill-us-makes-us-stronger
-urlImage: /img/Visual_Studio_Code_icon.svg
+urlImage: /img/vscode.png
 shortDescription: Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu itposuisti, et verba vestra sunt. Idemne potest esse dies sa
 ---
 

@@ -32,15 +32,15 @@ export function CardPost(props: CardPostI) {
         <Link href={postLink(urlPost)} key={id}>
             <a
                 className={Style.card}
-                // style={{ backgroundImage: `url(${urlImage})` }}
+                style={{ backgroundImage: `url(${urlImage})` }}
             >
-                <div className={Style.card_background}>
+                {/* <div className={Style.card_background}>
                     <img
                         src={urlImage}
                         alt=""
                         className={Style.card_background_icon}
                     />
-                </div>
+                </div> */}
 
                 <StarIcon className={Style.card_starWrapper} />
 

@@ -7,7 +7,7 @@ title: Instalaciones básicas
 urlMarkdown: public/post/md/Believe and act as if it were impossible to fail.md
 tags: [Work, Notes]
 urlPost: instalaciones-básicas
-urlImage: /img/Visual_Studio_Code_icon.svg
+urlImage: /img/vscode.png
 shortDescription: Descarga e instalación de los programas que vamos a usar para dar nuestros primeros pasos
 ---
 

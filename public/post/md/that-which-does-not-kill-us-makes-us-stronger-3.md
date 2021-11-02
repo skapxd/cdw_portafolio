@@ -7,7 +7,7 @@ readingTime: 10 min read
 title: That which does not kill us makes us stronger 3
 tags: [Work, Notes]
 urlPost: that-which-does-not-kill-us-makes-us-stronger
-urlImage: /img/Visual_Studio_Code_icon.svg
+urlImage: /img/vscode.png
 shortDescription: Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu itposuisti, et vestra sunt. Idemne potest esse dies sa
 ---
 
