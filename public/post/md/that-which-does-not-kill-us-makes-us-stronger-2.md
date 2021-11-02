@@ -1,9 +1,9 @@
 ---
-id: 2
+id: '3'
 favorite: false
+readingTime: 10 min read
 date: Nov 15 2021
 urlMarkdown: public/post/md/that-which-does-not-kill-us-makes-us-stronger-2.md
-readingTime: 10 min read
 title: That which does not kill us makes us stronger 2
 tags: [Work, Notes]
 urlPost: that-which-does-not-kill-us-makes-us-stronger

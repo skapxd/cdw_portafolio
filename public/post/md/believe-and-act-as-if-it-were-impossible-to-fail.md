@@ -1,5 +1,5 @@
 ---
-id: 1
+id: '1'
 favorite: false
 date: Nov 12 2020
 readingTime: 2 min read

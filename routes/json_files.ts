@@ -7,7 +7,6 @@ interface ReturnJsonFileI {
 export default function jsonFile(): ReturnJsonFileI {
     const fsMostSeen = 'public/most_seen.json'
     const fsPost = 'public/post/indice_de_posts.json'
-    // const fsPost = 'public/post.json'
     const fsTags = 'public/tags.json'
 
     return {
