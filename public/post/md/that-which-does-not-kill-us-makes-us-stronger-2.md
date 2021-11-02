@@ -7,7 +7,7 @@ urlMarkdown: public/post/md/that-which-does-not-kill-us-makes-us-stronger-2.md
 title: That which does not kill us makes us stronger 2
 tags: [Work, Notes]
 urlPost: that-which-does-not-kill-us-makes-us-stronger
-urlImage: /img/post_2.jpg
+urlImage: /img/Visual_Studio_Code_icon.svg
 shortDescription: Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu itposuisti, et vestra sunt. Idemne potest esse dies sa
 ---
 

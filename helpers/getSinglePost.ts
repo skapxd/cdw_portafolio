@@ -9,6 +9,7 @@ interface ReturnGetSinglePostI {
 export const getSinglePost = async (
     id: string
 ): Promise<ReturnGetSinglePostI> => {
+    console.log(id)
     let result = await readMarkdown(`public/post/md/${id}.md`)
     const metaData = result.meta
     const markDown = result.content

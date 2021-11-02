@@ -1,14 +1,14 @@
 ---
 id: '1'
 favorite: false
-date: Nov 12 2020
+date: Nov 1 2021
 readingTime: 2 min read
-title: Believe and act as if it were impossible to fail
+title: Instalaciones básicas
 urlMarkdown: public/post/md/Believe and act as if it were impossible to fail.md
 tags: [Work, Notes]
-urlPost: believe-and-act-as-if-it-were-impossible-to-fail
-urlImage: /img/post_1.jpg
-shortDescription: Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu posuistiet verba vestra sunt. Idemne potest esse dies sa
+urlPost: instalaciones-básicas
+urlImage: /img/Visual_Studio_Code_icon.svg
+shortDescription: Descarga e instalación de los programas que vamos a usar para dar nuestros primeros pasos
 ---
 
 Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu ita posuisti, et verba vestra sunt. Idemne potest esse dies saepius, qui semel fuit? Ampulla enim sit necne sit, quis non iure optimo irrideatur, si laboret? Ego vero volo in virtute vim esse quam maximam; Serpere anguiculos, nare anaticulas, evolare merulas, cornibus uti videmus boves, nepas aculeis. Conferam tecum, quam cuique verso rem subicias. Si longus, levis ampulla enim sit necne vel omnia vel partes genere plurima et maxima.

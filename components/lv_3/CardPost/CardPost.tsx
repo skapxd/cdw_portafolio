@@ -14,7 +14,6 @@ export interface CardPostI {
     shortDescription: string
     urlImage: string
     urlPost: string
-    urlMarkdown?: string
 }
 export function CardPost(props: CardPostI) {
     const {
@@ -33,8 +32,16 @@ export function CardPost(props: CardPostI) {
         <Link href={postLink(urlPost)} key={id}>
             <a
                 className={Style.card}
-                style={{ backgroundImage: `url(${urlImage})` }}
+                // style={{ backgroundImage: `url(${urlImage})` }}
             >
+                <div className={Style.card_background}>
+                    <img
+                        src={urlImage}
+                        alt=""
+                        className={Style.card_background_icon}
+                    />
+                </div>
+
                 <StarIcon className={Style.card_starWrapper} />
 
                 <div className={Style.card_readingTimeAndDatePosition}>
