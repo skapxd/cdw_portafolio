@@ -6,7 +6,7 @@
         "next:dev": "next dev",
         "dev": "run-s prepare_blog next:dev",
         "build": "next build",
-        "prepare_blog": "node .\\scripts\\prepare_indice_post.js",
+        "prepare_blog": "node ./scripts/prepare_indice_post.js",
         "docker:build": "sudo docker build . -t skapxd/blog-nextjs:v2",
         "docker:run": "sudo docker run -p 3000:3000 skapxd/blog-nextjs:v2",
         "docker:rm-img": "sudo  docker rmi $(docker images -q ) -f",

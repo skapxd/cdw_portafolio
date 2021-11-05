@@ -33,7 +33,7 @@ export default function ArrowIcon(props: ArrowIconI) {
 
     return (
         <svg
-            // data-cy={data_cy}
+            data-cy={data_cy}
             onClick={() => onClick && onClick()}
             viewBox="0 0 96 96"
             className={`${Style.arrow} ${axis} ${className}`}
