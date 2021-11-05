@@ -16,19 +16,22 @@ export async function getStaticProps() {
     }
 }
 
-interface AbilitiesI {
+interface TechnologiesI {
     listPost: CardPostI[]
     listTags: string[]
     mostSeen: CardPostI[]
     lastPost: CardPostI[]
 }
-export default function Abilities(props: AbilitiesI) {
+export default function Technologies(props: TechnologiesI) {
     const { mostSeen, listTags } = props
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
-            <div className={Style.abilities_title}>Habilidades</div>
+            <h1 className={Style.abilities_title}>Habilidades</h1>
+            <h2> Tecnologías según uso reciente </h2>
+            <h2> Tecnologías según mayor uso</h2>
+            <h2> Tecnologías según gustos </h2>
         </Layout>
     )
 }
 
-export const abilitiesLink = () => 'abilities'
+export const technologiesLink = () => 'technologies'

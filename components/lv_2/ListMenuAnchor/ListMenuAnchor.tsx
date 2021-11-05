@@ -7,7 +7,7 @@ export const menuAnchor = [
     { name: 'Articulos', url: '/post' },
     { name: 'Proyectos', url: '/projects' },
     { name: 'Historia', url: '/about' },
-    { name: 'Habilidades', url: '/abilities' },
+    { name: 'Tecnologías', url: '/technologies' },
     { name: 'Ruta', url: '/roadmap' }
 ]
 

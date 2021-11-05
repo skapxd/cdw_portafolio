@@ -6,7 +6,7 @@ import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 
 import Style from './about.module.sass'
 import staticImage from '../../routes/static_images'
-import { abilitiesLink } from '../abilities'
+import { technologiesLink } from '../technologies'
 
 export async function getStaticProps() {
     const { listPost, listTags, mostSeen } = await getBasicData()
@@ -45,7 +45,7 @@ export default function About(props: AboutI) {
                     aplicación de inicio a fin, con conocimientos en{' '}
                     <b>Frontend</b>, <b>Backend</b>, <b>Movíl</b>,{' '}
                     <b>Google Play</b>, <b>Google Cloud Platform</b>, ...{' '}
-                    <Link href={abilitiesLink()}>
+                    <Link href={technologiesLink()}>
                         <a className={Style.about_seeMore}> ver mas. </a>
                     </Link>
                 </p>
