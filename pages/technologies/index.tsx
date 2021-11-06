@@ -12,6 +12,9 @@ import { CssIcon } from '../../components/lv_1/Icons/Tecnologies/CssIcon'
 import { GoIcon } from '../../components/lv_1/Icons/Tecnologies/GoIcon'
 import { RustIcon } from '../../components/lv_1/Icons/Tecnologies/RustIcon'
 import { PythonIcon } from '../../components/lv_1/Icons/Tecnologies/PythonIcon'
+import { NextjsIcon } from '../../components/lv_1/Icons/Tecnologies/NextjsIcon'
+import { ReactIcon } from '../../components/lv_1/Icons/Tecnologies/ReactIcon'
+import { AngularIcon } from '../../components/lv_1/Icons/Tecnologies/AngularIcon'
 
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
@@ -57,15 +60,15 @@ export default function Technologies(props: TechnologiesI) {
                     text="Lenguajes"
                     learnOrDeepen={lenguajesLearnOrDeepen}
                     recentUse={lenguajesRecentUse}
-                    increasedUse={lenguajesRecentUse}
-                    pleasures={lenguajesRecentUse}
+                    increasedUse={lenguajesIncreasedUse}
+                    pleasures={lenguajesPleasure}
                 />
                 <TecnologiesComponent
                     text="Frontend"
-                    recentUse={frontendIncreasedUse}
-                    increasedUse={frontendLearnOrDeepen}
+                    recentUse={frontendRecentUse}
+                    increasedUse={frontendIncreasedUse}
                     pleasures={frontendPleasure}
-                    learnOrDeepen={frontendRecentUse}
+                    learnOrDeepen={frontendLearnOrDeepen}
                 />
                 <TecnologiesComponent
                     text="Backend"
@@ -108,44 +111,50 @@ function getTecnologiesIcons() {
             <JavascriptIcon />,
             <TypeScriptIcon />,
             <HtmlIcon />,
-            <SassIcon />,
-            <CssIcon />,
-            <DartIcon />
+            <SassIcon />
+            // <CssIcon />,
+            // <DartIcon />
         ],
         lenguajesIncreasedUse: [
             <TypeScriptIcon />,
             <DartIcon />,
             <SassIcon />,
-            <HtmlIcon />,
-            <JavascriptIcon />,
-            <CssIcon />
+            <HtmlIcon />
+            // <JavascriptIcon />,
+            // <CssIcon />
         ],
         lenguajesPleasure: [
             <DartIcon />,
             <TypeScriptIcon />,
-            <SassIcon />,
-            <JavascriptIcon />,
-            <HtmlIcon />,
-            <CssIcon />
+            <SassIcon />
+            // <JavascriptIcon />,
+            // <HtmlIcon />,
+            // <CssIcon />
         ],
         lenguajesLearnOrDeepen: [
             <TypeScriptIcon />,
             <PythonIcon />,
             <GoIcon />,
             <RustIcon />,
-            <DartIcon />,
-            <SassIcon />,
-            <JavascriptIcon />,
-            <HtmlIcon />,
-            <CssIcon />
+            <DartIcon />
+            // <SassIcon />,
+            // <JavascriptIcon />,
+            // <HtmlIcon />,
+            // <CssIcon />
         ]
     }
 
     const frontend = {
-        frontendIncreasedUse: [<CssIcon />],
-        frontendLearnOrDeepen: [<CssIcon />],
-        frontendPleasure: [<CssIcon />],
-        frontendRecentUse: [<CssIcon />]
+        frontendRecentUse: [<NextjsIcon />, <ReactIcon />],
+        frontendIncreasedUse: [
+            <HtmlIcon />,
+            <CssIcon />,
+            <JavascriptIcon />,
+            <TypeScriptIcon />,
+            <SassIcon />
+        ],
+        frontendPleasure: [<NextjsIcon />, <AngularIcon />],
+        frontendLearnOrDeepen: [<CssIcon />]
     }
 
     const backend = {}

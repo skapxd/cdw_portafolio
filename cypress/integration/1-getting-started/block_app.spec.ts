@@ -14,7 +14,7 @@ describe('Blog app', () => {
         cy.contains('Articulos').click()
         cy.contains('Proyectos').click()
         cy.contains('Historia').click()
-        cy.contains('Habilidades').click()
+        cy.contains('Tecnologías').click()
         cy.contains('Ruta').click()
         // cy.get('[data-cy="drawer"]').click()
         // cy.get('[data-cy="search_icon"]').click()

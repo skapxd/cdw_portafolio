@@ -1,6 +1,12 @@
+import Style from '../Icons.module.sass'
+
 export function AngularIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.2 200">
+        <svg
+            className={Style.tecnologies_icon}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 186.2 200"
+        >
             <g id="Capa_2" data-name="Capa 2">
                 <g id="Layer_1" data-name="Layer 1">
                     <polygon

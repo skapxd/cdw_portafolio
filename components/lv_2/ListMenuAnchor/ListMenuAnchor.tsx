@@ -8,7 +8,8 @@ export const menuAnchor = [
     { name: 'Proyectos', url: '/projects' },
     { name: 'Historia', url: '/about' },
     { name: 'Tecnologías', url: '/technologies' },
-    { name: 'Ruta', url: '/roadmap' }
+    // { name: 'Ruta', url: '/roadmap' },
+    { name: 'Créditos', url: '/credits' }
 ]
 
 interface ListMenuAnchorI {
