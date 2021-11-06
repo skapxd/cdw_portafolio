@@ -1,5 +1,5 @@
-import { Github } from '../../lv_1/Icons/Github'
-import { Telegram } from '../../lv_1/Icons/Telegram'
+import { Github } from '../../lv_1/Icons/SocialMedia/Github'
+import { Telegram } from '../../lv_1/Icons/SocialMedia/Telegram'
 import { Title } from '../../lv_1/Title/Title'
 import Style from './SocialMedia.module.sass'
 

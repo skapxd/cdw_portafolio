@@ -1,0 +1,28 @@
+@import '../../../styles/_theme.module'
+.tecnologiesComponent
+    display: flex
+    flex-direction: column
+    gap: 3rem
+
+    &_info
+        display: flex
+        flex-direction: column
+        grid-gap: 3rem
+
+    &_subTitle
+        display: flex
+        flex-direction: column
+        gap: 1rem
+
+    &_iconsList
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        gap: 1rem
+
+@media only screen and (min-width: $brackPointToTablet)
+    .tecnologiesComponent
+        &_info
+            flex-direction: row
+            grid-gap: 2rem
+            justify-content: space-between

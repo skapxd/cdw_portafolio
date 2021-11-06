@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Style from './Icons.module.sass'
+import Style from '../Icons.module.sass'
 
 interface GithubI {
     href?: string
