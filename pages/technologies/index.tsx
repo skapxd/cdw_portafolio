@@ -15,6 +15,9 @@ import { PythonIcon } from '../../components/lv_1/Icons/Tecnologies/PythonIcon'
 import { NextjsIcon } from '../../components/lv_1/Icons/Tecnologies/NextjsIcon'
 import { ReactIcon } from '../../components/lv_1/Icons/Tecnologies/ReactIcon'
 import { AngularIcon } from '../../components/lv_1/Icons/Tecnologies/AngularIcon'
+import { VuejsIcon } from '../../components/lv_1/Icons/Tecnologies/VuejsIcon'
+import { SvelteIcon } from '../../components/lv_1/Icons/Tecnologies/SvelteIcon'
+import { LitjsIcon } from '../../components/lv_1/Icons/Tecnologies/LitjsIcon'
 
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
@@ -153,8 +156,13 @@ function getTecnologiesIcons() {
             <TypeScriptIcon />,
             <SassIcon />
         ],
-        frontendPleasure: [<NextjsIcon />, <AngularIcon />],
-        frontendLearnOrDeepen: [<CssIcon />]
+        frontendPleasure: [<NextjsIcon />, <AngularIcon />, <SvelteIcon />],
+        frontendLearnOrDeepen: [
+            <NextjsIcon />,
+            <VuejsIcon />,
+            <SvelteIcon />,
+            <LitjsIcon />
+        ]
     }
 
     const backend = {}
