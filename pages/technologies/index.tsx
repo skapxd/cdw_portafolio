@@ -18,6 +18,7 @@ import { AngularIcon } from '../../components/lv_1/Icons/Tecnologies/AngularIcon
 import { VuejsIcon } from '../../components/lv_1/Icons/Tecnologies/VuejsIcon'
 import { SvelteIcon } from '../../components/lv_1/Icons/Tecnologies/SvelteIcon'
 import { LitjsIcon } from '../../components/lv_1/Icons/Tecnologies/LitjsIcon'
+import { SolidjsIcon } from '../../components/lv_1/Icons/Tecnologies/SolidjsIcon'
 
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
@@ -156,12 +157,18 @@ function getTecnologiesIcons() {
             <TypeScriptIcon />,
             <SassIcon />
         ],
-        frontendPleasure: [<NextjsIcon />, <AngularIcon />, <SvelteIcon />],
+        frontendPleasure: [
+            <NextjsIcon />,
+            <SassIcon />,
+            <AngularIcon />,
+            <SvelteIcon />
+        ],
         frontendLearnOrDeepen: [
             <NextjsIcon />,
             <VuejsIcon />,
             <SvelteIcon />,
-            <LitjsIcon />
+            <LitjsIcon />,
+            <SolidjsIcon />
         ]
     }
 
