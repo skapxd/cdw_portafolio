@@ -19,6 +19,13 @@ import { VuejsIcon } from '../../components/lv_1/Icons/Tecnologies/VuejsIcon'
 import { SvelteIcon } from '../../components/lv_1/Icons/Tecnologies/SvelteIcon'
 import { LitjsIcon } from '../../components/lv_1/Icons/Tecnologies/LitjsIcon'
 import { SolidjsIcon } from '../../components/lv_1/Icons/Tecnologies/SolidjsIcon'
+import { NodeIcon } from '../../components/lv_1/Icons/Tecnologies/NodeIcon'
+import { NestjsIcon } from '../../components/lv_1/Icons/Tecnologies/NestjsIcon'
+import { FlutterIcon } from '../../components/lv_1/Icons/Tecnologies/FlutterIcon'
+import { ReactNativeIcon } from '../../components/lv_1/Icons/Tecnologies/ReactNativeIcon'
+import { AndroidIcon } from '../../components/lv_1/Icons/Tecnologies/AndroidIcon'
+import { AppleIcon } from '../../components/lv_1/Icons/Tecnologies/AppleIcon'
+import { JavaIcon } from '../../components/lv_1/Icons/Tecnologies/JavaIcon'
 
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
@@ -55,6 +62,20 @@ export default function Technologies(props: TechnologiesI) {
         frontendRecentUse
     } = frontend
 
+    const {
+        backendRecentUse,
+        backendIncreasedUse,
+        backendPleasure,
+        backendLearnOrDeepen
+    } = backend
+
+    const {
+        mobileRecentUse,
+        mobileIncreasedUse,
+        mobilePleasure,
+        mobileLearnOrDeepen
+    } = mobile
+
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <h1 className={Style.abilities_title}>Tecnologías</h1>
@@ -76,17 +97,17 @@ export default function Technologies(props: TechnologiesI) {
                 />
                 <TecnologiesComponent
                     text="Backend"
-                    learnOrDeepen={lenguajesLearnOrDeepen}
-                    recentUse={lenguajesRecentUse}
-                    increasedUse={lenguajesRecentUse}
-                    pleasures={lenguajesRecentUse}
+                    recentUse={backendRecentUse}
+                    increasedUse={backendIncreasedUse}
+                    pleasures={backendPleasure}
+                    learnOrDeepen={backendLearnOrDeepen}
                 />
                 <TecnologiesComponent
                     text="Móvil"
-                    learnOrDeepen={lenguajesLearnOrDeepen}
-                    recentUse={lenguajesRecentUse}
-                    increasedUse={lenguajesRecentUse}
-                    pleasures={lenguajesRecentUse}
+                    learnOrDeepen={mobileLearnOrDeepen}
+                    recentUse={mobileRecentUse}
+                    increasedUse={mobileIncreasedUse}
+                    pleasures={mobilePleasure}
                 />
                 <TecnologiesComponent
                     text="Clouds"
@@ -97,10 +118,10 @@ export default function Technologies(props: TechnologiesI) {
                 />
                 <TecnologiesComponent
                     text="Git Cloud"
-                    learnOrDeepen={lenguajesLearnOrDeepen}
                     recentUse={lenguajesRecentUse}
                     increasedUse={lenguajesRecentUse}
                     pleasures={lenguajesRecentUse}
+                    learnOrDeepen={lenguajesLearnOrDeepen}
                 />
             </div>
         </Layout>
@@ -115,17 +136,17 @@ function getTecnologiesIcons() {
             <JavascriptIcon />,
             <TypeScriptIcon />,
             <HtmlIcon />,
+            // <CssIcon />
             <SassIcon />
-            // <CssIcon />,
             // <DartIcon />
         ],
         lenguajesIncreasedUse: [
             <TypeScriptIcon />,
             <DartIcon />,
-            <SassIcon />,
-            <HtmlIcon />
-            // <JavascriptIcon />,
-            // <CssIcon />
+            <JavascriptIcon />,
+            // <SassIcon />,
+            <HtmlIcon />,
+            <CssIcon />
         ],
         lenguajesPleasure: [
             <DartIcon />,
@@ -140,7 +161,8 @@ function getTecnologiesIcons() {
             <PythonIcon />,
             <GoIcon />,
             <RustIcon />,
-            <DartIcon />
+            <DartIcon />,
+            <JavaIcon />
             // <SassIcon />,
             // <JavascriptIcon />,
             // <HtmlIcon />,
@@ -149,7 +171,7 @@ function getTecnologiesIcons() {
     }
 
     const frontend = {
-        frontendRecentUse: [<NextjsIcon />, <ReactIcon />],
+        frontendRecentUse: [<NextjsIcon />, <SassIcon />, <ReactIcon />],
         frontendIncreasedUse: [
             <HtmlIcon />,
             <CssIcon />,
@@ -172,9 +194,23 @@ function getTecnologiesIcons() {
         ]
     }
 
-    const backend = {}
+    const backend = {
+        backendRecentUse: [<NodeIcon />, <NestjsIcon />],
+        backendIncreasedUse: [<NodeIcon />, <NestjsIcon />],
+        backendPleasure: [<NestjsIcon />, <NodeIcon />],
+        backendLearnOrDeepen: [<NodeIcon />, <GoIcon />]
+    }
 
-    const mobile = {}
+    const mobile = {
+        mobileRecentUse: [<ReactNativeIcon />, <FlutterIcon />],
+        mobileIncreasedUse: [<FlutterIcon />, <ReactNativeIcon />],
+        mobilePleasure: [<FlutterIcon />, <ReactNativeIcon />],
+        mobileLearnOrDeepen: [
+            <ReactNativeIcon />,
+            <AndroidIcon />,
+            <AppleIcon />
+        ]
+    }
 
     const clouds = {}
 

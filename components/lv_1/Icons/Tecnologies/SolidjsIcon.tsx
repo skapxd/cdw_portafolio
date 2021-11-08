@@ -2,7 +2,11 @@ import Style from '../Icons.module.sass'
 
 export function SolidjsIcon() {
     return (
-        <div className={Style.tecnologies}>
+        <a
+            target="_blank"
+            href="https://www.solidjs.com/"
+            className={Style.tecnologies}
+        >
             <h4 className={Style.tecnologies_name}>Solidjs</h4>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,6 +88,6 @@ export function SolidjsIcon() {
                     fill="url(#d)"
                 />
             </svg>
-        </div>
+        </a>
     )
 }

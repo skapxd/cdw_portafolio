@@ -7,7 +7,8 @@ interface ReturnStaticImageI {
 export default function staticImage(): ReturnStaticImageI {
     const favicon = '/assets/logo.svg'
     const logo = '/assets/logo.svg'
-    const perfil = '/assets/placeholder.png'
+    const perfil = '/assets/perfil.jpg'
+    // const perfil = '/assets/placeholder.png'
 
     return {
         favicon,

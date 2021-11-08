@@ -83,13 +83,22 @@
     flex-direction: column
     align-items: center
 
-    &_name
+    & > h4
         position: absolute
-        background: red
+        top: 0
+        transition: top 0.3s ease
+        background: $red
+        padding: 0.3rem 0.5rem
+        border-radius: 0.8rem
+        line-height: 1
+        font-size: 1.2rem
+        z-index: 100
+        letter-spacing: 0.1rem
+    &:hover > h4
         top: -20px
-        z-index: 10
 
     &_icon
+        cursor: pointer
         display: flex
         justify-content: center
         align-items: center
@@ -101,7 +110,3 @@
         position: relative
         transition: background 0.3s ease
         z-index: 100
-
-        &:hover ~ h4
-            top: -40px
-            // background: #000

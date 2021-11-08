@@ -18,7 +18,7 @@ export const Layout = ({ children, mostSeen, listOfTags }: LayoutI) => {
         <div className={Style.body}>
             <div className={Style.mainContainer}>
                 <Header />
-                {children}
+                <main>{children}</main>
 
                 <div className={Style.mainContainer_flex}>
                     <MostSeen
