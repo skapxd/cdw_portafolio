@@ -8,6 +8,7 @@ import { GoIcon } from '../../lv_1/Icons/Tecnologies/GoIcon'
 import { HtmlIcon } from '../../lv_1/Icons/Tecnologies/HtmlIcon'
 import { JavaIcon } from '../../lv_1/Icons/Tecnologies/JavaIcon'
 import { JavascriptIcon } from '../../lv_1/Icons/Tecnologies/JavascriptIcon'
+import { KotlinIcon } from '../../lv_1/Icons/Tecnologies/KotlinIcon'
 import { LitjsIcon } from '../../lv_1/Icons/Tecnologies/LitjsIcon'
 import { NestjsIcon } from '../../lv_1/Icons/Tecnologies/NestjsIcon'
 import { NextjsIcon } from '../../lv_1/Icons/Tecnologies/NextjsIcon'
@@ -54,6 +55,7 @@ export function getTecnologiesIcons() {
             <GoIcon />,
             <RustIcon />,
             <DartIcon />,
+            <KotlinIcon />,
             <JavaIcon />
             // <SassIcon />,
             // <JavascriptIcon />,
