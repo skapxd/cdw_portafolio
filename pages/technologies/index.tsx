@@ -56,6 +56,13 @@ export default function Technologies(props: TechnologiesI) {
         mobileLearnOrDeepen
     } = mobile
 
+    const {
+        cloudsIncreasedUse,
+        cloudsRecentUse,
+        cloudsPleasure,
+        cloudsLearnOrDeepen
+    } = clouds
+
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <h1 className={Style.abilities_title}>Tecnologías</h1>
@@ -91,10 +98,10 @@ export default function Technologies(props: TechnologiesI) {
                 />
                 <TecnologiesComponent
                     text="Clouds"
-                    learnOrDeepen={lenguajesLearnOrDeepen}
-                    recentUse={lenguajesRecentUse}
-                    increasedUse={lenguajesRecentUse}
-                    pleasures={lenguajesRecentUse}
+                    learnOrDeepen={cloudsIncreasedUse}
+                    recentUse={cloudsRecentUse}
+                    increasedUse={cloudsPleasure}
+                    pleasures={cloudsLearnOrDeepen}
                 />
                 <TecnologiesComponent
                     text="Git Cloud"

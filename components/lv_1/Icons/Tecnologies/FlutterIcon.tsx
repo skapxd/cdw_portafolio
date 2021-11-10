@@ -10,6 +10,7 @@ export function FlutterIcon() {
                 <svg
                     className={Style.tecnologies_icon}
                     xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 1757.5 2175.2"
                 >
                     <defs>
@@ -63,11 +64,11 @@ export function FlutterIcon() {
                             />
                             <path
                                 d="M837,1924l334.4-334.4,46.7,46.7L883.7,1970.7Z"
-                                fill="url(#Degradado_sin_nombre)"
+                                fill="url(#Degradado_sin_nombre);"
                             />
                             <path
                                 d="M836.7,1924.3l497-171.7-162-163.3"
-                                fill="url(#Degradado_sin_nombre_2)"
+                                fill="url(#Degradado_sin_nombre_2);"
                             />
                         </g>
                     </g>

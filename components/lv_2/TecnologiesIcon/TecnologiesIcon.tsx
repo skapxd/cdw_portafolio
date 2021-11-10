@@ -4,6 +4,7 @@ import { AppleIcon } from '../../lv_1/Icons/Tecnologies/AppleIcon'
 import { CssIcon } from '../../lv_1/Icons/Tecnologies/CssIcon'
 import { DartIcon } from '../../lv_1/Icons/Tecnologies/DartIcon'
 import { FlutterIcon } from '../../lv_1/Icons/Tecnologies/FlutterIcon'
+import { GcpIcon } from '../../lv_1/Icons/Tecnologies/GcpIcon'
 import { GoIcon } from '../../lv_1/Icons/Tecnologies/GoIcon'
 import { HtmlIcon } from '../../lv_1/Icons/Tecnologies/HtmlIcon'
 import { JavaIcon } from '../../lv_1/Icons/Tecnologies/JavaIcon'
@@ -55,8 +56,8 @@ export function getTecnologiesIcons() {
             <GoIcon />,
             <RustIcon />,
             <DartIcon />,
-            <KotlinIcon />,
-            <JavaIcon />
+            <KotlinIcon />
+            // <JavaIcon />
             // <SassIcon />,
             // <JavascriptIcon />,
             // <HtmlIcon />,
@@ -106,7 +107,16 @@ export function getTecnologiesIcons() {
         ]
     }
 
-    const clouds = {}
+    const clouds = {
+        cloudsRecentUse: [<GcpIcon />, <FlutterIcon />],
+        cloudsIncreasedUse: [<FlutterIcon />, <ReactNativeIcon />],
+        cloudsPleasure: [<FlutterIcon />, <ReactNativeIcon />],
+        cloudsLearnOrDeepen: [
+            <ReactNativeIcon />,
+            <AndroidIcon />,
+            <AppleIcon />
+        ]
+    }
 
     const gitCloud = {}
 

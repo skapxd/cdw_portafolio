@@ -6,7 +6,11 @@ export function GcpIcon() {
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>GCP</h4>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 205.8">
+                <svg
+                    className={Style.tecnologies_icon}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 205.8"
+                >
                     <g id="Capa_2" data-name="Capa 2">
                         <g id="Capa_1-2" data-name="Capa 1">
                             <path
