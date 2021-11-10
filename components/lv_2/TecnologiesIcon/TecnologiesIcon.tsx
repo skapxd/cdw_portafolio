@@ -1,11 +1,13 @@
 import { AndroidIcon } from '../../lv_1/Icons/Tecnologies/AndroidIcon'
 import { AngularIcon } from '../../lv_1/Icons/Tecnologies/AngularIcon'
 import { AppleIcon } from '../../lv_1/Icons/Tecnologies/AppleIcon'
+import { AzureIcon } from '../../lv_1/Icons/Tecnologies/AzureIcon'
 import { CssIcon } from '../../lv_1/Icons/Tecnologies/CssIcon'
 import { DartIcon } from '../../lv_1/Icons/Tecnologies/DartIcon'
 import { FlutterIcon } from '../../lv_1/Icons/Tecnologies/FlutterIcon'
 import { GcpIcon } from '../../lv_1/Icons/Tecnologies/GcpIcon'
 import { GoIcon } from '../../lv_1/Icons/Tecnologies/GoIcon'
+import { HerokuIcon } from '../../lv_1/Icons/Tecnologies/HerokuIcon'
 import { HtmlIcon } from '../../lv_1/Icons/Tecnologies/HtmlIcon'
 import { JavaIcon } from '../../lv_1/Icons/Tecnologies/JavaIcon'
 import { JavascriptIcon } from '../../lv_1/Icons/Tecnologies/JavascriptIcon'
@@ -108,9 +110,9 @@ export function getTecnologiesIcons() {
     }
 
     const clouds = {
-        cloudsRecentUse: [<GcpIcon />, <FlutterIcon />],
-        cloudsIncreasedUse: [<FlutterIcon />, <ReactNativeIcon />],
-        cloudsPleasure: [<FlutterIcon />, <ReactNativeIcon />],
+        cloudsRecentUse: [<GcpIcon />, <HerokuIcon />],
+        cloudsIncreasedUse: [<GcpIcon />, <AzureIcon />, <ReactNativeIcon />],
+        cloudsPleasure: [<ReactNativeIcon />],
         cloudsLearnOrDeepen: [
             <ReactNativeIcon />,
             <AndroidIcon />,

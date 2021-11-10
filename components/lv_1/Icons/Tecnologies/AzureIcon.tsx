@@ -1,79 +1,72 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function Azure() {
+export function AzureIcon() {
     return (
         <Link href="https://portal.azure.com/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Azure</h4>
-
                 <svg
+                    className={Style.tecnologies_icon}
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 0 233.98 220.47"
+                    viewBox="0 0 48 48"
                 >
-                    <defs>
-                        <linearGradient
-                            id="Degradado_sin_nombre"
-                            x1="-971.76"
-                            y1="2134.34"
-                            x2="-1043.67"
-                            y2="2346.76"
-                            gradientTransform="translate(1075 -2118)"
-                            gradientUnits="userSpaceOnUse"
-                        >
-                            <stop offset="0" stopColor="#114a8b" />
-                            <stop offset="1" stopColor="#0669bc" />
-                        </linearGradient>
-                        <linearGradient
-                            id="Degradado_sin_nombre_2"
-                            x1="-949.3"
-                            y1="2233.33"
-                            x2="-965.93"
-                            y2="2238.95"
-                            gradientTransform="translate(1075 -2118)"
-                            gradientUnits="userSpaceOnUse"
-                        >
-                            <stop offset="0" stopOpacity="0.3" />
-                            <stop offset="0.07" stopOpacity="0.2" />
-                            <stop offset="0.32" stopOpacity="0.1" />
-                            <stop offset="0.62" stopOpacity="0.05" />
-                            <stop offset="1" stopOpacity="0" />
-                        </linearGradient>
-                        <linearGradient
-                            id="Degradado_sin_nombre_3"
-                            x1="-957.93"
-                            y1="2127.95"
-                            x2="-879"
-                            y2="2338.23"
-                            gradientTransform="translate(1075 -2118)"
-                            gradientUnits="userSpaceOnUse"
-                        >
-                            <stop offset="0" stopColor="#3ccbf4" />
-                            <stop offset="1" stopColor="#2892df" />
-                        </linearGradient>
-                    </defs>
-                    <g id="Capa_2" data-name="Capa 2">
-                        <g id="b48db8d1-59c0-409d-89ab-baf5bac53ae6">
-                            <path
-                                d="M78,0h69.24L75.37,213a11,11,0,0,1-10.46,7.51H11a11,11,0,0,1-11-11,11.16,11.16,0,0,1,.58-3.53l67-198.41A11,11,0,0,1,78,0Z"
-                                fill="url(#Degradado_sin_nombre)"
-                            />
-                            <path
-                                d="M178.62,142.84H68.82a5.09,5.09,0,0,0-3.47,8.8l70.55,65.85a11.14,11.14,0,0,0,7.57,3h62.17Z"
-                                fill="#0078d4"
-                            />
-                            <path
-                                d="M78,0A10.94,10.94,0,0,0,67.52,7.65L.66,205.74a11,11,0,0,0,10.39,14.73H66.33a11.82,11.82,0,0,0,9.07-7.72l13.33-39.29,47.62,44.42a11.28,11.28,0,0,0,7.09,2.59h61.94l-27.17-77.63-79.19,0L147.49,0Z"
-                                fill="url(#Degradado_sin_nombre_2)"
-                            />
-                            <path
-                                d="M166.44,7.5A11,11,0,0,0,156,0H78.83A11,11,0,0,1,89.27,7.5l67,198.42a11,11,0,0,1-6.92,14,11.15,11.15,0,0,1-3.52.58H223a11,11,0,0,0,11-11,10.83,10.83,0,0,0-.58-3.52Z"
-                                fill="url(#Degradado_sin_nombre_3)"
-                            />
-                        </g>
-                    </g>
-                </svg>
+                    <linearGradient
+                        id="k8yl7~hDat~FaoWq8WjN6a"
+                        x1="-1254.397"
+                        x2="-1261.911"
+                        y1="877.268"
+                        y2="899.466"
+                        gradientTransform="translate(1981.75 -1362.063) scale(1.5625)"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop offset="0" stopColor="#114a8b" />
+                        <stop offset="1" stopColor="#0669bc" />
+                    </linearGradient>
+                    <path
+                        fill="url(#k8yl7~hDat~FaoWq8WjN6a)"
+                        d="M17.634,6h11.305L17.203,40.773c-0.247,0.733-0.934,1.226-1.708,1.226H6.697 c-0.994,0-1.8-0.806-1.8-1.8c0-0.196,0.032-0.39,0.094-0.576L15.926,7.227C16.173,6.494,16.86,6,17.634,6L17.634,6z"
+                    />
+                    <path
+                        fill="#0078d4"
+                        d="M34.062,29.324H16.135c-0.458-0.001-0.83,0.371-0.831,0.829c0,0.231,0.095,0.451,0.264,0.608 l11.52,10.752C27.423,41.826,27.865,42,28.324,42h10.151L34.062,29.324z"
+                    />
+                    <linearGradient
+                        id="k8yl7~hDat~FaoWq8WjN6b"
+                        x1="-1252.05"
+                        x2="-1253.788"
+                        y1="887.612"
+                        y2="888.2"
+                        gradientTransform="translate(1981.75 -1362.063) scale(1.5625)"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop offset="0" stopOpacity=".3" />
+                        <stop offset=".071" stopOpacity=".2" />
+                        <stop offset=".321" stopOpacity=".1" />
+                        <stop offset=".623" stopOpacity=".05" />
+                        <stop offset="1" stopOpacity="0" />
+                    </linearGradient>
+                    <path
+                        fill="url(#k8yl7~hDat~FaoWq8WjN6b)"
+                        d="M17.634,6c-0.783-0.003-1.476,0.504-1.712,1.25L5.005,39.595 c-0.335,0.934,0.151,1.964,1.085,2.299C6.286,41.964,6.493,42,6.702,42h9.026c0.684-0.122,1.25-0.603,1.481-1.259l2.177-6.416 l7.776,7.253c0.326,0.27,0.735,0.419,1.158,0.422h10.114l-4.436-12.676l-12.931,0.003L28.98,6H17.634z"
+                    />
+                    <linearGradient
+                        id="k8yl7~hDat~FaoWq8WjN6c"
+                        x1="-1252.952"
+                        x2="-1244.704"
+                        y1="876.6"
+                        y2="898.575"
+                        gradientTransform="translate(1981.75 -1362.063) scale(1.5625)"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop offset="0" stopColor="#3ccbf4" />
+                        <stop offset="1" stopColor="#2892df" />
+                    </linearGradient>
+                    <path
+                        fill="url(#k8yl7~hDat~FaoWq8WjN6c)"
+                        d="M32.074,7.225C31.827,6.493,31.141,6,30.368,6h-12.6c0.772,0,1.459,0.493,1.705,1.224 l10.935,32.399c0.318,0.942-0.188,1.963-1.13,2.281C29.093,41.968,28.899,42,28.703,42h12.6c0.994,0,1.8-0.806,1.8-1.801 c0-0.196-0.032-0.39-0.095-0.575L32.074,7.225z"
+                    />
+                </svg>{' '}
             </a>
         </Link>
     )
