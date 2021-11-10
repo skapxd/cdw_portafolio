@@ -35,3 +35,7 @@ export default function AllPost(props: AllPostI) {
         </Layout>
     )
 }
+
+export function postLink(post: string) {
+    return `/post/${post}`
+}

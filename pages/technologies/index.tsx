@@ -3,29 +3,7 @@ import { getBasicData } from '../../helpers/getBasicData'
 import Style from './index.module.sass'
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { TecnologiesComponent } from '../../components/lv_2/TecnologiesComponent/TecnologiesComponent'
-import { DartIcon } from '../../components/lv_1/Icons/Tecnologies/DartIcon'
-import { JavascriptIcon } from '../../components/lv_1/Icons/Tecnologies/JavascriptIcon'
-import { TypeScriptIcon } from '../../components/lv_1/Icons/Tecnologies/TypescriptIcon'
-import { HtmlIcon } from '../../components/lv_1/Icons/Tecnologies/HtmlIcon'
-import { SassIcon } from '../../components/lv_1/Icons/Tecnologies/SassIcon'
-import { CssIcon } from '../../components/lv_1/Icons/Tecnologies/CssIcon'
-import { GoIcon } from '../../components/lv_1/Icons/Tecnologies/GoIcon'
-import { RustIcon } from '../../components/lv_1/Icons/Tecnologies/RustIcon'
-import { PythonIcon } from '../../components/lv_1/Icons/Tecnologies/PythonIcon'
-import { NextjsIcon } from '../../components/lv_1/Icons/Tecnologies/NextjsIcon'
-import { ReactIcon } from '../../components/lv_1/Icons/Tecnologies/ReactIcon'
-import { AngularIcon } from '../../components/lv_1/Icons/Tecnologies/AngularIcon'
-import { VuejsIcon } from '../../components/lv_1/Icons/Tecnologies/VuejsIcon'
-import { SvelteIcon } from '../../components/lv_1/Icons/Tecnologies/SvelteIcon'
-import { LitjsIcon } from '../../components/lv_1/Icons/Tecnologies/LitjsIcon'
-import { SolidjsIcon } from '../../components/lv_1/Icons/Tecnologies/SolidjsIcon'
-import { NodeIcon } from '../../components/lv_1/Icons/Tecnologies/NodeIcon'
-import { NestjsIcon } from '../../components/lv_1/Icons/Tecnologies/NestjsIcon'
-import { FlutterIcon } from '../../components/lv_1/Icons/Tecnologies/FlutterIcon'
-import { ReactNativeIcon } from '../../components/lv_1/Icons/Tecnologies/ReactNativeIcon'
-import { AndroidIcon } from '../../components/lv_1/Icons/Tecnologies/AndroidIcon'
-import { AppleIcon } from '../../components/lv_1/Icons/Tecnologies/AppleIcon'
-import { JavaIcon } from '../../components/lv_1/Icons/Tecnologies/JavaIcon'
+import { getTecnologiesIcons } from '../../components/lv_2/TecnologiesIcon/TecnologiesIcon'
 
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
@@ -37,6 +15,8 @@ export async function getStaticProps() {
         }
     }
 }
+
+export const technologiesLink = () => '/technologies'
 
 interface TechnologiesI {
     listTags: string[]
@@ -126,95 +106,4 @@ export default function Technologies(props: TechnologiesI) {
             </div>
         </Layout>
     )
-}
-
-export const technologiesLink = () => 'technologies'
-
-function getTecnologiesIcons() {
-    const lenguajes = {
-        lenguajesRecentUse: [
-            <JavascriptIcon />,
-            <TypeScriptIcon />,
-            <HtmlIcon />,
-            // <CssIcon />
-            <SassIcon />
-            // <DartIcon />
-        ],
-        lenguajesIncreasedUse: [
-            <TypeScriptIcon />,
-            <DartIcon />,
-            <JavascriptIcon />,
-            // <SassIcon />,
-            <HtmlIcon />,
-            <CssIcon />
-        ],
-        lenguajesPleasure: [
-            <DartIcon />,
-            <TypeScriptIcon />,
-            <SassIcon />
-            // <JavascriptIcon />,
-            // <HtmlIcon />,
-            // <CssIcon />
-        ],
-        lenguajesLearnOrDeepen: [
-            <TypeScriptIcon />,
-            <PythonIcon />,
-            <GoIcon />,
-            <RustIcon />,
-            <DartIcon />,
-            <JavaIcon />
-            // <SassIcon />,
-            // <JavascriptIcon />,
-            // <HtmlIcon />,
-            // <CssIcon />
-        ]
-    }
-
-    const frontend = {
-        frontendRecentUse: [<NextjsIcon />, <SassIcon />, <ReactIcon />],
-        frontendIncreasedUse: [
-            <HtmlIcon />,
-            <CssIcon />,
-            <JavascriptIcon />,
-            <TypeScriptIcon />,
-            <SassIcon />
-        ],
-        frontendPleasure: [
-            <NextjsIcon />,
-            <SassIcon />,
-            <AngularIcon />,
-            <SvelteIcon />
-        ],
-        frontendLearnOrDeepen: [
-            <NextjsIcon />,
-            <VuejsIcon />,
-            <SvelteIcon />,
-            <LitjsIcon />,
-            <SolidjsIcon />
-        ]
-    }
-
-    const backend = {
-        backendRecentUse: [<NodeIcon />, <NestjsIcon />],
-        backendIncreasedUse: [<NodeIcon />, <NestjsIcon />],
-        backendPleasure: [<NestjsIcon />, <NodeIcon />],
-        backendLearnOrDeepen: [<NodeIcon />, <GoIcon />]
-    }
-
-    const mobile = {
-        mobileRecentUse: [<ReactNativeIcon />, <FlutterIcon />],
-        mobileIncreasedUse: [<FlutterIcon />, <ReactNativeIcon />],
-        mobilePleasure: [<FlutterIcon />, <ReactNativeIcon />],
-        mobileLearnOrDeepen: [
-            <ReactNativeIcon />,
-            <AndroidIcon />,
-            <AppleIcon />
-        ]
-    }
-
-    const clouds = {}
-
-    const gitCloud = {}
-
-    return { lenguajes, frontend, backend, mobile, clouds, gitCloud }
 }

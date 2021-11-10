@@ -37,6 +37,8 @@ export async function getStaticProps(props: any) {
     }
 }
 
+export const tagLink = (tag: string) => `/tag/${tag}`
+
 interface TagsI {
     listPost: CardPostI[]
     mostSeen: CardPostI[]
@@ -60,8 +62,4 @@ export default function Tags(props: TagsI) {
             </div>
         </Layout>
     )
-}
-
-export function tagLink(tag: string) {
-    return `/tag/${tag}`
 }

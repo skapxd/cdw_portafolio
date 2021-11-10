@@ -25,6 +25,10 @@ interface HomeI {
     lastPost: CardPostI[]
 }
 
+export function homeLink() {
+    return '/'
+}
+
 export default function Home(props: HomeI) {
     const { listPost, listTags, mostSeen, lastPost } = props
 
@@ -65,8 +69,4 @@ function WrapperComponent(props: any) {
             {props.children}
         </div>
     )
-}
-
-export function homeLink() {
-    return '/'
 }

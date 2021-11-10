@@ -22,6 +22,8 @@ export async function getStaticProps() {
     }
 }
 
+export const searchLink = () => '/search'
+
 interface SearchI {
     listPost: CardPostI[]
 }
@@ -63,10 +65,6 @@ export default function Search(props: SearchI) {
 }
 
 const search = 'search'
-
-export function searchLink() {
-    return '/search'
-}
 
 export const useOpenSearch = () => {
     const router = useRouter()

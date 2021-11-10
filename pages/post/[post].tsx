@@ -39,6 +39,8 @@ export async function getStaticProps(props: any) {
     }
 }
 
+export const singlePostLink = (post: string) => `/post/${post}`
+
 interface PostI {
     metaData: CardPostI
     mostSeen: CardPostI[]
@@ -95,8 +97,4 @@ export default function Post(props: PostI) {
             </Layout>
         </>
     )
-}
-
-export function postLink(post: string) {
-    return `/post/${post}`
 }

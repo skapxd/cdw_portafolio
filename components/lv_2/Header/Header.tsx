@@ -14,26 +14,28 @@ import Style from './Header.module.sass'
 export const Header = () => {
     const openDrawer = useOpenDrawer()
     return (
-        <div className={Style.mainContainer}>
-            <MenuIcon onClick={() => openDrawer()} className={Style.menu} />
+        <header className={Style.mainContainer}>
+            <div className={Style.mainContainer_content}>
+                <MenuIcon onClick={() => openDrawer()} className={Style.menu} />
 
-            <Link href={homeLink()}>
-                <a className={Style.logo}>
-                    <img src={staticImage().logo} alt="logo" />
-                </a>
-            </Link>
+                <Link href={homeLink()}>
+                    <a className={Style.logo}>
+                        <img src={staticImage().logo} alt="logo" />
+                    </a>
+                </Link>
 
-            <ListMenuAnchor className={Style.listMenuAnchor} />
+                <ListMenuAnchor className={Style.listMenuAnchor} />
 
-            <Link href={searchLink()}>
-                <a>
-                    <SearchIcon className={Style.search} />
-                </a>
-            </Link>
+                <Link href={searchLink()}>
+                    <a>
+                        <SearchIcon className={Style.search} />
+                    </a>
+                </Link>
 
-            <div style={{ width: 0, position: 'absolute' }}>
-                <Drawer />
+                <div style={{ width: 0, position: 'absolute' }}>
+                    <Drawer />
+                </div>
             </div>
-        </div>
+        </header>
     )
 }

@@ -1,15 +1,30 @@
+@use 'sass:string'
 @import '../../../styles/_theme.module'
 
 .mainContainer
-    // position: absolute
-    // top: 0
-    // padding: 1.8rem 1.6rem
-    display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: space-between
-    z-index: 5
+    position: fixed
+    height: 5rem
+    top: 0
+    left: 0
+    right: 0
     width: 100%
+    z-index: 900
+    display: flex
+    justify-content: center
+    background-color: $background + string.unquote('aa')
+    backdrop-filter: blur(10px)
+    &_content
+        padding: 0 1.6rem
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        max-width: 134rem
+        width: 100%
+        content: ''
+        height: 100%
+        width: 100%
+        position: absolute
 
 .listMenuAnchor
     display: none
@@ -20,8 +35,14 @@
 @media only screen and(min-width: $brackPointToTablet)
 
     .mainContainer
-        justify-content: flex-start
-        gap: 2.2rem
+        &_content
+            content: ''
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            position: absolute
+            gap: 2.2rem
 
     .logo
         display: flex
