@@ -1,17 +1,41 @@
 ---
 id: '1'
 favorite: false
-date: Nov 1 2021
-readingTime: 2 min read
+date: Nov 10 2021
+readingTime: x min read
 title: Instalaciones básicas
 urlMarkdown: public/post/md/Believe and act as if it were impossible to fail.md
-tags: [Work, Notes]
+tags: [vscode, git]
 urlPost: instalaciones-básicas
 urlImage: /img/vscode.png
-shortDescription: Descarga e instalación de los programas que vamos a usar para dar nuestros primeros pasos
+shortDescription: Descarga e instalación de los programas a utilizar para empezar a trabajar
 ---
 
-Sin tantum modo ad indicia veteris memoriae cognoscenda, curiosorum. Haec et tu ita posuisti, et verba vestra sunt. Idemne potest esse dies saepius, qui semel fuit? Ampulla enim sit necne sit, quis non iure optimo irrideatur, si laboret? Ego vero volo in virtute vim esse quam maximam; Serpere anguiculos, nare anaticulas, evolare merulas, cornibus uti videmus boves, nepas aculeis. Conferam tecum, quam cuique verso rem subicias. Si longus, levis ampulla enim sit necne vel omnia vel partes genere plurima et maxima.
+Para crear las primeras aplicaciones, instalaremos un par de herramientas básicas, una de ellas es `vscode` y la otra es `git`.
+
+[Descargar vscode](https://code.visualstudio.com/download")
+
+[Descargar git](https://git-scm.com/downloads)
+
+Para instalar las herramienta (en este caso `vscode` y `git` son nuestras herramientas), solo es darle `siguiente` hasta terminar.
+
+Una vez instalado las 2 herramientas, vamos a abrir la `terminal`, puede ser `Windows PowerShell` o el `CMD` y copiaremos el comando `mkdir proyecto` y lo pegaremos en la terminal, y se vería algo así.
+
+```console
+C:\Users\usuarioDeTurno> mkdir proyecto
+```
+
+`mkdir` es una abreviación de `Make Directory` y este comando recibe varios parametros pero el mas importante es el nombre de la carpeta (en este caso le pasamos `proyecto`).
+
+Para abrir la carpeta tendremos que utilizar el comando `code Users\usuarioDeTurno\proyecto` y se vería algo así.
+
+```console
+C:\Users\usuarioDeTurno> code Users\usuarioDeTurno\proyecto
+```
+
+`code` abre una carpeta con `vscode` y el parametro que recibe debe ser el `path` de la `carpeta`.
+
+Dentro de la car
 
 > The longer I live, the more I realize that I am never wrong about anything, and that all the pains I have so humbly taken to verify my notions have only wasted my time!
 
