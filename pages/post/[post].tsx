@@ -90,7 +90,17 @@ export default function Post(props: PostI) {
                         </div>
                     </div>
 
-                    <ReactMarkdown className={MarkDownStyle.markDown}>
+                    <ReactMarkdown
+                        className={MarkDownStyle.markDown}
+                        components={{
+                            a: ({ node, ...props }) => {
+                                return <a target="_blank" {...props}></a>
+                            },
+                            pre: ({ node, ...props }) => {
+                                return <pre {...props}></pre>
+                            }
+                        }}
+                    >
                         {markDown}
                     </ReactMarkdown>
                 </div>
