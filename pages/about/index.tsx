@@ -41,9 +41,10 @@ export default function About(props: AboutI) {
                 <h2 className={Style.about_name}>Manuel Londoño</h2>
 
                 <p className={Style.about_shortDescription}>
+                    {/* Bueno si llegaste hasta acá  */}
                     Soy un desarrollador de software capaz de llevar una
                     aplicación de inicio a fin, con conocimientos en{' '}
-                    <b>Frontend</b>, <b>Backend</b>, <b>Movíl</b>,{' '}
+                    <b>Frontend</b>, <b>Backend</b>, <b>Móvil</b>,{' '}
                     <b>Google Play</b>, <b>Google Cloud Platform</b>, ...{' '}
                     <Link href={technologiesLink()}>
                         <a className={Style.about_seeMore}> ver mas. </a>
