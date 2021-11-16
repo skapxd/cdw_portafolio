@@ -8,6 +8,7 @@ export function GitHubIcon() {
                 <h4 className={Style.tecnologies_name}>Github</h4>
 
                 <svg
+                    className={Style.tecnologies_icon}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1024 998.74"
                 >

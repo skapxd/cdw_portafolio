@@ -6,10 +6,10 @@ import { CssIcon } from '../../lv_1/Icons/Tecnologies/CssIcon'
 import { DartIcon } from '../../lv_1/Icons/Tecnologies/DartIcon'
 import { FlutterIcon } from '../../lv_1/Icons/Tecnologies/FlutterIcon'
 import { GcpIcon } from '../../lv_1/Icons/Tecnologies/GcpIcon'
+import { GitHubIcon } from '../../lv_1/Icons/Tecnologies/GithubIcon'
 import { GoIcon } from '../../lv_1/Icons/Tecnologies/GoIcon'
 import { HerokuIcon } from '../../lv_1/Icons/Tecnologies/HerokuIcon'
 import { HtmlIcon } from '../../lv_1/Icons/Tecnologies/HtmlIcon'
-import { JavaIcon } from '../../lv_1/Icons/Tecnologies/JavaIcon'
 import { JavascriptIcon } from '../../lv_1/Icons/Tecnologies/JavascriptIcon'
 import { KotlinIcon } from '../../lv_1/Icons/Tecnologies/KotlinIcon'
 import { LitjsIcon } from '../../lv_1/Icons/Tecnologies/LitjsIcon'
@@ -24,6 +24,7 @@ import { SassIcon } from '../../lv_1/Icons/Tecnologies/SassIcon'
 import { SolidjsIcon } from '../../lv_1/Icons/Tecnologies/SolidjsIcon'
 import { SvelteIcon } from '../../lv_1/Icons/Tecnologies/SvelteIcon'
 import { TypeScriptIcon } from '../../lv_1/Icons/Tecnologies/TypescriptIcon'
+import { VercelIcon } from '../../lv_1/Icons/Tecnologies/VercelIcon'
 import { VuejsIcon } from '../../lv_1/Icons/Tecnologies/VuejsIcon'
 
 export function getTecnologiesIcons() {
@@ -110,17 +111,18 @@ export function getTecnologiesIcons() {
     }
 
     const clouds = {
-        cloudsRecentUse: [<GcpIcon />, <HerokuIcon />],
-        cloudsIncreasedUse: [<GcpIcon />, <AzureIcon />, <ReactNativeIcon />],
-        cloudsPleasure: [<ReactNativeIcon />],
-        cloudsLearnOrDeepen: [
-            <ReactNativeIcon />,
-            <AndroidIcon />,
-            <AppleIcon />
-        ]
+        cloudsRecentUse: [<GcpIcon />, <HerokuIcon />, <VercelIcon />],
+        cloudsIncreasedUse: [<GcpIcon />, <HerokuIcon />],
+        cloudsPleasure: [<VercelIcon />, <GcpIcon />, <HerokuIcon />],
+        cloudsLearnOrDeepen: [<GcpIcon />, <AzureIcon />]
     }
 
-    const gitCloud = {}
+    const gitCloud = {
+        gitCloudsRecentUse: [<GitHubIcon />],
+        gitCloudsIncreasedUse: [<GitHubIcon />],
+        gitCloudsPleasure: [<GitHubIcon />],
+        gitCloudsLearnOrDeepen: [<GitHubIcon />]
+    }
 
     return { lenguajes, frontend, backend, mobile, clouds, gitCloud }
 }

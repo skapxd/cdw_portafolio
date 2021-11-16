@@ -57,11 +57,18 @@ export default function Technologies(props: TechnologiesI) {
     } = mobile
 
     const {
-        cloudsIncreasedUse,
         cloudsRecentUse,
+        cloudsIncreasedUse,
         cloudsPleasure,
         cloudsLearnOrDeepen
     } = clouds
+
+    const {
+        gitCloudsRecentUse,
+        gitCloudsIncreasedUse,
+        gitCloudsPleasure,
+        gitCloudsLearnOrDeepen
+    } = gitCloud
 
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
@@ -91,24 +98,24 @@ export default function Technologies(props: TechnologiesI) {
                 />
                 <TecnologiesComponent
                     text="Móvil"
-                    learnOrDeepen={mobileLearnOrDeepen}
                     recentUse={mobileRecentUse}
                     increasedUse={mobileIncreasedUse}
                     pleasures={mobilePleasure}
+                    learnOrDeepen={mobileLearnOrDeepen}
                 />
                 <TecnologiesComponent
                     text="Clouds"
-                    learnOrDeepen={cloudsIncreasedUse}
                     recentUse={cloudsRecentUse}
-                    increasedUse={cloudsPleasure}
-                    pleasures={cloudsLearnOrDeepen}
+                    increasedUse={cloudsIncreasedUse}
+                    pleasures={cloudsPleasure}
+                    learnOrDeepen={cloudsLearnOrDeepen}
                 />
                 <TecnologiesComponent
                     text="Git Cloud"
-                    recentUse={lenguajesRecentUse}
-                    increasedUse={lenguajesRecentUse}
-                    pleasures={lenguajesRecentUse}
-                    learnOrDeepen={lenguajesLearnOrDeepen}
+                    recentUse={gitCloudsRecentUse}
+                    increasedUse={gitCloudsIncreasedUse}
+                    pleasures={gitCloudsPleasure}
+                    learnOrDeepen={gitCloudsLearnOrDeepen}
                 />
             </div>
         </Layout>
