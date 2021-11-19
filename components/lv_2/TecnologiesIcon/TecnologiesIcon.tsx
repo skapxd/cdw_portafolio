@@ -26,6 +26,8 @@ import { SvelteIcon } from '../../lv_1/Icons/Tecnologies/SvelteIcon'
 import { TypeScriptIcon } from '../../lv_1/Icons/Tecnologies/TypescriptIcon'
 import { VercelIcon } from '../../lv_1/Icons/Tecnologies/VercelIcon'
 import { VuejsIcon } from '../../lv_1/Icons/Tecnologies/VuejsIcon'
+import { GitLabIcon } from '../../lv_1/Icons/Tecnologies/GitLabIcon'
+import { BitbucketIcon } from '../../lv_1/Icons/Tecnologies/BitbucketIcon'
 
 export function getTecnologiesIcons() {
     const lenguajes = {
@@ -118,10 +120,14 @@ export function getTecnologiesIcons() {
     }
 
     const gitCloud = {
-        gitCloudsRecentUse: [<GitHubIcon />],
+        gitCloudsRecentUse: [<GitHubIcon />, <BitbucketIcon />],
         gitCloudsIncreasedUse: [<GitHubIcon />],
         gitCloudsPleasure: [<GitHubIcon />],
-        gitCloudsLearnOrDeepen: [<GitHubIcon />]
+        gitCloudsLearnOrDeepen: [
+            <GitHubIcon />,
+            <BitbucketIcon />,
+            <GitLabIcon />
+        ]
     }
 
     return { lenguajes, frontend, backend, mobile, clouds, gitCloud }
