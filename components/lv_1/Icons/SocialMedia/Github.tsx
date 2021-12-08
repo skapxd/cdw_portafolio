@@ -4,14 +4,19 @@ import Style from '../Icons.module.sass'
 interface GithubI {
     href?: string
     className?: string
+    title?: string
 }
 
 export const Github = (props: GithubI) => {
-    const { href, className } = props
+    const { title, className = '', href = 'https://github.com/skapxd' } = props
 
     return (
-        <Link href={href ?? 'https://github.com/skapxd'}>
-            <a target="_blank" className={`${Style.github} ${className}`}>
+        <Link href={href}>
+            <a
+                target="_blank"
+                className={` ${Style.row} ${Style.github} ${className}`}
+            >
+                {title ? <h2>{title}</h2> : <></>}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1024 998.74"

@@ -77,11 +77,15 @@ function Content() {
             onClick={() => {}}
             onKeyDown={() => {}}
         >
-            <img
-                src={staticImage().logo}
-                alt="logo"
-                className={Style.drawer_container_logo}
-            />
+            <Link href="/">
+                <a>
+                    <img
+                        src={staticImage().logo}
+                        alt="logo"
+                        className={Style.drawer_container_logo}
+                    />
+                </a>
+            </Link>
 
             <List className={Style.drawer_container_listText}>
                 {menuAnchor.map((text, index) => (
