@@ -26,7 +26,50 @@ export default function Credits(props: CreditsI) {
     const { mostSeen, listTags } = props
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
-            <div className={Style.credits_title}> Créditos </div>
+            <div className={Style.credits}>
+                <div className={Style.credits_title}> Créditos </div>
+
+                <p>
+                    Agradezco el trabajo de{' '}
+                    <a
+                        target="_blank"
+                        href="https://themeforest.net/user/anvodstudio"
+                    >
+                        AnvodStudio
+                    </a>{' '}
+                    y el diseño{' '}
+                    <a
+                        target="_blank"
+                        href="http://preview.themeforest.net/item/norlin-personal-dark-theme-for-ghost/full_screen_preview/29478195"
+                    >
+                        Norlin
+                    </a>{' '}
+                    por ser fuente de inspiración para este blog. Puede
+                    encontrar más diseños de{' '}
+                    <a
+                        target="_blank"
+                        href="https://themeforest.net/user/anvodstudio"
+                    >
+                        AnvodStudio
+                    </a>{' '}
+                    en su{' '}
+                    <a target="_blank" href="https://anvodstudio.com/">
+                        página oficial
+                    </a>
+                    .
+                </p>
+
+                <p>
+                    Si desea revisar el código del blog puede encontrarlo en{' '}
+                    <a
+                        target="_blank"
+                        href="https://github.com/skapxd/cdw_portafolio"
+                    >
+                        github
+                    </a>
+                    .
+                </p>
+            </div>
         </Layout>
     )
 }

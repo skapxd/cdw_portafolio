@@ -30,11 +30,11 @@ export function CardPost(props: CardPostI) {
 
     return (
         <Link href={singlePostLink(urlPost)} key={id}>
-            <article
+            <a
                 className={Style.card}
                 style={{ backgroundImage: `url(${urlImage})` }}
             >
-                <a>
+                <article>
                     <StarIcon className={Style.card_starWrapper} />
 
                     <div className={Style.card_readingTimeAndDatePosition}>
@@ -54,8 +54,8 @@ export function CardPost(props: CardPostI) {
                         tags={tags}
                         className={Style.card_flexRow}
                     />
-                </a>
-            </article>
+                </article>
+            </a>
         </Link>
     )
 }
