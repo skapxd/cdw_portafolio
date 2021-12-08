@@ -23,8 +23,8 @@ export function BitbucketIcon() {
                     y1="13.818%"
                     y2="78.776%"
                 >
-                    <stop offset=".18" stop-color="#0052cc" />
-                    <stop offset="1" stop-color="#2684ff" />
+                    <stop offset=".18" stopColor="#0052cc" />
+                    <stop offset="1" stopColor="#2684ff" />
                 </linearGradient>
                 <g fill="none">
                     <path d="M101.272 152.561h53.449l12.901-75.32H87.06z" />

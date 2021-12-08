@@ -5,12 +5,12 @@ export function TypeScriptIcon() {
         <a
             target="_blank"
             href="https://www.typescriptlang.org/"
-            className={Style.tecnologies}
+            className={Style.technologies}
         >
-            <h4 className={Style.tecnologies_name}>TS</h4>
+            <h4 className={Style.technologies_name}>TS</h4>
 
             <svg
-                className={Style.tecnologies_icon}
+                className={Style.technologies_icon}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 26.3 26"
             >

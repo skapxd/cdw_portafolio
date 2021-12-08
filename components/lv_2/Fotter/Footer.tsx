@@ -1,5 +1,3 @@
-import { Github } from '../../lv_1/Icons/SocialMedia/Github'
-import { Telegram } from '../../lv_1/Icons/SocialMedia/Telegram'
 import Style from './Footer.module.sass'
 
 interface FooterI {
@@ -11,16 +9,12 @@ export const Footer = (props: FooterI) => {
 
     return (
         <footer className={`${Style.footer} ${className}`}>
-            {/* <div className={Style.footer_socialMedia}>
-                <Telegram />
-                <Github />
-            </div> */}
             <div className={Style.footer_right}>
                 2021 ©{' '}
                 <b>
                     Skap<span className={Style.footer_right_x}>x</span>d.
                 </b>{' '}
-                All Right Reserved. Published with <b>GCP</b>
+                All Right Reserved. Published with <b>Vercel</b>
             </div>
         </footer>
     )

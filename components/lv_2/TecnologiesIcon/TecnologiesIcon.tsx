@@ -29,32 +29,22 @@ import { VuejsIcon } from '../../lv_1/Icons/Tecnologies/VuejsIcon'
 import { GitLabIcon } from '../../lv_1/Icons/Tecnologies/GitLabIcon'
 import { BitbucketIcon } from '../../lv_1/Icons/Tecnologies/BitbucketIcon'
 
-export function getTecnologiesIcons() {
+export function getTechnologiesIcons() {
     const lenguajes = {
         lenguajesRecentUse: [
             <JavascriptIcon />,
             <TypeScriptIcon />,
             <HtmlIcon />,
-            // <CssIcon />
             <SassIcon />
-            // <DartIcon />
         ],
         lenguajesIncreasedUse: [
             <TypeScriptIcon />,
             <DartIcon />,
             <JavascriptIcon />,
-            // <SassIcon />,
             <HtmlIcon />,
             <CssIcon />
         ],
-        lenguajesPleasure: [
-            <DartIcon />,
-            <TypeScriptIcon />,
-            <SassIcon />
-            // <JavascriptIcon />,
-            // <HtmlIcon />,
-            // <CssIcon />
-        ],
+        lenguajesPleasure: [<DartIcon />, <TypeScriptIcon />, <SassIcon />],
         lenguajesLearnOrDeepen: [
             <TypeScriptIcon />,
             <PythonIcon />,
@@ -62,11 +52,6 @@ export function getTecnologiesIcons() {
             <RustIcon />,
             <DartIcon />,
             <KotlinIcon />
-            // <JavaIcon />
-            // <SassIcon />,
-            // <JavascriptIcon />,
-            // <HtmlIcon />,
-            // <CssIcon />
         ]
     }
 
@@ -130,5 +115,18 @@ export function getTecnologiesIcons() {
         ]
     }
 
-    return { lenguajes, frontend, backend, mobile, clouds, gitCloud }
+    const blog = {
+        blogCloudsPleasure: [
+            <NextjsIcon />,
+            <ReactIcon />,
+            <TypeScriptIcon />,
+            <NodeIcon />,
+            <HtmlIcon />,
+            <SassIcon />,
+            <GitHubIcon />,
+            <VercelIcon />
+        ]
+    }
+
+    return { lenguajes, frontend, backend, mobile, clouds, gitCloud, blog }
 }

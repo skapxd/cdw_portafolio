@@ -2,8 +2,8 @@ import { Layout } from '../../components/lv_5/Layout/Layout'
 import { getBasicData } from '../../helpers/getBasicData'
 import Style from './index.module.sass'
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
-import { TecnologiesComponent } from '../../components/lv_2/TecnologiesComponent/TecnologiesComponent'
-import { getTecnologiesIcons } from '../../components/lv_2/TecnologiesIcon/TecnologiesIcon'
+import { TechnologiesComponent } from '../../components/lv_2/TechnologiesComponent/TechnologiesComponent'
+import { getTechnologiesIcons } from '../../components/lv_2/TecnologiesIcon/TecnologiesIcon'
 
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
@@ -25,8 +25,8 @@ interface TechnologiesI {
 export default function Technologies(props: TechnologiesI) {
     const { mostSeen, listTags } = props
 
-    const { lenguajes, clouds, gitCloud, frontend, backend, mobile } =
-        getTecnologiesIcons()
+    const { lenguajes, clouds, gitCloud, frontend, backend, mobile, blog } =
+        getTechnologiesIcons()
 
     const {
         lenguajesIncreasedUse,
@@ -70,52 +70,58 @@ export default function Technologies(props: TechnologiesI) {
         gitCloudsLearnOrDeepen
     } = gitCloud
 
+    const { blogCloudsPleasure } = blog
+
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <h1 className={Style.abilities_title}>Tecnologías</h1>
-
             <div className={Style.abilities_components}>
-                <TecnologiesComponent
+                <TechnologiesComponent
                     text="Lenguajes"
                     learnOrDeepen={lenguajesLearnOrDeepen}
                     recentUse={lenguajesRecentUse}
                     increasedUse={lenguajesIncreasedUse}
                     pleasures={lenguajesPleasure}
                 />
-                <TecnologiesComponent
+                <TechnologiesComponent
                     text="Frontend"
                     recentUse={frontendRecentUse}
                     increasedUse={frontendIncreasedUse}
                     pleasures={frontendPleasure}
                     learnOrDeepen={frontendLearnOrDeepen}
                 />
-                <TecnologiesComponent
+                <TechnologiesComponent
                     text="Backend"
                     recentUse={backendRecentUse}
                     increasedUse={backendIncreasedUse}
                     pleasures={backendPleasure}
                     learnOrDeepen={backendLearnOrDeepen}
                 />
-                <TecnologiesComponent
+                <TechnologiesComponent
                     text="Móvil"
                     recentUse={mobileRecentUse}
                     increasedUse={mobileIncreasedUse}
                     pleasures={mobilePleasure}
                     learnOrDeepen={mobileLearnOrDeepen}
                 />
-                <TecnologiesComponent
+                <TechnologiesComponent
                     text="Clouds"
                     recentUse={cloudsRecentUse}
                     increasedUse={cloudsIncreasedUse}
                     pleasures={cloudsPleasure}
                     learnOrDeepen={cloudsLearnOrDeepen}
                 />
-                <TecnologiesComponent
+                <TechnologiesComponent
                     text="Git Cloud"
                     recentUse={gitCloudsRecentUse}
                     increasedUse={gitCloudsIncreasedUse}
                     pleasures={gitCloudsPleasure}
                     learnOrDeepen={gitCloudsLearnOrDeepen}
+                />
+
+                <TechnologiesComponent
+                    text="Utilizados en este blog"
+                    pleasures={blogCloudsPleasure}
                 />
             </div>
         </Layout>

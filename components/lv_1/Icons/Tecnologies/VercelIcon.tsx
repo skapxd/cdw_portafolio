@@ -2,9 +2,10 @@ import Style from '../Icons.module.sass'
 
 export function VercelIcon() {
     return (
-        <a href="https://vercel.com/">
+        <a href="https://vercel.com/" className={Style.technologies}>
+            <h4 className={Style.technologies_name}>Vercel</h4>
             <svg
-                className={Style.tecnologies_icon}
+                className={Style.technologies_icon}
                 // width="283"
                 // height="64"
                 viewBox="0 0 283 64"
