@@ -11,14 +11,17 @@ interface LayoutI {
     children: any
     mostSeen: CardPostI[]
     listOfTags: string[]
+    className?: string
 }
 
-export const Layout = ({ children, mostSeen, listOfTags }: LayoutI) => {
+export const Layout = (props: LayoutI) => {
+    const { children, mostSeen, listOfTags, className = '' } = props
+
     return (
         <div className={Style.body}>
             <div className={Style.mainContainer}>
                 <Header />
-                <main>{children}</main>
+                <main className={className}>{children}</main>
 
                 <div className={Style.mainContainer_flex}>
                     <MostSeen

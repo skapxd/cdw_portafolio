@@ -1,9 +1,8 @@
-import Style from './CardProject.module.sass'
-import { Github } from '../../lv_1/Icons/SocialMedia/Github'
 import {
     GithubUrl,
     ListOfGithubUrl
 } from '../../lv_2/ListOfGithubUrl/ListOfGithubUrl'
+import Style from './CardProject.module.sass'
 
 export interface CardProjectI {
     id: string
@@ -16,17 +15,17 @@ export function CardProject(props: CardProjectI) {
     const { title, urlImage, id, urlPost, listOfGithubUrl } = props
 
     return (
-        <article key={id} className={Style.project}>
-            <a href={urlPost}>
-                <div
-                    className={Style.project_bg}
-                    style={{ backgroundImage: `url(${urlImage})` }}
-                >
-                    <h2 className={Style.project_title}>{title}</h2>
-                </div>
+        <div key={id} className={Style.project}>
+            <a
+                href={urlPost}
+                className={Style.project_bg}
+                style={{ backgroundImage: `url(${urlImage})` }}
+            >
+                <h2 className={Style.project_title}>{title}</h2>
+                {/* <ListOfGithubUrl listOfGithubUrl={listOfGithubUrl} /> */}
+                {/* </div> */}
             </a>
-
             <ListOfGithubUrl listOfGithubUrl={listOfGithubUrl} />
-        </article>
+        </div>
     )
 }

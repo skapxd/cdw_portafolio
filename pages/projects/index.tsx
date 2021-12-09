@@ -28,6 +28,18 @@ export default function Projects(props: ProjectsI) {
     const { mostSeen, listTags } = props
 
     const listOfProjects: CardProjectI[] = [
+        // {
+        //     id: '0',
+        //     title: 'Challenges - Frontend Mentor',
+        //     urlImage: '/img/challenges.png',
+        //     urlPost: 'https://e-commerce-b.herokuapp.com/',
+        //     listOfGithubUrl: [
+        //         {
+        //             title: 'Front',
+        //             url: 'https://github.com/skapxd/audiophile'
+        //         }
+        //     ]
+        // },
         {
             id: '1',
             title: 'Audiophile',
@@ -45,7 +57,12 @@ export default function Projects(props: ProjectsI) {
             title: 'Tecnología Médica Celular',
             urlImage: '/img/tmc.png',
             urlPost: 'https://tecnologiamedicacelular.com/',
-            listOfGithubUrl: []
+            listOfGithubUrl: [
+                {
+                    title: 'Front',
+                    url: 'https://github.com/skapxd/TMC'
+                }
+            ]
         },
         {
             id: '3',
@@ -63,24 +80,17 @@ export default function Projects(props: ProjectsI) {
                     url: 'https://github.com/skapxd/nest-backend-all_app'
                 }
             ]
-        },
-        {
-            id: '4',
-            title: 'All App',
-            urlImage: '/img/all-app.png',
-            urlPost:
-                'https://play.google.com/store/apps/details?id=app.allapp.allapp',
-            listOfGithubUrl: []
         }
     ]
     return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
-            <div className={Style.projects_title}>Proyectos</div>
+            <h1 className={Style.projects_title}>Proyectos</h1>
 
             <ListOfCardProjects
                 list={listOfProjects}
                 className={Style.projects_listPost}
             />
+            {/* <h2 className={Style.projects_title}>Challenges</h2> */}
         </Layout>
     )
 }

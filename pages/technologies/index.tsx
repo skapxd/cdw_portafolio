@@ -1,10 +1,10 @@
 import { Layout } from '../../components/lv_5/Layout/Layout'
 import { getBasicData } from '../../helpers/getBasicData'
-import Style from './index.module.sass'
 import { CardPostI } from '../../components/lv_3/CardPost/CardPost'
 import { TechnologiesComponent } from '../../components/lv_2/TechnologiesComponent/TechnologiesComponent'
-import { getTechnologiesIcons } from '../../components/lv_2/TecnologiesIcon/TecnologiesIcon'
+import { getTechnologiesIcons } from '../../components/lv_2/TechnologiesIcon/TechnologiesIcon'
 
+import Style from './index.module.sass'
 export async function getStaticProps() {
     const { listTags, mostSeen } = getBasicData()
 
@@ -73,7 +73,11 @@ export default function Technologies(props: TechnologiesI) {
     const { blogCloudsPleasure } = blog
 
     return (
-        <Layout mostSeen={mostSeen} listOfTags={listTags}>
+        <Layout
+            className={Style.abilities}
+            mostSeen={mostSeen}
+            listOfTags={listTags}
+        >
             <h1 className={Style.abilities_title}>Tecnologías</h1>
             <div className={Style.abilities_components}>
                 <TechnologiesComponent
@@ -120,10 +124,21 @@ export default function Technologies(props: TechnologiesI) {
                 />
 
                 <TechnologiesComponent
-                    text="Utilizados en este blog"
+                    text="Utilizadas en este blog"
                     pleasures={blogCloudsPleasure}
                 />
             </div>
+
+            <p>
+                Si desea revisar el código del blog puede encontrarlo en{' '}
+                <a
+                    target="_blank"
+                    href="https://github.com/skapxd/cdw_portafolio"
+                >
+                    Github
+                </a>
+                .
+            </p>
         </Layout>
     )
 }

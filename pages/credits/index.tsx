@@ -58,17 +58,6 @@ export default function Credits(props: CreditsI) {
                     </a>
                     .
                 </p>
-
-                <p>
-                    Si desea revisar el código del blog puede encontrarlo en{' '}
-                    <a
-                        target="_blank"
-                        href="https://github.com/skapxd/cdw_portafolio"
-                    >
-                        github
-                    </a>
-                    .
-                </p>
             </div>
         </Layout>
     )

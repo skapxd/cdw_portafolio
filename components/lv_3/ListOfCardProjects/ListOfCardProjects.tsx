@@ -6,11 +6,11 @@ interface ListOfCardProjectsI {
 }
 
 export function ListOfCardProjects(props: ListOfCardProjectsI) {
-    const { list, className } = props
+    const { list = [], className } = props
 
     return (
         <div className={className}>
-            {list?.map((e) => (
+            {list.map((e) => (
                 <CardProject
                     listOfGithubUrl={e.listOfGithubUrl}
                     key={e.id}
