@@ -7,7 +7,7 @@ export function TypeScriptIcon() {
             href="https://www.typescriptlang.org/"
             className={Style.technologies}
         >
-            <h4 className={Style.technologies_name}>TS</h4>
+            <h4 className={Style.technologies_name}>TypeScript</h4>
 
             <svg
                 className={Style.technologies_icon}

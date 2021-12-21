@@ -7,7 +7,7 @@ export function JavascriptIcon() {
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             className={Style.tecnologies}
         >
-            <h4 className={Style.tecnologies_name}>JS</h4>
+            <h4 className={Style.tecnologies_name}>JavaScript</h4>
 
             <svg
                 className={Style.tecnologies_icon}

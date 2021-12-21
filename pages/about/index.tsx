@@ -50,6 +50,8 @@ export default function About(props: AboutI) {
                         <a className={Style.about_seeMore}> ver mas. </a>
                     </Link>
                 </p>
+
+                <h2 className={Style.about_name}>Trayectoria </h2>
             </div>
         </Layout>
     )

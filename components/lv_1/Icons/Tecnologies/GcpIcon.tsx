@@ -4,7 +4,9 @@ export function GcpIcon() {
     return (
         <Link href="https://cloud.google.com/">
             <a target="_blank" className={Style.tecnologies}>
-                <h4 className={Style.tecnologies_name}>GCP</h4>
+                <h4 className={Style.tecnologies_name}>
+                    Google Cloud Platform
+                </h4>
 
                 <svg
                     className={Style.tecnologies_icon}
