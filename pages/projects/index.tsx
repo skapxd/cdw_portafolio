@@ -68,16 +68,11 @@ export default function Projects(props: ProjectsI) {
             id: '3',
             title: 'All App',
             urlImage: '/img/all-app.png',
-            urlPost:
-                'https://play.google.com/store/apps/details?id=app.allapp.allapp',
+            urlPost: 'https://next-all-app.vercel.app/',
             listOfGithubUrl: [
                 {
-                    title: 'Front',
-                    url: 'https://github.com/skapxd/All-App'
-                },
-                {
-                    title: 'Back',
-                    url: 'https://github.com/skapxd/nest-backend-all_app'
+                    title: 'Back and Front',
+                    url: 'https://github.com/skapxd/next-all-app'
                 }
             ]
         }

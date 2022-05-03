@@ -17,6 +17,7 @@ export function CardProject(props: CardProjectI) {
     return (
         <div key={id} className={Style.project}>
             <a
+                target="_blank"
                 href={urlPost}
                 className={Style.project_bg}
                 style={{ backgroundImage: `url(${urlImage})` }}
