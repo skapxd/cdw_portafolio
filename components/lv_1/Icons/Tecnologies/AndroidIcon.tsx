@@ -1,7 +1,7 @@
 import Style from '../Icons.module.sass'
 
-export function AndroidIcon() {
-    return (
+export function AndroidIcon () {
+  return (
         <a href="https://www.android.com/" className={Style.tecnologies}>
             <h4>Android</h4>
             <svg
@@ -25,5 +25,5 @@ export function AndroidIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

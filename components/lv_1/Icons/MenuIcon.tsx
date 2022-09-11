@@ -5,10 +5,10 @@ interface MenuI {
     onClick?: () => void
 }
 
-export default function MenuIcon(props: MenuI) {
-    const { onClick, className = '' } = props
+export default function MenuIcon (props: MenuI) {
+  const { onClick, className = '' } = props
 
-    return (
+  return (
         <svg
             data-cy="drawer"
             onClick={() => onClick && onClick()}
@@ -23,5 +23,5 @@ export default function MenuIcon(props: MenuI) {
             <line x1="3" x2="21" y1="6" y2="6" />
             <line x1="3" x2="21" y1="18" y2="18" />
         </svg>
-    )
+  )
 }

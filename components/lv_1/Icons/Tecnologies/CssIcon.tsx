@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function CssIcon() {
-    return (
+export function CssIcon () {
+  return (
         <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>CSS</h4>
@@ -186,5 +186,5 @@ export function CssIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

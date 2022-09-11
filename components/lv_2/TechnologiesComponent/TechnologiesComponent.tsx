@@ -10,17 +10,17 @@ interface TechnologiesComponentI {
     pleasures?: JSX.Element[]
     learnOrDeepen?: JSX.Element[]
 }
-export function TechnologiesComponent(props: TechnologiesComponentI) {
-    const {
-        text,
-        recentUse,
-        increasedUse,
-        pleasures,
-        learnOrDeepen,
-        className = ''
-    } = props
+export function TechnologiesComponent (props: TechnologiesComponentI) {
+  const {
+    text,
+    recentUse,
+    increasedUse,
+    pleasures,
+    learnOrDeepen,
+    className = ''
+  } = props
 
-    return (
+  return (
         <div className={`${Style.technologiesComponent} ${className}`}>
             <Title text={text} className={Style.technologiesComponent_title} />
 
@@ -37,20 +37,20 @@ export function TechnologiesComponent(props: TechnologiesComponentI) {
                 />
             </div>
         </div>
-    )
+  )
 }
 
 interface ListOfTechnologiesI {
     list?: JSX.Element[]
     title: string
 }
-function ListOfTechnologies(props: ListOfTechnologiesI) {
-    const { title, list = [] } = props
-    const key = Math.random
+function ListOfTechnologies (props: ListOfTechnologiesI) {
+  const { title, list = [] } = props
+  const key = Math.random
 
-    if (list.length === 0) return <></>
+  if (list.length === 0) return <></>
 
-    return (
+  return (
         <div className={Style.technologiesComponent_subTitle}>
             <h2>{title}</h2>
             <div className={Style.technologiesComponent_iconsList}>
@@ -59,5 +59,5 @@ function ListOfTechnologies(props: ListOfTechnologiesI) {
                 ))}
             </div>
         </div>
-    )
+  )
 }

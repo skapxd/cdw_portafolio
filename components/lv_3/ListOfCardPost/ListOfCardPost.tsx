@@ -5,10 +5,10 @@ interface ListOfCardPostI {
     className?: string
 }
 
-export function ListOfCardPost(props: ListOfCardPostI) {
-    const { list, className } = props
+export function ListOfCardPost (props: ListOfCardPostI) {
+  const { list, className } = props
 
-    return (
+  return (
         <div className={className}>
             {list?.map((e) => (
                 <CardPost
@@ -25,5 +25,5 @@ export function ListOfCardPost(props: ListOfCardPostI) {
                 />
             ))}
         </div>
-    )
+  )
 }

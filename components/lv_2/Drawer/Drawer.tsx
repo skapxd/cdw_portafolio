@@ -14,38 +14,38 @@ import staticImage from '../../../routes/static_images'
 const drawer = '#drawer'
 const drawerDirection = 'left'
 
-export function useOpenDrawer() {
-    const router = useRouter()
+export function useOpenDrawer () {
+  const router = useRouter()
 
-    // if true, it means that Drawer page is open
-    if (router.asPath.includes(drawer)) return () => {}
+  // if true, it means that Drawer page is open
+  if (router.asPath.includes(drawer)) return () => {}
 
-    return () => router.push(router.asPath + drawer)
+  return () => router.push(router.asPath + drawer)
 }
 
-export function useCloseDrawer() {
-    const router = useRouter()
+export function useCloseDrawer () {
+  const router = useRouter()
 
-    // if false, it means that Drawer page is close
-    if (!router.asPath.includes(drawer)) return () => {}
+  // if false, it means that Drawer page is close
+  if (!router.asPath.includes(drawer)) return () => {}
 
-    return () => router.back()
+  return () => router.back()
 }
 
-export function Drawer() {
-    const [open, setOpen] = useState(false)
-    const router = useRouter()
-    const closeDrawer = useCloseDrawer()
+export function Drawer () {
+  const [open, setOpen] = useState(false)
+  const router = useRouter()
+  const closeDrawer = useCloseDrawer()
 
-    useEffect(() => {
-        if (router.asPath.includes(drawer)) {
-            setOpen(true)
-        } else {
-            setOpen(false)
-        }
-    }, [router.asPath])
+  useEffect(() => {
+    if (router.asPath.includes(drawer)) {
+      setOpen(true)
+    } else {
+      setOpen(false)
+    }
+  }, [router.asPath])
 
-    return (
+  return (
         <div>
             <div>
                 <SwipeableDrawer
@@ -54,8 +54,8 @@ export function Drawer() {
                     open={open}
                     disableSwipeToOpen={true}
                     onClose={() => {
-                        closeDrawer()
-                        setOpen(false)
+                      closeDrawer()
+                      setOpen(false)
                     }}
                     onOpen={() => setOpen(true)}
                 >
@@ -63,15 +63,15 @@ export function Drawer() {
                 </SwipeableDrawer>
             </div>
         </div>
-    )
+  )
 }
 
-function Content() {
-    return (
+function Content () {
+  return (
         <Box
             className={Style.drawer_container}
             sx={{
-                width: 250 ?? 'auto'
+              width: 250 ?? 'auto'
             }}
             role="presentation"
             onClick={() => {}}
@@ -99,5 +99,5 @@ function Content() {
                 ))}
             </List>
         </Box>
-    )
+  )
 }

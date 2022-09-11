@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function RustIcon() {
-    return (
+export function RustIcon () {
+  return (
         <a
             target="_blank"
             href="https://www.rust-lang.org/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Rust</h4>
 
@@ -24,5 +24,5 @@ export function RustIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

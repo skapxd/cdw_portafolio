@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function CloudSqlIcon() {
-    return (
+export function CloudSqlIcon () {
+  return (
         <Link href="https://cloud.google.com/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Cloud Sql</h4>
@@ -59,5 +59,5 @@ export function CloudSqlIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

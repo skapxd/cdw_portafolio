@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function AzureIcon() {
-    return (
+export function AzureIcon () {
+  return (
         <Link href="https://portal.azure.com/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Azure</h4>
@@ -69,5 +69,5 @@ export function AzureIcon() {
                 </svg>{' '}
             </a>
         </Link>
-    )
+  )
 }

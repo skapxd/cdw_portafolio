@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function NestjsIcon() {
-    return (
+export function NestjsIcon () {
+  return (
         <a
             target="_blank"
             href="https://nestjs.com/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Nestjs</h4>
 
@@ -25,5 +25,5 @@ export function NestjsIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

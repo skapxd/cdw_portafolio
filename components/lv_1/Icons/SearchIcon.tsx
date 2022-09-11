@@ -4,9 +4,9 @@ interface SearchIconI {
     className?: string
     onClick?: () => void
 }
-export default function SearchIcon(props: SearchIconI) {
-    const { className = '', onClick } = props
-    return (
+export default function SearchIcon (props: SearchIconI) {
+  const { className = '', onClick } = props
+  return (
         <div className={className} onClick={() => onClick && onClick()}>
             <svg
                 data-cy="search_icon"
@@ -21,5 +21,5 @@ export default function SearchIcon(props: SearchIconI) {
                 <line x1="21" x2="15.8" y1="21" y2="15.8" />
             </svg>
         </div>
-    )
+  )
 }

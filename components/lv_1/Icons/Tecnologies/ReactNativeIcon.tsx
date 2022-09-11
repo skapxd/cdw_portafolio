@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function ReactNativeIcon() {
-    return (
+export function ReactNativeIcon () {
+  return (
         <a
             target="_blank"
             href="https://reactnative.dev/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4>Native</h4>
             <svg
@@ -29,5 +29,5 @@ export function ReactNativeIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

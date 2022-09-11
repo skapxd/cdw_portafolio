@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function BitbucketIcon() {
-    return (
+export function BitbucketIcon () {
+  return (
         <a
             className={Style.tecnologies}
             target="_blank"
-            href="https://bitbucket.org/"
+            href="https://bitbucket.org/" rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Bitbucket</h4>
             <svg
@@ -39,5 +39,5 @@ export function BitbucketIcon() {
                 </g>
             </svg>{' '}
         </a>
-    )
+  )
 }

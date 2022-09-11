@@ -6,37 +6,37 @@ import { Layout } from '../../components/lv_5/Layout/Layout'
 import { getBasicData } from '../../helpers/getBasicData'
 import { getSinglePost } from '../../helpers/getSinglePost'
 
-import Style from './[post].module.sass'
+import Style from './[post].module.scss'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
 
-export async function getStaticPaths(props: any) {
-    const getPaths = async () => {
-        const { listPost } = getBasicData()
-        const paths = listPost.map((e) => ({
-            params: { post: e.urlPost }
-        }))
-        return paths
-    }
+export async function getStaticPaths (props: any) {
+  const getPaths = async () => {
+    const { listPost } = getBasicData()
+    const paths = listPost.map((e) => ({
+      params: { post: e.urlPost }
+    }))
+    return paths
+  }
 
-    const paths = await getPaths()
-    return { paths, fallback: false }
+  const paths = await getPaths()
+  return { paths, fallback: false }
 }
 
-export async function getStaticProps(props: any) {
-    const { params } = props
+export async function getStaticProps (props: any) {
+  const { params } = props
 
-    const { listTags, mostSeen } = getBasicData()
-    const { metaData, markDown, success } = await getSinglePost(params.post)
-    if (!success) {
+  const { listTags, mostSeen } = getBasicData()
+  const { metaData, markDown, success } = await getSinglePost(params.post)
+  if (!success) {
+  }
+  return {
+    props: {
+      mostSeen,
+      listTags,
+      metaData,
+      markDown
     }
-    return {
-        props: {
-            mostSeen,
-            listTags,
-            metaData,
-            markDown
-        }
-    }
+  }
 }
 
 export const singlePostLink = (post: string) => `/post/${post}`
@@ -48,13 +48,13 @@ interface PostI {
     markDown: string
 }
 
-export default function Post(props: PostI) {
-    const { metaData, listTags, mostSeen, markDown } = props
+export default function Post (props: PostI) {
+  const { metaData, listTags, mostSeen, markDown } = props
 
-    const { date, tags, title, shortDescription, urlImage, readingTime } =
+  const { date, tags, title, shortDescription, urlImage, readingTime } =
         metaData
 
-    return (
+  return (
         <>
             <Head>
                 <meta property="og:locale" content="es_ES" />
@@ -93,12 +93,12 @@ export default function Post(props: PostI) {
                     <ReactMarkdown
                         className={MarkDownStyle.markDown}
                         components={{
-                            a: ({ node, ...props }) => {
-                                return <a target="_blank" {...props}></a>
-                            },
-                            pre: ({ node, ...props }) => {
-                                return <pre {...props}></pre>
-                            }
+                          a: ({ node, ...props }) => {
+                            return <a target="_blank" {...props}></a>
+                          },
+                          pre: ({ node, ...props }) => {
+                            return <pre {...props}></pre>
+                          }
                         }}
                     >
                         {markDown}
@@ -106,5 +106,5 @@ export default function Post(props: PostI) {
                 </div>
             </Layout>
         </>
-    )
+  )
 }

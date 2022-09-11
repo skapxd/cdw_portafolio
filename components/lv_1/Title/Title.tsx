@@ -5,7 +5,7 @@ interface TitleI {
     className?: string
 }
 export const Title = (props: TitleI) => {
-    const { text, className } = props
+  const { text, className } = props
 
-    return <h2 className={`${Style.title} ${className}`}>{text}</h2>
+  return <h2 className={`${Style.title} ${className}`}>{text}</h2>
 }

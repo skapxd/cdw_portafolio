@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function KotlinIcon() {
-    return (
+export function KotlinIcon () {
+  return (
         <a
             target="_blank"
             href="https://lit.dev/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Kotlin</h4>
 
@@ -74,5 +74,5 @@ export function KotlinIcon() {
                 </symbol>
             </svg>
         </a>
-    )
+  )
 }

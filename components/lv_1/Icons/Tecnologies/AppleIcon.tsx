@@ -1,7 +1,7 @@
 import Style from '../Icons.module.sass'
 
-export function AppleIcon() {
-    return (
+export function AppleIcon () {
+  return (
         <a href="https://www.apple.com/store" className={Style.tecnologies}>
             <h4>Apple</h4>
             <svg
@@ -17,5 +17,5 @@ export function AppleIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

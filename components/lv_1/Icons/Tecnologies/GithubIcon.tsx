@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function GitHubIcon() {
-    return (
+export function GitHubIcon () {
+  return (
         <Link href="https://github.com/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Github</h4>
@@ -25,5 +25,5 @@ export function GitHubIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

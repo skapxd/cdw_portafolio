@@ -10,35 +10,35 @@ type Data = {
     data?: any
 }
 
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
+export default function handler (
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
 ) {
-    const queryPost = req.query.posts
-    const postUrl = jsonFile().post
+  const queryPost = req.query.posts
+  const postUrl = jsonFile().post
 
-    const data = fs.readFileSync(postUrl, {
-        encoding: 'utf-8'
+  const data = fs.readFileSync(postUrl, {
+    encoding: 'utf-8'
+  })
+
+  if (!data) {
+    return res.status(400).json({
+      success: false,
+      error: 'Error to load data file'
     })
+  }
+  const posts = <CardPostI[]>JSON.parse(data)
 
-    if (!data) {
-        return res.status(400).json({
-            success: false,
-            error: 'Error to load data file'
-        })
-    }
-    const posts = <CardPostI[]>JSON.parse(data)
+  const post = posts.filter((e) => {
+    return e.urlPost === queryPost
+  })
 
-    const post = posts.filter((e) => {
-        return e.urlPost === queryPost
+  if (post.length === 0) {
+    return res.status(400).json({
+      success: false,
+      error: 'Post not found'
     })
+  }
 
-    if (post.length === 0) {
-        return res.status(400).json({
-            success: false,
-            error: 'Post not found'
-        })
-    }
-
-    res.status(200).json({ success: true, data: post[0] })
+  res.status(200).json({ success: true, data: post[0] })
 }

@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function JavascriptIcon() {
-    return (
+export function JavascriptIcon () {
+  return (
         <a
             target="_blank"
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>JavaScript</h4>
 
@@ -36,7 +36,7 @@ export function JavascriptIcon() {
                                 fillOpacity="0"
                                 opacity="0.99"
                                 style={{
-                                    isolation: 'isolate'
+                                  isolation: 'isolate'
                                 }}
                             />
                             <path
@@ -57,5 +57,5 @@ export function JavascriptIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

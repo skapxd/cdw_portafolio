@@ -1,10 +1,10 @@
 import Style from '../Icons.module.sass'
-export function HerokuIcon() {
-    return (
+export function HerokuIcon () {
+  return (
         <a
             href="https://www.heroku.com/"
             target="_blank"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Heroku</h4>
 
@@ -24,5 +24,5 @@ export function HerokuIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

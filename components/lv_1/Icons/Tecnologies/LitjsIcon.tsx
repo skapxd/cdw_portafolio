@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function LitjsIcon() {
-    return (
+export function LitjsIcon () {
+  return (
         <a
             target="_blank"
             href="https://lit.dev/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Litjs</h4>
 
@@ -58,5 +58,5 @@ export function LitjsIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

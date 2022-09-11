@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function AngularIcon() {
-    return (
+export function AngularIcon () {
+  return (
         <Link href="https://angular.io/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Angular</h4>
@@ -31,5 +31,5 @@ export function AngularIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

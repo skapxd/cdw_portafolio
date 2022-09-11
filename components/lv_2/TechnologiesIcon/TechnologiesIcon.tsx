@@ -29,94 +29,94 @@ import { VuejsIcon } from '../../lv_1/Icons/Tecnologies/VuejsIcon'
 import { GitLabIcon } from '../../lv_1/Icons/Tecnologies/GitLabIcon'
 import { BitbucketIcon } from '../../lv_1/Icons/Tecnologies/BitbucketIcon'
 
-export function getTechnologiesIcons() {
-    const lenguajes = {
-        lenguajesRecentUse: [
+export function getTechnologiesIcons () {
+  const lenguajes = {
+    lenguajesRecentUse: [
             <JavascriptIcon />,
             <TypeScriptIcon />,
             <HtmlIcon />,
             <SassIcon />
-        ],
-        lenguajesIncreasedUse: [
+    ],
+    lenguajesIncreasedUse: [
             <TypeScriptIcon />,
             <DartIcon />,
             <JavascriptIcon />,
             <HtmlIcon />,
             <CssIcon />
-        ],
-        lenguajesPleasure: [<DartIcon />, <TypeScriptIcon />, <SassIcon />],
-        lenguajesLearnOrDeepen: [
+    ],
+    lenguajesPleasure: [<DartIcon />, <TypeScriptIcon />, <SassIcon />],
+    lenguajesLearnOrDeepen: [
             <TypeScriptIcon />,
             <PythonIcon />,
             <GoIcon />,
             <RustIcon />,
             <DartIcon />,
             <KotlinIcon />
-        ]
-    }
+    ]
+  }
 
-    const frontend = {
-        frontendRecentUse: [<NextjsIcon />, <SassIcon />, <ReactIcon />],
-        frontendIncreasedUse: [
+  const frontend = {
+    frontendRecentUse: [<NextjsIcon />, <SassIcon />, <ReactIcon />],
+    frontendIncreasedUse: [
             <HtmlIcon />,
             <CssIcon />,
             <JavascriptIcon />,
             <TypeScriptIcon />,
             <SassIcon />
-        ],
-        frontendPleasure: [
+    ],
+    frontendPleasure: [
             <NextjsIcon />,
             <SassIcon />,
             <AngularIcon />,
             <SvelteIcon />
-        ],
-        frontendLearnOrDeepen: [
+    ],
+    frontendLearnOrDeepen: [
             <NextjsIcon />,
             <VuejsIcon />,
             <SvelteIcon />,
             <LitjsIcon />,
             <SolidjsIcon />
-        ]
-    }
+    ]
+  }
 
-    const backend = {
-        backendRecentUse: [<NodeIcon />, <NestjsIcon />],
-        backendIncreasedUse: [<NodeIcon />, <NestjsIcon />],
-        backendPleasure: [<NestjsIcon />, <NodeIcon />],
-        backendLearnOrDeepen: [<NodeIcon />, <GoIcon />]
-    }
+  const backend = {
+    backendRecentUse: [<NodeIcon />, <NestjsIcon />],
+    backendIncreasedUse: [<NodeIcon />, <NestjsIcon />],
+    backendPleasure: [<NestjsIcon />, <NodeIcon />],
+    backendLearnOrDeepen: [<NodeIcon />, <GoIcon />]
+  }
 
-    const mobile = {
-        mobileRecentUse: [<ReactNativeIcon />, <FlutterIcon />],
-        mobileIncreasedUse: [<FlutterIcon />, <ReactNativeIcon />],
-        mobilePleasure: [<FlutterIcon />, <ReactNativeIcon />],
-        mobileLearnOrDeepen: [
+  const mobile = {
+    mobileRecentUse: [<ReactNativeIcon />, <FlutterIcon />],
+    mobileIncreasedUse: [<FlutterIcon />, <ReactNativeIcon />],
+    mobilePleasure: [<FlutterIcon />, <ReactNativeIcon />],
+    mobileLearnOrDeepen: [
             <ReactNativeIcon />,
             <AndroidIcon />,
             <AppleIcon />
-        ]
-    }
+    ]
+  }
 
-    const clouds = {
-        cloudsRecentUse: [<GcpIcon />, <HerokuIcon />, <VercelIcon />],
-        cloudsIncreasedUse: [<GcpIcon />, <HerokuIcon />],
-        cloudsPleasure: [<VercelIcon />, <GcpIcon />, <HerokuIcon />],
-        cloudsLearnOrDeepen: [<GcpIcon />, <AzureIcon />]
-    }
+  const clouds = {
+    cloudsRecentUse: [<GcpIcon />, <HerokuIcon />, <VercelIcon />],
+    cloudsIncreasedUse: [<GcpIcon />, <HerokuIcon />],
+    cloudsPleasure: [<VercelIcon />, <GcpIcon />, <HerokuIcon />],
+    cloudsLearnOrDeepen: [<GcpIcon />, <AzureIcon />]
+  }
 
-    const gitCloud = {
-        gitCloudsRecentUse: [<GitHubIcon />, <BitbucketIcon />],
-        gitCloudsIncreasedUse: [<GitHubIcon />],
-        gitCloudsPleasure: [<GitHubIcon />],
-        gitCloudsLearnOrDeepen: [
+  const gitCloud = {
+    gitCloudsRecentUse: [<GitHubIcon />, <BitbucketIcon />],
+    gitCloudsIncreasedUse: [<GitHubIcon />],
+    gitCloudsPleasure: [<GitHubIcon />],
+    gitCloudsLearnOrDeepen: [
             <GitHubIcon />,
             <BitbucketIcon />,
             <GitLabIcon />
-        ]
-    }
+    ]
+  }
 
-    const blog = {
-        blogCloudsPleasure: [
+  const blog = {
+    blogCloudsPleasure: [
             <NextjsIcon />,
             <ReactIcon />,
             <TypeScriptIcon />,
@@ -125,8 +125,8 @@ export function getTechnologiesIcons() {
             <SassIcon />,
             <GitHubIcon />,
             <VercelIcon />
-        ]
-    }
+    ]
+  }
 
-    return { lenguajes, frontend, backend, mobile, clouds, gitCloud, blog }
+  return { lenguajes, frontend, backend, mobile, clouds, gitCloud, blog }
 }

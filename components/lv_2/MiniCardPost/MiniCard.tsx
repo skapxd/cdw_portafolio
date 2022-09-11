@@ -3,22 +3,22 @@ import { singlePostLink } from '../../../pages/post/[post]'
 
 import { CardPostI } from '../../lv_3/CardPost/CardPost'
 import { ListOfMiniTags } from '../ListOfMiniTags/ListOfTags'
-import Style from './MiniCard.module.sass'
+import Style from './MiniCard.module.scss'
 
 export const MiniCard = (props: CardPostI) => {
-    const {
-        id,
-        tags,
-        date,
-        title,
-        urlPost,
-        favorite,
-        urlImage,
-        readingTime,
-        shortDescription
-    } = props
+  const {
+    id,
+    tags,
+    date,
+    title,
+    urlPost,
+    favorite,
+    urlImage,
+    readingTime,
+    shortDescription
+  } = props
 
-    return (
+  return (
         <article className={Style.miniCard}>
             <Link href={singlePostLink(urlPost)}>
                 <a>
@@ -49,5 +49,5 @@ export const MiniCard = (props: CardPostI) => {
                 />
             </div>
         </article>
-    )
+  )
 }

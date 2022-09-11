@@ -8,9 +8,9 @@ interface GithubI {
 }
 
 export const Github = (props: GithubI) => {
-    const { title, className = '', href = 'https://github.com/skapxd' } = props
+  const { title, className = '', href = 'https://github.com/skapxd' } = props
 
-    return (
+  return (
         <Link href={href}>
             <a
                 target="_blank"
@@ -33,5 +33,5 @@ export const Github = (props: GithubI) => {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

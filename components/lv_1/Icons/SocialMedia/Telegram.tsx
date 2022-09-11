@@ -7,9 +7,9 @@ interface TelegramI {
 }
 
 export const Telegram = (props: TelegramI) => {
-    const { href, className } = props
+  const { href, className } = props
 
-    return (
+  return (
         <Link href={href ?? 'https://t.me/skapxd'}>
             <a className={`${Style.telegram} ${className}`} target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">
@@ -24,5 +24,5 @@ export const Telegram = (props: TelegramI) => {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

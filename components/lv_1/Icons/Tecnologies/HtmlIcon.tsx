@@ -1,7 +1,7 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
-export function HtmlIcon() {
-    return (
+export function HtmlIcon () {
+  return (
         <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>HTML</h4>
@@ -34,5 +34,5 @@ export function HtmlIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

@@ -74,5 +74,33 @@
     },
     "main": "index.js",
     "repository": "https://github.com/skapxd/cdw_portafolio.git",
-    "license": "MIT"
+    "license": "MIT",
+    "eslintConfig": {
+        "globals": {
+            "JSX": true,
+            "React": true
+        },
+        "env": {
+            "browser": true,
+            "es2021": true,
+            "node": true
+        },
+        "extends": [
+            "plugin:react/recommended",
+            "standard"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+            "ecmaFeatures": {
+                "jsx": true,
+                "tsx": true
+            },
+            "ecmaVersion": 12,
+            "sourceType": "module"
+        },
+        "plugins": [
+            "react",
+            "@typescript-eslint"
+        ]
+    }
 }

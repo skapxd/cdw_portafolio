@@ -1,0 +1,43 @@
+@import '../../styles/_theme.module';
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  &_title {
+    color: $white;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    line-height: 5.2rem;
+  }
+
+  &>p {
+    margin-top: 3rem;
+    color: $greyMedium;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 3rem;
+  }
+
+  &_listPost {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 10rem;
+  }
+}
+
+@media only screen and (min-width: $brackPointToTablet) {
+  .tags {
+    &_listPost {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+;

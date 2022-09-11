@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function GoIcon() {
-    return (
+export function GoIcon () {
+  return (
         <Link href="https://golang.org/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>GO</h4>
@@ -88,5 +88,5 @@ export function GoIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

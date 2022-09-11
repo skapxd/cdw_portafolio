@@ -9,21 +9,21 @@ export interface GithubUrl {
 interface ListOfGithubUrlI {
     listOfGithubUrl?: GithubUrl[]
 }
-export function ListOfGithubUrl(props: ListOfGithubUrlI) {
-    const {
-        listOfGithubUrl = [
-            {
-                title: 'Front - default',
-                url: 'https://github.com/'
-            },
-            {
-                title: 'Back - default',
-                url: 'https://github.com/'
-            }
-        ]
-    } = props
+export function ListOfGithubUrl (props: ListOfGithubUrlI) {
+  const {
+    listOfGithubUrl = [
+      {
+        title: 'Front - default',
+        url: 'https://github.com/'
+      },
+      {
+        title: 'Back - default',
+        url: 'https://github.com/'
+      }
+    ]
+  } = props
 
-    return (
+  return (
         <div className={Style.list}>
             {listOfGithubUrl.map((e) => (
                 <Github
@@ -34,5 +34,5 @@ export function ListOfGithubUrl(props: ListOfGithubUrlI) {
                 />
             ))}
         </div>
-    )
+  )
 }

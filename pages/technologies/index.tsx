@@ -5,15 +5,15 @@ import { TechnologiesComponent } from '../../components/lv_2/TechnologiesCompone
 import { getTechnologiesIcons } from '../../components/lv_2/TechnologiesIcon/TechnologiesIcon'
 
 import Style from './index.module.sass'
-export async function getStaticProps() {
-    const { listTags, mostSeen } = getBasicData()
+export async function getStaticProps () {
+  const { listTags, mostSeen } = getBasicData()
 
-    return {
-        props: {
-            listTags,
-            mostSeen
-        }
+  return {
+    props: {
+      listTags,
+      mostSeen
     }
+  }
 }
 
 export const technologiesLink = () => '/technologies'
@@ -22,57 +22,57 @@ interface TechnologiesI {
     listTags: string[]
     mostSeen: CardPostI[]
 }
-export default function Technologies(props: TechnologiesI) {
-    const { mostSeen, listTags } = props
+export default function Technologies (props: TechnologiesI) {
+  const { mostSeen, listTags } = props
 
-    const { lenguajes, clouds, gitCloud, frontend, backend, mobile, blog } =
+  const { lenguajes, clouds, gitCloud, frontend, backend, mobile, blog } =
         getTechnologiesIcons()
 
-    const {
-        lenguajesIncreasedUse,
-        lenguajesLearnOrDeepen,
-        lenguajesPleasure,
-        lenguajesRecentUse
-    } = lenguajes
+  const {
+    lenguajesIncreasedUse,
+    lenguajesLearnOrDeepen,
+    lenguajesPleasure,
+    lenguajesRecentUse
+  } = lenguajes
 
-    const {
-        frontendIncreasedUse,
-        frontendLearnOrDeepen,
-        frontendPleasure,
-        frontendRecentUse
-    } = frontend
+  const {
+    frontendIncreasedUse,
+    frontendLearnOrDeepen,
+    frontendPleasure,
+    frontendRecentUse
+  } = frontend
 
-    const {
-        backendRecentUse,
-        backendIncreasedUse,
-        backendPleasure,
-        backendLearnOrDeepen
-    } = backend
+  const {
+    backendRecentUse,
+    backendIncreasedUse,
+    backendPleasure,
+    backendLearnOrDeepen
+  } = backend
 
-    const {
-        mobileRecentUse,
-        mobileIncreasedUse,
-        mobilePleasure,
-        mobileLearnOrDeepen
-    } = mobile
+  const {
+    mobileRecentUse,
+    mobileIncreasedUse,
+    mobilePleasure,
+    mobileLearnOrDeepen
+  } = mobile
 
-    const {
-        cloudsRecentUse,
-        cloudsIncreasedUse,
-        cloudsPleasure,
-        cloudsLearnOrDeepen
-    } = clouds
+  const {
+    cloudsRecentUse,
+    cloudsIncreasedUse,
+    cloudsPleasure,
+    cloudsLearnOrDeepen
+  } = clouds
 
-    const {
-        gitCloudsRecentUse,
-        gitCloudsIncreasedUse,
-        gitCloudsPleasure,
-        gitCloudsLearnOrDeepen
-    } = gitCloud
+  const {
+    gitCloudsRecentUse,
+    gitCloudsIncreasedUse,
+    gitCloudsPleasure,
+    gitCloudsLearnOrDeepen
+  } = gitCloud
 
-    const { blogCloudsPleasure } = blog
+  const { blogCloudsPleasure } = blog
 
-    return (
+  return (
         <Layout
             className={Style.abilities}
             mostSeen={mostSeen}
@@ -133,12 +133,12 @@ export default function Technologies(props: TechnologiesI) {
                 Si desea revisar el código del blog puede encontrarlo en{' '}
                 <a
                     target="_blank"
-                    href="https://github.com/skapxd/cdw_portafolio"
+                    href="https://github.com/skapxd/cdw_portafolio" rel="noreferrer"
                 >
                     Github
                 </a>
                 .
             </p>
         </Layout>
-    )
+  )
 }

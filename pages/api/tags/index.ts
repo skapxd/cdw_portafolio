@@ -10,18 +10,18 @@ type Data = {
     data?: any
 }
 
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
+export default function handler (
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
 ) {
-    const tagsUrl = jsonFile().tags
+  const tagsUrl = jsonFile().tags
 
-    const data = fs.readFileSync(tagsUrl, { encoding: 'utf-8' })
+  const data = fs.readFileSync(tagsUrl, { encoding: 'utf-8' })
 
-    const tags = <string[]>JSON.parse(data)
+  const tags = <string[]>JSON.parse(data)
 
-    return res.status(400).json({
-        success: true,
-        data: tags
-    })
+  return res.status(400).json({
+    success: true,
+    data: tags
+  })
 }

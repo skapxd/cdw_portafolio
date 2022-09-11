@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function FirebaseIcon() {
-    return (
+export function FirebaseIcon () {
+  return (
         <Link href="https://firebase.google.com/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Firebase</h4>
@@ -34,5 +34,5 @@ export function FirebaseIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

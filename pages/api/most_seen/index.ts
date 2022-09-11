@@ -9,21 +9,21 @@ type Data = {
     data?: any
 }
 
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
+export default function handler (
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
 ) {
-    const mostSeenUrl = jsonFile().mostSeen
-    const data = fs.readFileSync(mostSeenUrl, {
-        encoding: 'utf-8'
-    })
+  const mostSeenUrl = jsonFile().mostSeen
+  const data = fs.readFileSync(mostSeenUrl, {
+    encoding: 'utf-8'
+  })
 
-    if (!data) throw new Error('Data don´t exist')
+  if (!data) throw new Error('Data don´t exist')
 
-    const mostSeen = <CardPostI[]>JSON.parse(data)
+  const mostSeen = <CardPostI[]>JSON.parse(data)
 
-    return res.status(400).json({
-        success: true,
-        data: mostSeen
-    })
+  return res.status(400).json({
+    success: true,
+    data: mostSeen
+  })
 }

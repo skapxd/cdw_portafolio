@@ -5,17 +5,17 @@ import { ListOfCardProjects } from '../../components/lv_3/ListOfCardProjects/Lis
 import { CardProjectI } from '../../components/lv_3/CardProject/CardProject'
 import Style from './index.module.sass'
 
-export async function getStaticProps() {
-    const { listPost, listTags, mostSeen, lastPost } = getBasicData()
+export async function getStaticProps () {
+  const { listPost, listTags, mostSeen, lastPost } = getBasicData()
 
-    return {
-        props: {
-            listPost,
-            listTags,
-            mostSeen,
-            lastPost
-        }
+  return {
+    props: {
+      listPost,
+      listTags,
+      mostSeen,
+      lastPost
     }
+  }
 }
 
 interface ProjectsI {
@@ -24,60 +24,60 @@ interface ProjectsI {
     mostSeen: CardPostI[]
     lastPost: CardPostI[]
 }
-export default function Projects(props: ProjectsI) {
-    const { mostSeen, listTags } = props
+export default function Projects (props: ProjectsI) {
+  const { mostSeen, listTags } = props
 
-    const listOfProjects: CardProjectI[] = [
-        // {
-        //     id: '0',
-        //     title: 'Challenges - Frontend Mentor',
-        //     urlImage: '/img/challenges.png',
-        //     urlPost: 'https://e-commerce-b.herokuapp.com/',
-        //     listOfGithubUrl: [
-        //         {
-        //             title: 'Front',
-        //             url: 'https://github.com/skapxd/audiophile'
-        //         }
-        //     ]
-        // },
+  const listOfProjects: CardProjectI[] = [
+    // {
+    //     id: '0',
+    //     title: 'Challenges - Frontend Mentor',
+    //     urlImage: '/img/challenges.png',
+    //     urlPost: 'https://e-commerce-b.herokuapp.com/',
+    //     listOfGithubUrl: [
+    //         {
+    //             title: 'Front',
+    //             url: 'https://github.com/skapxd/audiophile'
+    //         }
+    //     ]
+    // },
+    {
+      id: '1',
+      title: 'Audiophile',
+      urlImage: '/img/audiophile.png',
+      urlPost: 'https://e-commerce-b.herokuapp.com/',
+      listOfGithubUrl: [
         {
-            id: '1',
-            title: 'Audiophile',
-            urlImage: '/img/audiophile.png',
-            urlPost: 'https://e-commerce-b.herokuapp.com/',
-            listOfGithubUrl: [
-                {
-                    title: 'Front',
-                    url: 'https://github.com/skapxd/audiophile'
-                }
-            ]
-        },
-        {
-            id: '2',
-            title: 'Tecnología Médica Celular',
-            urlImage: '/img/tmc.png',
-            urlPost: 'https://tecnologiamedicacelular.com/',
-            listOfGithubUrl: [
-                {
-                    title: 'Front',
-                    url: 'https://github.com/skapxd/TMC'
-                }
-            ]
-        },
-        {
-            id: '3',
-            title: 'All App',
-            urlImage: '/img/all-app.png',
-            urlPost: 'https://next-all-app.vercel.app/',
-            listOfGithubUrl: [
-                {
-                    title: 'Back and Front',
-                    url: 'https://github.com/skapxd/next-all-app'
-                }
-            ]
+          title: 'Front',
+          url: 'https://github.com/skapxd/audiophile'
         }
-    ]
-    return (
+      ]
+    },
+    {
+      id: '2',
+      title: 'Tecnología Médica Celular',
+      urlImage: '/img/tmc.png',
+      urlPost: 'https://tecnologiamedicacelular.com/',
+      listOfGithubUrl: [
+        {
+          title: 'Front',
+          url: 'https://github.com/skapxd/TMC'
+        }
+      ]
+    },
+    {
+      id: '3',
+      title: 'All App',
+      urlImage: '/img/all-app.png',
+      urlPost: 'https://next-all-app.vercel.app/',
+      listOfGithubUrl: [
+        {
+          title: 'Back and Front',
+          url: 'https://github.com/skapxd/next-all-app'
+        }
+      ]
+    }
+  ]
+  return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <h1 className={Style.projects_title}>Proyectos</h1>
 
@@ -87,5 +87,5 @@ export default function Projects(props: ProjectsI) {
             />
             {/* <h2 className={Style.projects_title}>Challenges</h2> */}
         </Layout>
-    )
+  )
 }

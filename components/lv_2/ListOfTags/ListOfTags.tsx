@@ -6,14 +6,14 @@ interface ListOfTagsI {
 }
 
 export const ListOfTags = (props: ListOfTagsI) => {
-    const { tags, className } = props
+  const { tags, className } = props
 
-    return (
+  return (
         <div className={className}>
             {tags?.map((e) => (
                 // {data.map((e) => (
                 <Tags text={e} key={e} />
             ))}
         </div>
-    )
+  )
 }

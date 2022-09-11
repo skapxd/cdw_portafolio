@@ -1,7 +1,7 @@
 import Style from '../Icons.module.sass'
 
-export function VercelIcon() {
-    return (
+export function VercelIcon () {
+  return (
         <a href="https://vercel.com/" className={Style.technologies}>
             <h4 className={Style.technologies_name}>Vercel</h4>
             <svg
@@ -19,5 +19,5 @@ export function VercelIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

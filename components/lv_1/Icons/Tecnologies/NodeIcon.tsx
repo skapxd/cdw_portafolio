@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function NodeIcon() {
-    return (
+export function NodeIcon () {
+  return (
         <a
             target="_blank"
             href="https://nodejs.org/en/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Nextjs</h4>
 
@@ -24,5 +24,5 @@ export function NodeIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

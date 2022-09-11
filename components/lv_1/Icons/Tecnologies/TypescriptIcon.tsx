@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function TypeScriptIcon() {
-    return (
+export function TypeScriptIcon () {
+  return (
         <a
             target="_blank"
             href="https://www.typescriptlang.org/"
-            className={Style.technologies}
+            className={Style.technologies} rel="noreferrer"
         >
             <h4 className={Style.technologies_name}>TypeScript</h4>
 
@@ -35,5 +35,5 @@ export function TypeScriptIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

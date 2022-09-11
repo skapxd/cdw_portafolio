@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function ReactIcon() {
-    return (
+export function ReactIcon () {
+  return (
         <a
             target="_blank"
             href="https://reactjs.org/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>React</h4>
 
@@ -22,5 +22,5 @@ export function ReactIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

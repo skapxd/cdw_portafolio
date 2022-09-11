@@ -2,10 +2,10 @@ import Style from './Icons.module.sass'
 interface VSCodeIconI {
     className?: string
 }
-export default function VSCodeIcon(props: VSCodeIconI) {
-    const { className = '' } = props
+export default function VSCodeIcon (props: VSCodeIconI) {
+  const { className = '' } = props
 
-    return (
+  return (
         <>
             <svg
                 className={className}
@@ -48,7 +48,7 @@ export default function VSCodeIcon(props: VSCodeIconI) {
                     </g>
                     <g
                         style={{
-                            mixBlendMode: 'overlay'
+                          mixBlendMode: 'overlay'
                         }}
                         opacity="0.25"
                     >
@@ -141,5 +141,5 @@ export default function VSCodeIcon(props: VSCodeIconI) {
                 </defs>
             </svg>
         </>
-    )
+  )
 }

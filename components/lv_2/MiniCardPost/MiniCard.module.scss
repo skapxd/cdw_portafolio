@@ -1,0 +1,67 @@
+@import '../../../styles/_theme.module';
+
+.miniCard {
+  display: flex;
+  flex-direction: column;
+
+  &_img {
+    width: 100%;
+    aspect-ratio: 101/57;
+    border-radius: 1.6rem;
+    object-fit: cover;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1rem;
+    gap: 1rem;
+
+    &_readingTime {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    &_date {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $greyAct;
+    }
+
+    &_title {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 2.5rem;
+      transition: color 0.3s ease;
+    }
+
+    &_displayRow {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  .miniCard {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    &_img {
+      width: 17.5rem;
+      height: 14.5rem;
+      object-fit: cover;
+    }
+
+    &_info {
+      padding-top: 0;
+    }
+  }
+}
+
+;

@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function PythonIcon() {
-    return (
+export function PythonIcon () {
+  return (
         <a
             target="_blank"
             href="https://www.python.org/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Python</h4>
 
@@ -49,5 +49,5 @@ export function PythonIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

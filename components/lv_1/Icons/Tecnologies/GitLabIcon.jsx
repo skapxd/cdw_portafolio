@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function GitLabIcon() {
-    return (
+export function GitLabIcon () {
+  return (
         <a
             className={Style.tecnologies}
             target="_blank"
-            href="https://about.gitlab.com/"
+            href="https://about.gitlab.com/" rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>GitLab</h4>
 
@@ -47,5 +47,5 @@ export function GitLabIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

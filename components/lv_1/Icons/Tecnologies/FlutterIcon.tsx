@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function FlutterIcon() {
-    return (
+export function FlutterIcon () {
+  return (
         <Link href="https://flutter.dev/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Flutter</h4>
@@ -75,5 +75,5 @@ export function FlutterIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

@@ -7,9 +7,9 @@ interface ListOfMiniCardI {
 }
 
 export const ListOfMiniCard = (props: ListOfMiniCardI) => {
-    const { list, className } = props
+  const { list, className } = props
 
-    return (
+  return (
         <div className={className}>
             {list?.map((e) => (
                 <MiniCard
@@ -26,5 +26,5 @@ export const ListOfMiniCard = (props: ListOfMiniCardI) => {
                 />
             ))}
         </div>
-    )
+  )
 }

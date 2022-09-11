@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ListOfMiniTags } from '../../lv_2/ListOfMiniTags/ListOfTags'
 import { StarIcon } from '../../lv_1/Icons/StarIcon'
 import { singlePostLink } from '../../../pages/post/[post]'
-import Style from './CardPost.module.sass'
+import Style from './CardPost.module.scss'
 
 export interface CardPostI {
     id: string
@@ -15,20 +15,20 @@ export interface CardPostI {
     urlImage: string
     urlPost: string
 }
-export function CardPost(props: CardPostI) {
-    const {
-        favorite,
-        date,
-        readingTime,
-        title,
-        tags,
-        shortDescription,
-        urlImage,
-        id,
-        urlPost
-    } = props
+export function CardPost (props: CardPostI) {
+  const {
+    favorite,
+    date,
+    readingTime,
+    title,
+    tags,
+    shortDescription,
+    urlImage,
+    id,
+    urlPost
+  } = props
 
-    return (
+  return (
         <Link href={singlePostLink(urlPost)} key={id}>
             <a
                 className={Style.card}
@@ -57,5 +57,5 @@ export function CardPost(props: CardPostI) {
                 </article>
             </a>
         </Link>
-    )
+  )
 }

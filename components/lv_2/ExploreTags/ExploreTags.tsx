@@ -8,9 +8,9 @@ interface ExploreTagsI {
 }
 
 export const ExploreTags = (props: ExploreTagsI) => {
-    const { listOfTags, className = '' } = props
+  const { listOfTags, className = '' } = props
 
-    return (
+  return (
         <div className={`${Style.exploreTags} ${className}`}>
             <Title text="Etiquetas" className={Style.exploreTags_title} />
             <ListOfTags
@@ -18,5 +18,5 @@ export const ExploreTags = (props: ExploreTagsI) => {
                 className={Style.exploreTags_displayRow}
             />
         </div>
-    )
+  )
 }

@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function SassIcon() {
-    return (
+export function SassIcon () {
+  return (
         <a
             target="_blank"
             href="https://sass-lang.com/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Sass</h4>
 
@@ -24,5 +24,5 @@ export function SassIcon() {
                 </g>
             </svg>
         </a>
-    )
+  )
 }

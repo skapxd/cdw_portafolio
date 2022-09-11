@@ -8,16 +8,16 @@ import Style from './about.module.sass'
 import staticImage from '../../routes/static_images'
 import { technologiesLink } from '../technologies'
 
-export async function getStaticProps() {
-    const { listPost, listTags, mostSeen } = await getBasicData()
+export async function getStaticProps () {
+  const { listPost, listTags, mostSeen } = await getBasicData()
 
-    return {
-        props: {
-            listPost,
-            listTags,
-            mostSeen
-        }
+  return {
+    props: {
+      listPost,
+      listTags,
+      mostSeen
     }
+  }
 }
 
 interface AboutI {
@@ -26,10 +26,10 @@ interface AboutI {
     listTags: string[]
 }
 
-export default function About(props: AboutI) {
-    const { listPost, listTags, mostSeen } = props
+export default function About (props: AboutI) {
+  const { listPost, listTags, mostSeen } = props
 
-    return (
+  return (
         <Layout listOfTags={listTags} mostSeen={mostSeen}>
             <div className={Style.about}>
                 <img
@@ -54,5 +54,5 @@ export default function About(props: AboutI) {
                 <h2 className={Style.about_name}>Trayectoria </h2>
             </div>
         </Layout>
-    )
+  )
 }

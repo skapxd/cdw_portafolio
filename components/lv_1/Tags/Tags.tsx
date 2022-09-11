@@ -7,10 +7,10 @@ export interface TagsI {
     className?: string
 }
 export const Tags = (props: TagsI) => {
-    const { className, text } = props
-    return (
+  const { className, text } = props
+  return (
         <Link href={tagLink(text)}>
             <a className={`${Style.tags} ${className}`}>{text}</a>
         </Link>
-    )
+  )
 }

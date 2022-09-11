@@ -9,11 +9,11 @@ import { searchLink } from '../../../pages/search'
 import staticImage from '../../../routes/static_images'
 import { homeLink } from '../../../pages/index'
 
-import Style from './Header.module.sass'
+import Style from './Header.module.scss'
 
 export const Header = () => {
-    const openDrawer = useOpenDrawer()
-    return (
+  const openDrawer = useOpenDrawer()
+  return (
         <header className={Style.mainContainer}>
             <div className={Style.mainContainer_content}>
                 <MenuIcon onClick={() => openDrawer()} className={Style.menu} />
@@ -37,5 +37,5 @@ export const Header = () => {
                 </div>
             </div>
         </header>
-    )
+  )
 }

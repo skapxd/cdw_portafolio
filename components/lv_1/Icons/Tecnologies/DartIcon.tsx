@@ -1,8 +1,8 @@
 import Style from '../Icons.module.sass'
 import Link from 'next/link'
 
-export function DartIcon() {
-    return (
+export function DartIcon () {
+  return (
         <Link href="https://dart.dev/">
             <a target="_blank" className={Style.tecnologies}>
                 <h4 className={Style.tecnologies_name}>Dart</h4>
@@ -56,7 +56,7 @@ export function DartIcon() {
                                 fill="#fff"
                                 opacity="0.2"
                                 style={{
-                                    isolation: 'isolate'
+                                  isolation: 'isolate'
                                 }}
                             />
                             <polygon
@@ -64,7 +64,7 @@ export function DartIcon() {
                                 fill="#263238"
                                 opacity="0.2"
                                 style={{
-                                    isolation: 'isolate'
+                                  isolation: 'isolate'
                                 }}
                             />
                             <path
@@ -72,7 +72,7 @@ export function DartIcon() {
                                 fill="#fff"
                                 opacity="0.2"
                                 style={{
-                                    isolation: 'isolate'
+                                  isolation: 'isolate'
                                 }}
                             />
                             <path
@@ -80,7 +80,7 @@ export function DartIcon() {
                                 opacity="0.2"
                                 fill="url(#Degradado_sin_nombre)"
                                 style={{
-                                    isolation: 'isolate'
+                                  isolation: 'isolate'
                                 }}
                             />
                         </g>
@@ -88,5 +88,5 @@ export function DartIcon() {
                 </svg>
             </a>
         </Link>
-    )
+  )
 }

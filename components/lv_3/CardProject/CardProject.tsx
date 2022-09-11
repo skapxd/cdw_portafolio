@@ -1,6 +1,6 @@
 import {
-    GithubUrl,
-    ListOfGithubUrl
+  GithubUrl,
+  ListOfGithubUrl
 } from '../../lv_2/ListOfGithubUrl/ListOfGithubUrl'
 import Style from './CardProject.module.sass'
 
@@ -11,16 +11,16 @@ export interface CardProjectI {
     urlPost: string
     listOfGithubUrl?: GithubUrl[]
 }
-export function CardProject(props: CardProjectI) {
-    const { title, urlImage, id, urlPost, listOfGithubUrl } = props
+export function CardProject (props: CardProjectI) {
+  const { title, urlImage, id, urlPost, listOfGithubUrl } = props
 
-    return (
+  return (
         <div key={id} className={Style.project}>
             <a
                 target="_blank"
                 href={urlPost}
                 className={Style.project_bg}
-                style={{ backgroundImage: `url(${urlImage})` }}
+                style={{ backgroundImage: `url(${urlImage})` }} rel="noreferrer"
             >
                 <h2 className={Style.project_title}>{title}</h2>
                 {/* <ListOfGithubUrl listOfGithubUrl={listOfGithubUrl} /> */}
@@ -28,5 +28,5 @@ export function CardProject(props: CardProjectI) {
             </a>
             <ListOfGithubUrl listOfGithubUrl={listOfGithubUrl} />
         </div>
-    )
+  )
 }

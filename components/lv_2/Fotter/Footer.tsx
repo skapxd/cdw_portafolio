@@ -5,9 +5,9 @@ interface FooterI {
 }
 
 export const Footer = (props: FooterI) => {
-    const { className = '' } = props
+  const { className = '' } = props
 
-    return (
+  return (
         <footer className={`${Style.footer} ${className}`}>
             <div className={Style.footer_right}>
                 2021 ©{' '}
@@ -17,5 +17,5 @@ export const Footer = (props: FooterI) => {
                 All Right Reserved. Published with <b>Vercel</b>
             </div>
         </footer>
-    )
+  )
 }

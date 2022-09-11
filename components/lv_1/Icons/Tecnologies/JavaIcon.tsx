@@ -1,7 +1,7 @@
 import Style from '../Icons.module.sass'
 
-export function JavaIcon() {
-    return (
+export function JavaIcon () {
+  return (
         <a href="" target="_blank" className={Style.tecnologies}>
             <h4>Java</h4>
             <svg
@@ -447,5 +447,5 @@ export function JavaIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

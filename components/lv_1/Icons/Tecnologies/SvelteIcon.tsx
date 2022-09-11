@@ -1,11 +1,11 @@
 import Style from '../Icons.module.sass'
 
-export function SvelteIcon() {
-    return (
+export function SvelteIcon () {
+  return (
         <a
             target="_blank"
             href="https://svelte.dev/"
-            className={Style.tecnologies}
+            className={Style.tecnologies} rel="noreferrer"
         >
             <h4 className={Style.tecnologies_name}>Svelte</h4>
 
@@ -25,5 +25,5 @@ export function SvelteIcon() {
                 />
             </svg>
         </a>
-    )
+  )
 }

@@ -5,36 +5,36 @@ import { Layout } from '../../components/lv_5/Layout/Layout'
 import { getBasicData } from '../../helpers/getBasicData'
 import { getPostByTags } from '../../helpers/getPostByTags'
 
-import Style from './[tag].module.sass'
+import Style from './[tag].module.scss'
 
-export async function getStaticPaths(props: any) {
-    const getPath = async () => {
-        const { listTags } = await getBasicData()
-        const paths = listTags.map((e) => ({
-            params: { tag: e }
-        }))
-        return paths
-    }
+export async function getStaticPaths (props: any) {
+  const getPath = async () => {
+    const { listTags } = await getBasicData()
+    const paths = listTags.map((e) => ({
+      params: { tag: e }
+    }))
+    return paths
+  }
 
-    const paths = await getPath()
+  const paths = await getPath()
 
-    return { paths, fallback: false }
+  return { paths, fallback: false }
 }
 
-export async function getStaticProps(props: any) {
-    const { params } = props
+export async function getStaticProps (props: any) {
+  const { params } = props
 
-    const { mostSeen, listTags } = getBasicData()
-    const listPost = getPostByTags(params.tag)
+  const { mostSeen, listTags } = getBasicData()
+  const listPost = getPostByTags(params.tag)
 
-    return {
-        props: {
-            listPost,
-            mostSeen,
-            listTags,
-            tag: params.tag
-        }
+  return {
+    props: {
+      listPost,
+      mostSeen,
+      listTags,
+      tag: params.tag
     }
+  }
 }
 
 export const tagLink = (tag: string) => `/tag/${tag}`
@@ -46,10 +46,10 @@ interface TagsI {
     tag: string
 }
 
-export default function Tags(props: TagsI) {
-    const { listTags, listPost, tag, mostSeen } = props
+export default function Tags (props: TagsI) {
+  const { listTags, listPost, tag, mostSeen } = props
 
-    return (
+  return (
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.tags}>
                 <p> {listPost?.length ?? 0} coincidencias de</p>
@@ -61,5 +61,5 @@ export default function Tags(props: TagsI) {
                 />
             </div>
         </Layout>
-    )
+  )
 }

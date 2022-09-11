@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const WebIcon = () => {
-    return (
+  return (
         <div>
             <svg
                 version="1.1"
@@ -59,5 +59,5 @@ export const WebIcon = () => {
                 <g></g>
             </svg>
         </div>
-    )
+  )
 }
