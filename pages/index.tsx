@@ -42,7 +42,7 @@ export default function Home (props: HomeI) {
                     Desarrollo web y móvil
                 </h1>
 
-                <ListOfCardPost
+                   <ListOfCardPost
                     className={Style.firtsScreen_listOfCardPost}
                     list={lastPost}
                 />
