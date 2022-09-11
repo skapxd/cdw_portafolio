@@ -26,9 +26,8 @@ export async function getStaticProps (props: any) {
   const { params } = props
 
   const { listTags, mostSeen } = getBasicData()
-  const { metaData, markDown, success } = await getSinglePost(params.post)
-  if (!success) {
-  }
+  const { metaData, markDown } = await getSinglePost(params.post)
+
   return {
     props: {
       mostSeen,

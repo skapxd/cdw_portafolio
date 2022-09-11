@@ -48,6 +48,7 @@ export function Drawer () {
   return (
         <div>
             <div>
+                {/* @ts-ignore */}
                 <SwipeableDrawer
                     id="drawer"
                     anchor={drawerDirection}

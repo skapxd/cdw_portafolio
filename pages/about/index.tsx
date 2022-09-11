@@ -27,7 +27,7 @@ interface AboutI {
 }
 
 export default function About (props: AboutI) {
-  const { listPost, listTags, mostSeen } = props
+  const { listTags, mostSeen } = props
 
   return (
         <Layout listOfTags={listTags} mostSeen={mostSeen}>

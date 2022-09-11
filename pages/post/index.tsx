@@ -6,8 +6,6 @@ import { ListOfCardPost } from '../../components/lv_3/ListOfCardPost/ListOfCardP
 import Style from './index.module.sass'
 
 export async function getStaticProps (props: any) {
-  const { params } = props
-
   const { listTags, mostSeen, listPost } = getBasicData()
 
   return {

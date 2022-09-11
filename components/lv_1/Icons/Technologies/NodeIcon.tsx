@@ -2,7 +2,7 @@ import Style from '../Icons.module.sass'
 
 export function NodeIcon () {
   return (
-        <a
+         <a
             target="_blank"
             href="https://nodejs.org/en/"
             className={Style.tecnologies} rel="noreferrer"

@@ -17,6 +17,7 @@ function MyApp ({ Component, pageProps }: AppProps) {
                 <title>Skapxd</title>
             </Head>
 
+            {/* @ts-ignore */}
             <Component {...pageProps} />
         </>
   )

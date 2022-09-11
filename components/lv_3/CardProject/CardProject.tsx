@@ -2,7 +2,7 @@ import {
   GithubUrl,
   ListOfGithubUrl
 } from '../../lv_2/ListOfGithubUrl/ListOfGithubUrl'
-import Style from './CardProject.module.sass'
+import Style from './CardProject.module.scss'
 
 export interface CardProjectI {
     id: string

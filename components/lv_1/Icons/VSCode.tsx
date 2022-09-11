@@ -13,8 +13,9 @@ export default function VSCodeIcon (props: VSCodeIconI) {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <mask
+                   <mask
                     id="mask0"
+                    // eslint-disable-next-line react/no-unknown-property
                     mask-type="alpha"
                     maskUnits="userSpaceOnUse"
                     x="0"
