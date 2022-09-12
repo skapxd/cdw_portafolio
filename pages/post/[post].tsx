@@ -8,6 +8,7 @@ import { getSinglePost } from '../../helpers/getSinglePost'
 
 import Style from './[post].module.scss'
 import MarkDownStyle from '../../styles/_markdown.module.sass'
+import Image from 'next/image'
 
 export async function getStaticPaths (props: any) {
   const getPaths = async () => {
@@ -66,7 +67,7 @@ export default function Post (props: PostI) {
                 <div className={Style.post}>
                     <div className={Style.post_presentation}>
                         <div className={Style.post_boxImgMain}>
-                            <img
+                            <Image
                                 className={Style.post_imgMain}
                                 src={urlImage}
                                 alt=""

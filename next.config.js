@@ -7,6 +7,7 @@ module.exports = {
     defaultLocale: 'es-ES',
     localeDetection: true
   },
+  output: 'standalone',
   redirects: async () => [
     {
       permanent: true,

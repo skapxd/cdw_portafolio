@@ -2,4 +2,6 @@
     "editor.formatOnSave": true,
     "commentTranslate.targetLanguage": "es",
     "cSpell.language": "en,es-ES",
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

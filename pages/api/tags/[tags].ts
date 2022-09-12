@@ -33,7 +33,7 @@ export default function handler (
   const post = postList.filter((e) => {
     if (typeof queryPost === 'object') return
 
-    return e.tags.includes(queryPost)
+    return e.tags.includes(queryPost ?? '')
   })
 
   if (post.length === 0) {

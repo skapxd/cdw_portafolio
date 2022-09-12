@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { singlePostLink } from '../../../pages/post/[post]'
 
@@ -22,7 +23,7 @@ export const MiniCard = (props: CardPostI) => {
         <article className={Style.miniCard}>
             <Link href={singlePostLink(urlPost)}>
                 <a>
-                    <img
+                    <Image
                         className={Style.miniCard_img}
                         src={urlImage}
                         alt={title}

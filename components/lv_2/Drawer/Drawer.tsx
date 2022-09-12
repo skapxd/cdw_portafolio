@@ -10,6 +10,7 @@ import ListItem from '@mui/material/ListItem'
 import Style from './Drawer.module.sass'
 import { menuAnchor } from '../ListMenuAnchor/ListMenuAnchor'
 import staticImage from '../../../routes/static_images'
+import Image from 'next/image'
 
 const drawer = '#drawer'
 const drawerDirection = 'left'
@@ -80,7 +81,7 @@ function Content () {
         >
             <Link href="/">
                 <a>
-                    <img
+                    <Image
                         src={staticImage().logo}
                         alt="logo"
                         className={Style.drawer_container_logo}

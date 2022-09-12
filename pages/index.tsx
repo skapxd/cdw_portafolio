@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CardPostI } from '../components/lv_3/CardPost/CardPost'
 import { ListOfCardPost } from '../components/lv_3/ListOfCardPost/ListOfCardPost'
 import { Layout } from '../components/lv_5/Layout/Layout'
@@ -36,7 +37,7 @@ export default function Home (props: HomeI) {
         <Layout mostSeen={mostSeen} listOfTags={listTags}>
             <div className={Style.firtsScreen}>
                 <div className={Style.firtsScreen_logo}>
-                    <img src={staticImage().logo} height="50" width="150" alt='logo'/>
+                    <Image src={staticImage().logo} height="50" width="150" alt='logo'/>
                 </div>
                 <h1 className={Style.firtsScreen_titulo}>
                     Desarrollo web y móvil

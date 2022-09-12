@@ -10,6 +10,7 @@ import staticImage from '../../../routes/static_images'
 import { homeLink } from '../../../pages/index'
 
 import Style from './Header.module.scss'
+import Image from 'next/image'
 
 export const Header = () => {
   const openDrawer = useOpenDrawer()
@@ -20,7 +21,7 @@ export const Header = () => {
 
                 <Link href={homeLink()}>
                     <a className={Style.logo}>
-                        <img src={staticImage().logo} alt="logo" />
+                        <Image src={staticImage().logo} alt="logo" />
                     </a>
                 </Link>
 
