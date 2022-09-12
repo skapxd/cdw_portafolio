@@ -1,5 +1,5 @@
-@use 'sass:string';
-@import '../../../styles/_theme.module';
+@use "sass:string";
+@import "../../../styles/_theme.module";
 
 .mainContainer {
   position: fixed;
@@ -11,7 +11,7 @@
   z-index: 900;
   display: flex;
   justify-content: center;
-  background-color: $background + string.unquote('55');
+  background-color: $background + string.unquote("55");
   backdrop-filter: blur(10px);
 
   &_content {
@@ -22,7 +22,7 @@
     justify-content: space-between;
     max-width: 134rem;
     width: 100%;
-    content: '';
+    content: "";
     height: 100%;
     width: 100%;
     position: absolute;
@@ -37,10 +37,10 @@
   display: none;
 }
 
-@media only screen and (min-width: $brackPointToTablet ) {
+@media only screen and (min-width: $brackPointToTablet) {
   .mainContainer {
     &_content {
-      content: '';
+      content: "";
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -63,6 +63,4 @@
   .menu {
     display: none;
   }
-}
-
-;
+} ;

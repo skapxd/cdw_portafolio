@@ -1,4 +1,4 @@
-@import '#/styles/_theme.module';
+@import "#/styles/_theme.module";
 
 .socialMedia {
   display: flex;
@@ -10,5 +10,16 @@
     flex-direction: column;
     margin-top: 3rem;
     gap: 1rem;
+    width: min-content;
+  }
+
+  &_group {
+    display: flex;
+    align-items: center;
+    &_text {
+      margin-left: 8px;
+      font-size: 1.6rem;
+      color: $greyAct;
+    }
   }
 }
