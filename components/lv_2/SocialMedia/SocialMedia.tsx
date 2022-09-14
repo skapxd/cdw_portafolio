@@ -36,7 +36,7 @@ export const SocialMedia = (props: Props) => {
   const Element = () => (
     <>
       {socialMedias.map((e) => (
-        <a href={e.link} className={Style.socialMedia_group}>
+        <a key={e.link} href={e.link} className={Style.socialMedia_group}>
           {e.icon}
 
           <p className={Style.socialMedia_group_text}>{e.text}</p>

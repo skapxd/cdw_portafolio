@@ -13,6 +13,11 @@ module.exports = {
       permanent: true,
       source: '/curriculum.figma',
       destination: 'https://www.figma.com/file/sBfI5tPy3a9Pp6O7hrSNuM/Portafolio'
+    },
+    {
+      permanent: true,
+      source: '/cv.figma',
+      destination: 'https://www.figma.com/file/sBfI5tPy3a9Pp6O7hrSNuM/Portafolio'
     }
   ]
 }
