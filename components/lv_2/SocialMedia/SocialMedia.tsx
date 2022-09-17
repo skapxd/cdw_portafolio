@@ -3,13 +3,15 @@ import { Telegram } from "../../lv_1/Icons/SocialMedia/Telegram";
 import { Title } from "../../lv_1/Title/Title";
 import Style from "./SocialMedia.module.scss";
 import { Mail } from "../../lv_1/Icons/SocialMedia/Mail";
+import { FC } from "react";
+import Link from "next/link";
 
 interface Props {
   className?: string;
 }
 
 interface SocialMediaI {
-  icon: JSX.Element;
+  icon: FC;
   text: string;
   link: string;
 }
@@ -17,42 +19,43 @@ interface SocialMediaI {
 export const SocialMedia = (props: Props) => {
   const socialMedias: Array<SocialMediaI> = [
     {
-      icon: <Telegram />,
+      icon: () => <Telegram />,
       text: "@skapxd",
       link: "https://t.me/skapxd",
     },
     {
-      icon: <Github />,
+      icon: () => <Github />,
       text: "github.com/skapxd",
       link: "https://github.com/skapxd",
     },
     {
-      icon: <Mail />,
-      link: "mailto:hola@skapxd.dev",
+      icon: () => <Mail />,
       text: "hola@skapxd.dev",
+      link: "mailto:hola@skapxd.dev",
     },
   ];
 
-  const Element = () => (
-    <>
-      {socialMedias.map((e) => (
-        <a key={e.link} href={e.link} className={Style.socialMedia_group}>
-          {e.icon}
+  const { className = "" } = props;
 
-          <p className={Style.socialMedia_group_text}>{e.text}</p>
-        </a>
+  const Elements = () => (
+    <>
+      {socialMedias.map((E) => (
+        <Link href={E.link}>
+          <a key={E.text} className={Style.socialMedia_group} target="_blanc">
+            <E.icon />
+            <p className={Style.socialMedia_group_text}>{E.text}</p>
+          </a>
+        </Link>
       ))}
     </>
   );
-
-  const { className = "" } = props;
 
   return (
     <div className={`${Style.socialMedia} ${className}`}>
       <Title text="Contacto" className={Style.socialMedia_title} />
 
       <div className={Style.socialMedia_listLink}>
-        <Element />
+        <Elements />
       </div>
     </div>
   );
