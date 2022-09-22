@@ -4,7 +4,6 @@
     "cSpell.language": "en,es-ES",
     "editor.tabSize": 2,
     "prettier.tabWidth": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[sass]": {
         "editor.defaultFormatter": "syler.sass-indented"
     }
