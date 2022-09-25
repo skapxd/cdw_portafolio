@@ -19,6 +19,7 @@ export default async function handler (
   // await runMiddleware(req, res, cors)
 
   res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
 
   return res.json({
     age: 23,
